@@ -84,7 +84,7 @@ Pod::Spec.new do |s|
   #
 
   # s.source       = { :git => "http://EXAMPLE/RTVideoPlayer.git", :tag => "#{s.version}" }
-  s.source = { :path => "/Users/michaelyudin/Desktop/develop/RTVideoPlayer" }
+  s.source = { :git => "git@github.com:yudinm/RTVideoPlayer.git" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
