@@ -1,0 +1,25 @@
+PODS:
+  - CocoaLumberjack (3.0.0):
+    - CocoaLumberjack/Default (= 3.0.0)
+    - CocoaLumberjack/Extensions (= 3.0.0)
+  - CocoaLumberjack/Core (3.0.0)
+  - CocoaLumberjack/Default (3.0.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (3.0.0):
+    - CocoaLumberjack/Default
+  - KWTransition (0.0.4)
+  - Reachability (3.2)
+
+DEPENDENCIES:
+  - CocoaLumberjack
+  - KWTransition
+  - Reachability
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: c823149bccc5519a9447aeb433be7b1212a7d6a5
+  KWTransition: 72d59eef35ddb67769eb99a41317fa75c0444e1b
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+
+PODFILE CHECKSUM: 5730085e13728c1036f8b739a29554493047a9bc
+
+COCOAPODS: 1.0.1
