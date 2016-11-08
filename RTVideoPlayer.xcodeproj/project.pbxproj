@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E90DEEF04C98E0543A61FCC /* libPods-RTVideoPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 380D1D801C8EB7D7DE0C23A5 /* libPods-RTVideoPlayer.a */; };
-		5E5F8D0E1DD1D37E006E1D00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D0D1DD1D37E006E1D00 /* main.m */; };
-		5E5F8D111DD1D37E006E1D00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D101DD1D37E006E1D00 /* AppDelegate.m */; };
 		5E5F8D191DD1D37E006E1D00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8D181DD1D37E006E1D00 /* Assets.xcassets */; };
-		5E5F8D1C1DD1D37E006E1D00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8D1A1DD1D37E006E1D00 /* LaunchScreen.storyboard */; };
 		5E5F8D251DD1D920006E1D00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8D241DD1D920006E1D00 /* Main.storyboard */; };
 		5E5F8D281DD1D955006E1D00 /* MainDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D271DD1D955006E1D00 /* MainDemoViewController.m */; };
 		5E5F8D681DD1DBFA006E1D00 /* VKVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D511DD1DBFA006E1D00 /* VKVideoPlayer.m */; };
@@ -32,21 +29,19 @@
 		5E5F8D8B1DD1EED4006E1D00 /* VKVideoPlayerViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8D891DD1EED4006E1D00 /* VKVideoPlayerViewController~ipad.xib */; };
 		5E5F8D8C1DD1EED4006E1D00 /* VKVideoPlayerViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8D8A1DD1EED4006E1D00 /* VKVideoPlayerViewController~iphone.xib */; };
 		5E5F8D8E1DD1EFE3006E1D00 /* VKVideoPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8D8D1DD1EFE3006E1D00 /* VKVideoPlayerView.xib */; };
+		5E5F8DA91DD22AD5006E1D00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8DA51DD22AD5006E1D00 /* AppDelegate.m */; };
+		5E5F8DAA1DD22AD5006E1D00 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8DA61DD22AD5006E1D00 /* Info.plist */; };
+		5E5F8DAB1DD22AD5006E1D00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8DA71DD22AD5006E1D00 /* main.m */; };
+		5E5F8DAE1DD22AE3006E1D00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8DAC1DD22AE3006E1D00 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		380D1D801C8EB7D7DE0C23A5 /* libPods-RTVideoPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RTVideoPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E5F8D091DD1D37E006E1D00 /* RTVideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTVideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E5F8D0D1DD1D37E006E1D00 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5E5F8D0F1DD1D37E006E1D00 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5E5F8D101DD1D37E006E1D00 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5E5F8D181DD1D37E006E1D00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5E5F8D1B1DD1D37E006E1D00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5E5F8D1D1DD1D37E006E1D00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E5F8D241DD1D920006E1D00 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = RTVideoPlayerDemo/Main.storyboard; sourceTree = "<group>"; };
 		5E5F8D261DD1D955006E1D00 /* MainDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainDemoViewController.h; path = RTVideoPlayerDemo/MainDemoViewController.h; sourceTree = "<group>"; };
 		5E5F8D271DD1D955006E1D00 /* MainDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainDemoViewController.m; path = RTVideoPlayerDemo/MainDemoViewController.m; sourceTree = "<group>"; };
-		5E5F8D291DD1DA01006E1D00 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		5E5F8D501DD1DBFA006E1D00 /* VKVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayer.h; path = VKPlayer/VKVideoPlayer.h; sourceTree = "<group>"; };
 		5E5F8D511DD1DBFA006E1D00 /* VKVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayer.m; path = VKPlayer/VKVideoPlayer.m; sourceTree = "<group>"; };
 		5E5F8D521DD1DBFA006E1D00 /* VKVideoPlayerAirPlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerAirPlay.h; path = VKPlayer/VKVideoPlayerAirPlay.h; sourceTree = "<group>"; };
@@ -82,6 +77,12 @@
 		5E5F8D891DD1EED4006E1D00 /* VKVideoPlayerViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "VKVideoPlayerViewController~ipad.xib"; path = "VKPlayer/VKVideoPlayerViewController~ipad.xib"; sourceTree = "<group>"; };
 		5E5F8D8A1DD1EED4006E1D00 /* VKVideoPlayerViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "VKVideoPlayerViewController~iphone.xib"; path = "VKPlayer/VKVideoPlayerViewController~iphone.xib"; sourceTree = "<group>"; };
 		5E5F8D8D1DD1EFE3006E1D00 /* VKVideoPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VKVideoPlayerView.xib; path = VKPlayer/VKVideoPlayerView.xib; sourceTree = "<group>"; };
+		5E5F8DA41DD22AD5006E1D00 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5E5F8DA51DD22AD5006E1D00 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5E5F8DA61DD22AD5006E1D00 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E5F8DA71DD22AD5006E1D00 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5E5F8DA81DD22AD5006E1D00 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		5E5F8DAD1DD22AE3006E1D00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92D1BFA38481C49B25F2B485 /* Pods-RTVideoPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTVideoPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-RTVideoPlayer/Pods-RTVideoPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		F2CE38926C8C23EC07F06328 /* Pods-RTVideoPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTVideoPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RTVideoPlayer/Pods-RTVideoPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,24 +145,10 @@
 			path = RTVideoPlayer;
 			sourceTree = "<group>";
 		};
-		5E5F8D0C1DD1D37E006E1D00 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5E5F8D0F1DD1D37E006E1D00 /* AppDelegate.h */,
-				5E5F8D101DD1D37E006E1D00 /* AppDelegate.m */,
-				5E5F8D1A1DD1D37E006E1D00 /* LaunchScreen.storyboard */,
-				5E5F8D1D1DD1D37E006E1D00 /* Info.plist */,
-				5E5F8D0D1DD1D37E006E1D00 /* main.m */,
-				5E5F8D291DD1DA01006E1D00 /* PrefixHeader.pch */,
-			);
-			name = "Supporting Files";
-			path = RTVideoPlayer;
-			sourceTree = "<group>";
-		};
 		5E5F8D231DD1D8F1006E1D00 /* RTVideoPlayerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				5E5F8D0C1DD1D37E006E1D00 /* Supporting Files */,
+				5E5F8DA31DD22AA8006E1D00 /* Supporting Files */,
 				5E5F8D241DD1D920006E1D00 /* Main.storyboard */,
 				5E5F8D261DD1D955006E1D00 /* MainDemoViewController.h */,
 				5E5F8D271DD1D955006E1D00 /* MainDemoViewController.m */,
@@ -216,6 +203,20 @@
 				5E5F8D7C1DD1DCF0006E1D00 /* VKView.m */,
 			);
 			name = VKFoundation;
+			sourceTree = "<group>";
+		};
+		5E5F8DA31DD22AA8006E1D00 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5E5F8DAC1DD22AE3006E1D00 /* LaunchScreen.storyboard */,
+				5E5F8DA41DD22AD5006E1D00 /* AppDelegate.h */,
+				5E5F8DA51DD22AD5006E1D00 /* AppDelegate.m */,
+				5E5F8DA61DD22AD5006E1D00 /* Info.plist */,
+				5E5F8DA71DD22AD5006E1D00 /* main.m */,
+				5E5F8DA81DD22AD5006E1D00 /* PrefixHeader.pch */,
+			);
+			name = "Supporting Files";
+			path = "RTVideoPlayerDemo/Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,11 +282,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E5F8D251DD1D920006E1D00 /* Main.storyboard in Resources */,
-				5E5F8D1C1DD1D37E006E1D00 /* LaunchScreen.storyboard in Resources */,
+				5E5F8DAE1DD22AE3006E1D00 /* LaunchScreen.storyboard in Resources */,
 				5E5F8D8B1DD1EED4006E1D00 /* VKVideoPlayerViewController~ipad.xib in Resources */,
 				5E5F8D8C1DD1EED4006E1D00 /* VKVideoPlayerViewController~iphone.xib in Resources */,
 				5E5F8D8E1DD1EFE3006E1D00 /* VKVideoPlayerView.xib in Resources */,
 				5E5F8D191DD1D37E006E1D00 /* Assets.xcassets in Resources */,
+				5E5F8DAA1DD22AD5006E1D00 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,15 +354,15 @@
 				5E5F8D281DD1D955006E1D00 /* MainDemoViewController.m in Sources */,
 				5E5F8D6B1DD1DBFA006E1D00 /* VKVideoPlayerCaptionSRT.m in Sources */,
 				5E5F8D6F1DD1DBFA006E1D00 /* VKVideoPlayerTrack.m in Sources */,
-				5E5F8D111DD1D37E006E1D00 /* AppDelegate.m in Sources */,
 				5E5F8D871DD1DE34006E1D00 /* NSObject+VKFoundation.m in Sources */,
 				5E5F8D6D1DD1DBFA006E1D00 /* VKVideoPlayerLayerView.m in Sources */,
 				5E5F8D7D1DD1DCF0006E1D00 /* VKPickerButton.m in Sources */,
 				5E5F8D721DD1DBFA006E1D00 /* VKVideoPlayerViewController.m in Sources */,
 				5E5F8D781DD1DCC8006E1D00 /* VKScrubber.m in Sources */,
-				5E5F8D0E1DD1D37E006E1D00 /* main.m in Sources */,
 				5E5F8D6E1DD1DBFA006E1D00 /* VKVideoPlayerSettingsManager.m in Sources */,
+				5E5F8DA91DD22AD5006E1D00 /* AppDelegate.m in Sources */,
 				5E5F8D681DD1DBFA006E1D00 /* VKVideoPlayer.m in Sources */,
+				5E5F8DAB1DD22AD5006E1D00 /* main.m in Sources */,
 				5E5F8D7E1DD1DCF0006E1D00 /* VKView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,10 +370,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5E5F8D1A1DD1D37E006E1D00 /* LaunchScreen.storyboard */ = {
+		5E5F8DAC1DD22AE3006E1D00 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5E5F8D1B1DD1D37E006E1D00 /* Base */,
+				5E5F8DAD1DD22AE3006E1D00 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -475,10 +477,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F2CE38926C8C23EC07F06328 /* Pods-RTVideoPlayer.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K2B5R7D5U8;
-				GCC_PREFIX_HEADER = RTVideoPlayer/PrefixHeader.pch;
-				INFOPLIST_FILE = RTVideoPlayer/Info.plist;
+				GCC_PREFIX_HEADER = "RTVideoPlayerDemo/Supporting Files/PrefixHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/RTVideoPlayerDemo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rtnews.RTVideoPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -489,10 +490,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 92D1BFA38481C49B25F2B485 /* Pods-RTVideoPlayer.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K2B5R7D5U8;
-				GCC_PREFIX_HEADER = RTVideoPlayer/PrefixHeader.pch;
-				INFOPLIST_FILE = RTVideoPlayer/Info.plist;
+				GCC_PREFIX_HEADER = "RTVideoPlayerDemo/Supporting Files/PrefixHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/RTVideoPlayerDemo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rtnews.RTVideoPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
