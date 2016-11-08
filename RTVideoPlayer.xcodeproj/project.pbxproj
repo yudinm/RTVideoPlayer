@@ -137,6 +137,7 @@
 		5E5F8D0B1DD1D37E006E1D00 /* RTVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				5E5F8D751DD1DC7F006E1D00 /* VKFoundation */,
 				5E5F8D2A1DD1DBBF006E1D00 /* VKPlayer */,
 				5E5F8D181DD1D37E006E1D00 /* Assets.xcassets */,
 			);
@@ -171,7 +172,6 @@
 		5E5F8D2A1DD1DBBF006E1D00 /* VKPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				5E5F8D751DD1DC7F006E1D00 /* VKFoundation */,
 				5E5F8D501DD1DBFA006E1D00 /* VKVideoPlayer.h */,
 				5E5F8D511DD1DBFA006E1D00 /* VKVideoPlayer.m */,
 				5E5F8D521DD1DBFA006E1D00 /* VKVideoPlayerAirPlay.h */,
