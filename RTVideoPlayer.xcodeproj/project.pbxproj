@@ -10,10 +10,26 @@
 		3E90DEEF04C98E0543A61FCC /* libPods-RTVideoPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 380D1D801C8EB7D7DE0C23A5 /* libPods-RTVideoPlayer.a */; };
 		5E5F8D0E1DD1D37E006E1D00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D0D1DD1D37E006E1D00 /* main.m */; };
 		5E5F8D111DD1D37E006E1D00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D101DD1D37E006E1D00 /* AppDelegate.m */; };
-		5E5F8D141DD1D37E006E1D00 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D131DD1D37E006E1D00 /* ViewController.m */; };
-		5E5F8D171DD1D37E006E1D00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8D151DD1D37E006E1D00 /* Main.storyboard */; };
 		5E5F8D191DD1D37E006E1D00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8D181DD1D37E006E1D00 /* Assets.xcassets */; };
 		5E5F8D1C1DD1D37E006E1D00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8D1A1DD1D37E006E1D00 /* LaunchScreen.storyboard */; };
+		5E5F8D251DD1D920006E1D00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8D241DD1D920006E1D00 /* Main.storyboard */; };
+		5E5F8D281DD1D955006E1D00 /* MainDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D271DD1D955006E1D00 /* MainDemoViewController.m */; };
+		5E5F8D681DD1DBFA006E1D00 /* VKVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D511DD1DBFA006E1D00 /* VKVideoPlayer.m */; };
+		5E5F8D691DD1DBFA006E1D00 /* VKVideoPlayerAirPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D531DD1DBFA006E1D00 /* VKVideoPlayerAirPlay.m */; };
+		5E5F8D6A1DD1DBFA006E1D00 /* VKVideoPlayerCaption.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D551DD1DBFA006E1D00 /* VKVideoPlayerCaption.m */; };
+		5E5F8D6B1DD1DBFA006E1D00 /* VKVideoPlayerCaptionSRT.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D571DD1DBFA006E1D00 /* VKVideoPlayerCaptionSRT.m */; };
+		5E5F8D6C1DD1DBFA006E1D00 /* VKVideoPlayerExternalMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D5A1DD1DBFA006E1D00 /* VKVideoPlayerExternalMonitor.m */; };
+		5E5F8D6D1DD1DBFA006E1D00 /* VKVideoPlayerLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D5C1DD1DBFA006E1D00 /* VKVideoPlayerLayerView.m */; };
+		5E5F8D6E1DD1DBFA006E1D00 /* VKVideoPlayerSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D5E1DD1DBFA006E1D00 /* VKVideoPlayerSettingsManager.m */; };
+		5E5F8D6F1DD1DBFA006E1D00 /* VKVideoPlayerTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D601DD1DBFA006E1D00 /* VKVideoPlayerTrack.m */; };
+		5E5F8D701DD1DBFA006E1D00 /* VKVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D621DD1DBFA006E1D00 /* VKVideoPlayerView.m */; };
+		5E5F8D711DD1DBFA006E1D00 /* VKVideoPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8D631DD1DBFA006E1D00 /* VKVideoPlayerView.xib */; };
+		5E5F8D721DD1DBFA006E1D00 /* VKVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D651DD1DBFA006E1D00 /* VKVideoPlayerViewController.m */; };
+		5E5F8D781DD1DCC8006E1D00 /* VKScrubber.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D771DD1DCC8006E1D00 /* VKScrubber.m */; };
+		5E5F8D7D1DD1DCF0006E1D00 /* VKPickerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D7A1DD1DCF0006E1D00 /* VKPickerButton.m */; };
+		5E5F8D7E1DD1DCF0006E1D00 /* VKView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D7C1DD1DCF0006E1D00 /* VKView.m */; };
+		5E5F8D841DD1DDF4006E1D00 /* VKSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D831DD1DDF4006E1D00 /* VKSlider.m */; };
+		5E5F8D871DD1DE34006E1D00 /* NSObject+VKFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D861DD1DE34006E1D00 /* NSObject+VKFoundation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +38,46 @@
 		5E5F8D0D1DD1D37E006E1D00 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5E5F8D0F1DD1D37E006E1D00 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5E5F8D101DD1D37E006E1D00 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5E5F8D121DD1D37E006E1D00 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5E5F8D131DD1D37E006E1D00 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		5E5F8D161DD1D37E006E1D00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E5F8D181DD1D37E006E1D00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E5F8D1B1DD1D37E006E1D00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E5F8D1D1DD1D37E006E1D00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E5F8D241DD1D920006E1D00 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = RTVideoPlayerDemo/Main.storyboard; sourceTree = "<group>"; };
+		5E5F8D261DD1D955006E1D00 /* MainDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainDemoViewController.h; path = RTVideoPlayerDemo/MainDemoViewController.h; sourceTree = "<group>"; };
+		5E5F8D271DD1D955006E1D00 /* MainDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainDemoViewController.m; path = RTVideoPlayerDemo/MainDemoViewController.m; sourceTree = "<group>"; };
+		5E5F8D291DD1DA01006E1D00 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		5E5F8D501DD1DBFA006E1D00 /* VKVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayer.h; path = VKPlayer/VKVideoPlayer.h; sourceTree = "<group>"; };
+		5E5F8D511DD1DBFA006E1D00 /* VKVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayer.m; path = VKPlayer/VKVideoPlayer.m; sourceTree = "<group>"; };
+		5E5F8D521DD1DBFA006E1D00 /* VKVideoPlayerAirPlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerAirPlay.h; path = VKPlayer/VKVideoPlayerAirPlay.h; sourceTree = "<group>"; };
+		5E5F8D531DD1DBFA006E1D00 /* VKVideoPlayerAirPlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayerAirPlay.m; path = VKPlayer/VKVideoPlayerAirPlay.m; sourceTree = "<group>"; };
+		5E5F8D541DD1DBFA006E1D00 /* VKVideoPlayerCaption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerCaption.h; path = VKPlayer/VKVideoPlayerCaption.h; sourceTree = "<group>"; };
+		5E5F8D551DD1DBFA006E1D00 /* VKVideoPlayerCaption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayerCaption.m; path = VKPlayer/VKVideoPlayerCaption.m; sourceTree = "<group>"; };
+		5E5F8D561DD1DBFA006E1D00 /* VKVideoPlayerCaptionSRT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerCaptionSRT.h; path = VKPlayer/VKVideoPlayerCaptionSRT.h; sourceTree = "<group>"; };
+		5E5F8D571DD1DBFA006E1D00 /* VKVideoPlayerCaptionSRT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayerCaptionSRT.m; path = VKPlayer/VKVideoPlayerCaptionSRT.m; sourceTree = "<group>"; };
+		5E5F8D581DD1DBFA006E1D00 /* VKVideoPlayerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerConfig.h; path = VKPlayer/VKVideoPlayerConfig.h; sourceTree = "<group>"; };
+		5E5F8D591DD1DBFA006E1D00 /* VKVideoPlayerExternalMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerExternalMonitor.h; path = VKPlayer/VKVideoPlayerExternalMonitor.h; sourceTree = "<group>"; };
+		5E5F8D5A1DD1DBFA006E1D00 /* VKVideoPlayerExternalMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayerExternalMonitor.m; path = VKPlayer/VKVideoPlayerExternalMonitor.m; sourceTree = "<group>"; };
+		5E5F8D5B1DD1DBFA006E1D00 /* VKVideoPlayerLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerLayerView.h; path = VKPlayer/VKVideoPlayerLayerView.h; sourceTree = "<group>"; };
+		5E5F8D5C1DD1DBFA006E1D00 /* VKVideoPlayerLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayerLayerView.m; path = VKPlayer/VKVideoPlayerLayerView.m; sourceTree = "<group>"; };
+		5E5F8D5D1DD1DBFA006E1D00 /* VKVideoPlayerSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerSettingsManager.h; path = VKPlayer/VKVideoPlayerSettingsManager.h; sourceTree = "<group>"; };
+		5E5F8D5E1DD1DBFA006E1D00 /* VKVideoPlayerSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayerSettingsManager.m; path = VKPlayer/VKVideoPlayerSettingsManager.m; sourceTree = "<group>"; };
+		5E5F8D5F1DD1DBFA006E1D00 /* VKVideoPlayerTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerTrack.h; path = VKPlayer/VKVideoPlayerTrack.h; sourceTree = "<group>"; };
+		5E5F8D601DD1DBFA006E1D00 /* VKVideoPlayerTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayerTrack.m; path = VKPlayer/VKVideoPlayerTrack.m; sourceTree = "<group>"; };
+		5E5F8D611DD1DBFA006E1D00 /* VKVideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerView.h; path = VKPlayer/VKVideoPlayerView.h; sourceTree = "<group>"; };
+		5E5F8D621DD1DBFA006E1D00 /* VKVideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayerView.m; path = VKPlayer/VKVideoPlayerView.m; sourceTree = "<group>"; };
+		5E5F8D631DD1DBFA006E1D00 /* VKVideoPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VKVideoPlayerView.xib; path = VKPlayer/VKVideoPlayerView.xib; sourceTree = "<group>"; };
+		5E5F8D641DD1DBFA006E1D00 /* VKVideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerViewController.h; path = VKPlayer/VKVideoPlayerViewController.h; sourceTree = "<group>"; };
+		5E5F8D651DD1DBFA006E1D00 /* VKVideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayerViewController.m; path = VKPlayer/VKVideoPlayerViewController.m; sourceTree = "<group>"; };
+		5E5F8D761DD1DCC8006E1D00 /* VKScrubber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKScrubber.h; path = VKFoundation/VKScrubber.h; sourceTree = "<group>"; };
+		5E5F8D771DD1DCC8006E1D00 /* VKScrubber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKScrubber.m; path = VKFoundation/VKScrubber.m; sourceTree = "<group>"; };
+		5E5F8D791DD1DCF0006E1D00 /* VKPickerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKPickerButton.h; path = VKFoundation/VKPickerButton.h; sourceTree = "<group>"; };
+		5E5F8D7A1DD1DCF0006E1D00 /* VKPickerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKPickerButton.m; path = VKFoundation/VKPickerButton.m; sourceTree = "<group>"; };
+		5E5F8D7B1DD1DCF0006E1D00 /* VKView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKView.h; path = VKFoundation/VKView.h; sourceTree = "<group>"; };
+		5E5F8D7C1DD1DCF0006E1D00 /* VKView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKView.m; path = VKFoundation/VKView.m; sourceTree = "<group>"; };
+		5E5F8D821DD1DDF4006E1D00 /* VKSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKSlider.h; path = VKFoundation/VKSlider.h; sourceTree = "<group>"; };
+		5E5F8D831DD1DDF4006E1D00 /* VKSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKSlider.m; path = VKFoundation/VKSlider.m; sourceTree = "<group>"; };
+		5E5F8D851DD1DE34006E1D00 /* NSObject+VKFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+VKFoundation.h"; path = "VKFoundation/NSObject+VKFoundation.h"; sourceTree = "<group>"; };
+		5E5F8D861DD1DE34006E1D00 /* NSObject+VKFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+VKFoundation.m"; path = "VKFoundation/NSObject+VKFoundation.m"; sourceTree = "<group>"; };
+		5E5F8D881DD1DE65006E1D00 /* VKFoundationLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VKFoundationLib.h; path = VKFoundation/VKFoundationLib.h; sourceTree = "<group>"; };
 		92D1BFA38481C49B25F2B485 /* Pods-RTVideoPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTVideoPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-RTVideoPlayer/Pods-RTVideoPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		F2CE38926C8C23EC07F06328 /* Pods-RTVideoPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTVideoPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RTVideoPlayer/Pods-RTVideoPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +114,7 @@
 		5E5F8D001DD1D37E006E1D00 = {
 			isa = PBXGroup;
 			children = (
+				5E5F8D231DD1D8F1006E1D00 /* RTVideoPlayerDemo */,
 				5E5F8D0B1DD1D37E006E1D00 /* RTVideoPlayer */,
 				5E5F8D0A1DD1D37E006E1D00 /* Products */,
 				54D3D947C9EAC1EAC4392401 /* Pods */,
@@ -82,14 +133,8 @@
 		5E5F8D0B1DD1D37E006E1D00 /* RTVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				5E5F8D0F1DD1D37E006E1D00 /* AppDelegate.h */,
-				5E5F8D101DD1D37E006E1D00 /* AppDelegate.m */,
-				5E5F8D121DD1D37E006E1D00 /* ViewController.h */,
-				5E5F8D131DD1D37E006E1D00 /* ViewController.m */,
-				5E5F8D151DD1D37E006E1D00 /* Main.storyboard */,
+				5E5F8D2A1DD1DBBF006E1D00 /* VKPlayer */,
 				5E5F8D181DD1D37E006E1D00 /* Assets.xcassets */,
-				5E5F8D1A1DD1D37E006E1D00 /* LaunchScreen.storyboard */,
-				5E5F8D1D1DD1D37E006E1D00 /* Info.plist */,
 				5E5F8D0C1DD1D37E006E1D00 /* Supporting Files */,
 			);
 			path = RTVideoPlayer;
@@ -98,9 +143,72 @@
 		5E5F8D0C1DD1D37E006E1D00 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5E5F8D0F1DD1D37E006E1D00 /* AppDelegate.h */,
+				5E5F8D101DD1D37E006E1D00 /* AppDelegate.m */,
+				5E5F8D1A1DD1D37E006E1D00 /* LaunchScreen.storyboard */,
+				5E5F8D1D1DD1D37E006E1D00 /* Info.plist */,
 				5E5F8D0D1DD1D37E006E1D00 /* main.m */,
+				5E5F8D291DD1DA01006E1D00 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5E5F8D231DD1D8F1006E1D00 /* RTVideoPlayerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				5E5F8D241DD1D920006E1D00 /* Main.storyboard */,
+				5E5F8D261DD1D955006E1D00 /* MainDemoViewController.h */,
+				5E5F8D271DD1D955006E1D00 /* MainDemoViewController.m */,
+			);
+			name = RTVideoPlayerDemo;
+			sourceTree = "<group>";
+		};
+		5E5F8D2A1DD1DBBF006E1D00 /* VKPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				5E5F8D751DD1DC7F006E1D00 /* VKFoundation */,
+				5E5F8D501DD1DBFA006E1D00 /* VKVideoPlayer.h */,
+				5E5F8D511DD1DBFA006E1D00 /* VKVideoPlayer.m */,
+				5E5F8D521DD1DBFA006E1D00 /* VKVideoPlayerAirPlay.h */,
+				5E5F8D531DD1DBFA006E1D00 /* VKVideoPlayerAirPlay.m */,
+				5E5F8D541DD1DBFA006E1D00 /* VKVideoPlayerCaption.h */,
+				5E5F8D551DD1DBFA006E1D00 /* VKVideoPlayerCaption.m */,
+				5E5F8D561DD1DBFA006E1D00 /* VKVideoPlayerCaptionSRT.h */,
+				5E5F8D571DD1DBFA006E1D00 /* VKVideoPlayerCaptionSRT.m */,
+				5E5F8D581DD1DBFA006E1D00 /* VKVideoPlayerConfig.h */,
+				5E5F8D591DD1DBFA006E1D00 /* VKVideoPlayerExternalMonitor.h */,
+				5E5F8D5A1DD1DBFA006E1D00 /* VKVideoPlayerExternalMonitor.m */,
+				5E5F8D5B1DD1DBFA006E1D00 /* VKVideoPlayerLayerView.h */,
+				5E5F8D5C1DD1DBFA006E1D00 /* VKVideoPlayerLayerView.m */,
+				5E5F8D5D1DD1DBFA006E1D00 /* VKVideoPlayerSettingsManager.h */,
+				5E5F8D5E1DD1DBFA006E1D00 /* VKVideoPlayerSettingsManager.m */,
+				5E5F8D5F1DD1DBFA006E1D00 /* VKVideoPlayerTrack.h */,
+				5E5F8D601DD1DBFA006E1D00 /* VKVideoPlayerTrack.m */,
+				5E5F8D611DD1DBFA006E1D00 /* VKVideoPlayerView.h */,
+				5E5F8D621DD1DBFA006E1D00 /* VKVideoPlayerView.m */,
+				5E5F8D631DD1DBFA006E1D00 /* VKVideoPlayerView.xib */,
+				5E5F8D641DD1DBFA006E1D00 /* VKVideoPlayerViewController.h */,
+				5E5F8D651DD1DBFA006E1D00 /* VKVideoPlayerViewController.m */,
+			);
+			name = VKPlayer;
+			sourceTree = "<group>";
+		};
+		5E5F8D751DD1DC7F006E1D00 /* VKFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				5E5F8D881DD1DE65006E1D00 /* VKFoundationLib.h */,
+				5E5F8D851DD1DE34006E1D00 /* NSObject+VKFoundation.h */,
+				5E5F8D861DD1DE34006E1D00 /* NSObject+VKFoundation.m */,
+				5E5F8D791DD1DCF0006E1D00 /* VKPickerButton.h */,
+				5E5F8D7A1DD1DCF0006E1D00 /* VKPickerButton.m */,
+				5E5F8D761DD1DCC8006E1D00 /* VKScrubber.h */,
+				5E5F8D771DD1DCC8006E1D00 /* VKScrubber.m */,
+				5E5F8D821DD1DDF4006E1D00 /* VKSlider.h */,
+				5E5F8D831DD1DDF4006E1D00 /* VKSlider.m */,
+				5E5F8D7B1DD1DCF0006E1D00 /* VKView.h */,
+				5E5F8D7C1DD1DCF0006E1D00 /* VKView.m */,
+			);
+			name = VKFoundation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,9 +273,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E5F8D251DD1D920006E1D00 /* Main.storyboard in Resources */,
 				5E5F8D1C1DD1D37E006E1D00 /* LaunchScreen.storyboard in Resources */,
+				5E5F8D711DD1DBFA006E1D00 /* VKVideoPlayerView.xib in Resources */,
 				5E5F8D191DD1D37E006E1D00 /* Assets.xcassets in Resources */,
-				5E5F8D171DD1D37E006E1D00 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,23 +335,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E5F8D141DD1D37E006E1D00 /* ViewController.m in Sources */,
+				5E5F8D6A1DD1DBFA006E1D00 /* VKVideoPlayerCaption.m in Sources */,
+				5E5F8D841DD1DDF4006E1D00 /* VKSlider.m in Sources */,
+				5E5F8D6C1DD1DBFA006E1D00 /* VKVideoPlayerExternalMonitor.m in Sources */,
+				5E5F8D701DD1DBFA006E1D00 /* VKVideoPlayerView.m in Sources */,
+				5E5F8D691DD1DBFA006E1D00 /* VKVideoPlayerAirPlay.m in Sources */,
+				5E5F8D281DD1D955006E1D00 /* MainDemoViewController.m in Sources */,
+				5E5F8D6B1DD1DBFA006E1D00 /* VKVideoPlayerCaptionSRT.m in Sources */,
+				5E5F8D6F1DD1DBFA006E1D00 /* VKVideoPlayerTrack.m in Sources */,
 				5E5F8D111DD1D37E006E1D00 /* AppDelegate.m in Sources */,
+				5E5F8D871DD1DE34006E1D00 /* NSObject+VKFoundation.m in Sources */,
+				5E5F8D6D1DD1DBFA006E1D00 /* VKVideoPlayerLayerView.m in Sources */,
+				5E5F8D7D1DD1DCF0006E1D00 /* VKPickerButton.m in Sources */,
+				5E5F8D721DD1DBFA006E1D00 /* VKVideoPlayerViewController.m in Sources */,
+				5E5F8D781DD1DCC8006E1D00 /* VKScrubber.m in Sources */,
 				5E5F8D0E1DD1D37E006E1D00 /* main.m in Sources */,
+				5E5F8D6E1DD1DBFA006E1D00 /* VKVideoPlayerSettingsManager.m in Sources */,
+				5E5F8D681DD1DBFA006E1D00 /* VKVideoPlayer.m in Sources */,
+				5E5F8D7E1DD1DCF0006E1D00 /* VKView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5E5F8D151DD1D37E006E1D00 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5E5F8D161DD1D37E006E1D00 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5E5F8D1A1DD1D37E006E1D00 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -272,6 +388,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -284,6 +401,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -294,7 +412,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -319,6 +437,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -329,13 +448,14 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -348,6 +468,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K2B5R7D5U8;
+				GCC_PREFIX_HEADER = RTVideoPlayer/PrefixHeader.pch;
 				INFOPLIST_FILE = RTVideoPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rtnews.RTVideoPlayer;
@@ -361,6 +482,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K2B5R7D5U8;
+				GCC_PREFIX_HEADER = RTVideoPlayer/PrefixHeader.pch;
 				INFOPLIST_FILE = RTVideoPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rtnews.RTVideoPlayer;

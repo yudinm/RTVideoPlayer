@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainDemoViewController.h
 //  RTVideoPlayer
 //
 //  Created by Michael Yudin on 08.11.16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MainDemoViewController : UIViewController
 
 @end
-

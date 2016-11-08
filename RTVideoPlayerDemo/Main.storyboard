@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fyr-c5-Y81">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MainDemoViewController-->
+        <scene sceneID="4NT-Dc-ueh">
+            <objects>
+                <viewController storyboardIdentifier="MainDemoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fyr-c5-Y81" userLabel="MainDemoViewController" customClass="MainDemoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qRH-9V-1va"/>
+                        <viewControllerLayoutGuide type="bottom" id="nr4-Gh-ziS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aHz-v2-57E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00u-NJ-iY8">
+                                <rect key="frame" x="8" y="28" width="359" height="223"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="0.33286236699999999" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nr4-Gh-ziS" firstAttribute="top" secondItem="00u-NJ-iY8" secondAttribute="bottom" id="0yC-xP-AdH"/>
+                            <constraint firstItem="00u-NJ-iY8" firstAttribute="top" secondItem="qRH-9V-1va" secondAttribute="bottom" constant="8" id="7av-YB-GxE">
+                                <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="0.0"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="00u-NJ-iY8" firstAttribute="height" secondItem="aHz-v2-57E" secondAttribute="height" multiplier="1:3" priority="995" id="OjX-yE-UaL"/>
+                            <constraint firstAttribute="trailing" secondItem="00u-NJ-iY8" secondAttribute="trailing" constant="8" id="ri3-s6-zOW">
+                                <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="0.0"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="00u-NJ-iY8" firstAttribute="leading" secondItem="aHz-v2-57E" secondAttribute="leading" constant="8" id="udb-uK-bs0">
+                                <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="0.0"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0yC-xP-AdH"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="OjX-yE-UaL"/>
+                                <include reference="0yC-xP-AdH"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="0yC-xP-AdH"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="0yC-xP-AdH"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="vPlayerContainer" destination="00u-NJ-iY8" id="RXp-KT-ClN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fsm-Oe-JyQ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="148" y="682"/>
+        </scene>
+    </scenes>
+</document>
