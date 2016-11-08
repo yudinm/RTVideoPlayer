@@ -213,7 +213,6 @@ typedef enum {
 }
 
 - (void)reachabilityChanged:(NSNotification*)notification {
-    // TODO: Check quality
 //    Reachability* curReachability = notification.object;
 //    if (curReachability == VKSharedUtility.wifiReach) {
 //        DDLogVerbose(@"Reachability Changed: %@", [VKSharedUtility.wifiReach isReachableViaWiFi] ? @"Wifi Detected." : @"Cellular Detected.");
@@ -284,7 +283,7 @@ typedef enum {
     }
     
     //增加加载进度
-//    NSLog(@"加载进度:%f",);
+    //    NSLog(@"加载进度:%f",);
     [self.activePlayerView.progressBar setValue:[self availableDuration] animated:YES];
 }
 
@@ -583,7 +582,7 @@ typedef enum {
     } else return CMTimeGetSeconds([self.player currentCMTime]);
 }
 
-#pragma mark - captions
+//#pragma mark - captions
 //- (void)clearCaptions {
 //    [self setCaptionToTop:nil];
 //    [self setCaptionToBottom:nil];
@@ -965,17 +964,24 @@ typedef enum {
 }
 
 - (void)fullScreenButtonTapped {
-    self.isFullScreen = self.view.fullscreenButton.selected;
+    // self.fullScreen = !self.fullScreen;
     
-//    if (self.isFullScreen) {
-//        [self performOrientationChange:UIInterfaceOrientationLandscapeRight];
-//    } else {
-//        [self performOrientationChange:UIInterfaceOrientationPortrait];
-//    }
+    
+    //    if (self.isFullScreen) {
+    //        [self performOrientationChange:UIInterfaceOrientationLandscapeRight];
+    //    } else {
+    //        [self performOrientationChange:UIInterfaceOrientationPortrait];
+    //    }
+    
     
     if ([self.delegate respondsToSelector:@selector(videoPlayer:didControlByEvent:)]) {
         [self.delegate videoPlayer:self didControlByEvent:VKVideoPlayerControlEventTapFullScreen];
     }
+}
+
+- (void)setFullScreen:(BOOL)fullScreen; {
+    _fullScreen = fullScreen;
+    [self updateFullscreenButton:fullScreen];
 }
 
 - (void)captionButtonTapped {
@@ -1060,6 +1066,15 @@ typedef enum {
     }
 }
 
+- (void)updateFullscreenButton:(BOOL)fullScreen;
+{
+    if (fullScreen) {
+        [self.activePlayerView.fullscreenButton setImage:[UIImage imageNamed:@"VKVideoPlayer_zoom_out"] forState:UIControlStateNormal];
+        return;
+    }
+    [self.activePlayerView.fullscreenButton setImage:[UIImage imageNamed:@"VKVideoPlayer_zoom_in"] forState:UIControlStateNormal];
+}
+
 //- (void)layoutNavigationAndStatusBarForOrientation:(UIInterfaceOrientation)interfaceOrientation {
 //    [[UIApplication sharedApplication] setStatusBarOrientation:interfaceOrientation animated:NO];
 //}
@@ -1070,7 +1085,7 @@ typedef enum {
 //    if (_forceRotate != forceRotate) {
 //        _forceRotate = forceRotate;
 //    }
-//    
+//
 //    self.view.fullscreenButton.hidden = !self.forceRotate;
 //}
 
@@ -1154,7 +1169,7 @@ typedef enum {
 //                                                                               }", fontSize, color, shadowSize, shadowSize, shadowSize, shadowSize, shadowSize, shadowSize, shadowSize, shadowSize, shadowSize, shadowSize, shadowSize, shadowSize]];
 //    return stylesheet;
 //}
-
+//
 //- (void)clearCaptionView:(DTAttributedLabel*)captionView {
 //    [captionView setAttributedString:[[NSAttributedString alloc] initWithHTMLData:[@"" dataUsingEncoding:NSUTF8StringEncoding] options:nil documentAttributes:NULL]];
 //}
@@ -1210,7 +1225,7 @@ typedef enum {
 //    
 //    [playerView.captionTopContainerView setFrameHeight:MIN(playerView.captionBottomView.frame.origin.y - padding, playerView.captionTopView.frame.size.height + padding + extraPadding)];
 //}
-
+//
 //- (void)setCaptionToBottom:(id<VKVideoPlayerCaptionProtocol>)caption {
 //    [self setCaptionToBottom:caption playerView:[self activePlayerView]];
 //}

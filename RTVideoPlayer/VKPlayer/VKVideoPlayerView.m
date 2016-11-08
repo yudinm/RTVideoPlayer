@@ -86,13 +86,13 @@ static const int ddLogLevel = DDLogLevelWarning;
     
     self.fullscreenButton.hidden = NO;
     
-    for (UIButton* button in @[
-                               self.topPortraitCloseButton
-                               ]) {
-//        [button setBackgroundImage:[[UIImage imageWithColor:THEMECOLOR(@"colorBackground8")] imageByApplyingAlpha:0.6f] forState:UIControlStateNormal];
-        button.layer.cornerRadius = 4.0f;
-        button.clipsToBounds = YES;
-    }
+//    for (UIButton* button in @[
+//                               self.topPortraitCloseButton
+//                               ]) {
+////        [button setBackgroundImage:[[UIImage imageWithColor:THEMECOLOR(@"colorBackground8")] imageByApplyingAlpha:0.6f] forState:UIControlStateNormal];
+//        button.layer.cornerRadius = 4.0f;
+//        button.clipsToBounds = YES;
+//    }
     
     [self.topPortraitCloseButton addTarget:self action:@selector(doneButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -238,11 +238,11 @@ static const int ddLogLevel = DDLogLevelWarning;
 //    [self.currentTimeLabel setFrameWidth:100.0f];
 //    [self.totalTimeLabel setFrameWidth:100.0f];
     
-//    self.currentTimeLabel.text = [VKSharedUtility timeStringFromSecondsValue:(int)self.scrubber.value];
+    self.currentTimeLabel.text = [NSObject timeStringFromSecondsValue:(int)self.scrubber.value];
 //    [self.currentTimeLabel sizeToFit];
 //    [self.currentTimeLabel setFrameHeight:CGRectGetHeight(self.bottomControlOverlay.frame)];
     
-//    self.totalTimeLabel.text = [VKSharedUtility timeStringFromSecondsValue:(int)self.scrubber.maximumValue];
+    self.totalTimeLabel.text = [NSObject timeStringFromSecondsValue:(int)self.scrubber.maximumValue];
 //    [self.totalTimeLabel sizeToFit];
 //    [self.totalTimeLabel setFrameHeight:CGRectGetHeight(self.bottomControlOverlay.frame)];
     

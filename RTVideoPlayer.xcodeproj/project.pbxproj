@@ -23,13 +23,15 @@
 		5E5F8D6E1DD1DBFA006E1D00 /* VKVideoPlayerSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D5E1DD1DBFA006E1D00 /* VKVideoPlayerSettingsManager.m */; };
 		5E5F8D6F1DD1DBFA006E1D00 /* VKVideoPlayerTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D601DD1DBFA006E1D00 /* VKVideoPlayerTrack.m */; };
 		5E5F8D701DD1DBFA006E1D00 /* VKVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D621DD1DBFA006E1D00 /* VKVideoPlayerView.m */; };
-		5E5F8D711DD1DBFA006E1D00 /* VKVideoPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8D631DD1DBFA006E1D00 /* VKVideoPlayerView.xib */; };
 		5E5F8D721DD1DBFA006E1D00 /* VKVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D651DD1DBFA006E1D00 /* VKVideoPlayerViewController.m */; };
 		5E5F8D781DD1DCC8006E1D00 /* VKScrubber.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D771DD1DCC8006E1D00 /* VKScrubber.m */; };
 		5E5F8D7D1DD1DCF0006E1D00 /* VKPickerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D7A1DD1DCF0006E1D00 /* VKPickerButton.m */; };
 		5E5F8D7E1DD1DCF0006E1D00 /* VKView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D7C1DD1DCF0006E1D00 /* VKView.m */; };
 		5E5F8D841DD1DDF4006E1D00 /* VKSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D831DD1DDF4006E1D00 /* VKSlider.m */; };
 		5E5F8D871DD1DE34006E1D00 /* NSObject+VKFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D861DD1DE34006E1D00 /* NSObject+VKFoundation.m */; };
+		5E5F8D8B1DD1EED4006E1D00 /* VKVideoPlayerViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8D891DD1EED4006E1D00 /* VKVideoPlayerViewController~ipad.xib */; };
+		5E5F8D8C1DD1EED4006E1D00 /* VKVideoPlayerViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8D8A1DD1EED4006E1D00 /* VKVideoPlayerViewController~iphone.xib */; };
+		5E5F8D8E1DD1EFE3006E1D00 /* VKVideoPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8D8D1DD1EFE3006E1D00 /* VKVideoPlayerView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,7 +66,6 @@
 		5E5F8D601DD1DBFA006E1D00 /* VKVideoPlayerTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayerTrack.m; path = VKPlayer/VKVideoPlayerTrack.m; sourceTree = "<group>"; };
 		5E5F8D611DD1DBFA006E1D00 /* VKVideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerView.h; path = VKPlayer/VKVideoPlayerView.h; sourceTree = "<group>"; };
 		5E5F8D621DD1DBFA006E1D00 /* VKVideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayerView.m; path = VKPlayer/VKVideoPlayerView.m; sourceTree = "<group>"; };
-		5E5F8D631DD1DBFA006E1D00 /* VKVideoPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VKVideoPlayerView.xib; path = VKPlayer/VKVideoPlayerView.xib; sourceTree = "<group>"; };
 		5E5F8D641DD1DBFA006E1D00 /* VKVideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerViewController.h; path = VKPlayer/VKVideoPlayerViewController.h; sourceTree = "<group>"; };
 		5E5F8D651DD1DBFA006E1D00 /* VKVideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayerViewController.m; path = VKPlayer/VKVideoPlayerViewController.m; sourceTree = "<group>"; };
 		5E5F8D761DD1DCC8006E1D00 /* VKScrubber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKScrubber.h; path = VKFoundation/VKScrubber.h; sourceTree = "<group>"; };
@@ -78,6 +79,9 @@
 		5E5F8D851DD1DE34006E1D00 /* NSObject+VKFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+VKFoundation.h"; path = "VKFoundation/NSObject+VKFoundation.h"; sourceTree = "<group>"; };
 		5E5F8D861DD1DE34006E1D00 /* NSObject+VKFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+VKFoundation.m"; path = "VKFoundation/NSObject+VKFoundation.m"; sourceTree = "<group>"; };
 		5E5F8D881DD1DE65006E1D00 /* VKFoundationLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VKFoundationLib.h; path = VKFoundation/VKFoundationLib.h; sourceTree = "<group>"; };
+		5E5F8D891DD1EED4006E1D00 /* VKVideoPlayerViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "VKVideoPlayerViewController~ipad.xib"; path = "VKPlayer/VKVideoPlayerViewController~ipad.xib"; sourceTree = "<group>"; };
+		5E5F8D8A1DD1EED4006E1D00 /* VKVideoPlayerViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "VKVideoPlayerViewController~iphone.xib"; path = "VKPlayer/VKVideoPlayerViewController~iphone.xib"; sourceTree = "<group>"; };
+		5E5F8D8D1DD1EFE3006E1D00 /* VKVideoPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VKVideoPlayerView.xib; path = VKPlayer/VKVideoPlayerView.xib; sourceTree = "<group>"; };
 		92D1BFA38481C49B25F2B485 /* Pods-RTVideoPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTVideoPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-RTVideoPlayer/Pods-RTVideoPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		F2CE38926C8C23EC07F06328 /* Pods-RTVideoPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTVideoPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RTVideoPlayer/Pods-RTVideoPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,7 +139,6 @@
 			children = (
 				5E5F8D2A1DD1DBBF006E1D00 /* VKPlayer */,
 				5E5F8D181DD1D37E006E1D00 /* Assets.xcassets */,
-				5E5F8D0C1DD1D37E006E1D00 /* Supporting Files */,
 			);
 			path = RTVideoPlayer;
 			sourceTree = "<group>";
@@ -151,11 +154,13 @@
 				5E5F8D291DD1DA01006E1D00 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
+			path = RTVideoPlayer;
 			sourceTree = "<group>";
 		};
 		5E5F8D231DD1D8F1006E1D00 /* RTVideoPlayerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5E5F8D0C1DD1D37E006E1D00 /* Supporting Files */,
 				5E5F8D241DD1D920006E1D00 /* Main.storyboard */,
 				5E5F8D261DD1D955006E1D00 /* MainDemoViewController.h */,
 				5E5F8D271DD1D955006E1D00 /* MainDemoViewController.m */,
@@ -186,9 +191,11 @@
 				5E5F8D601DD1DBFA006E1D00 /* VKVideoPlayerTrack.m */,
 				5E5F8D611DD1DBFA006E1D00 /* VKVideoPlayerView.h */,
 				5E5F8D621DD1DBFA006E1D00 /* VKVideoPlayerView.m */,
-				5E5F8D631DD1DBFA006E1D00 /* VKVideoPlayerView.xib */,
+				5E5F8D8D1DD1EFE3006E1D00 /* VKVideoPlayerView.xib */,
 				5E5F8D641DD1DBFA006E1D00 /* VKVideoPlayerViewController.h */,
 				5E5F8D651DD1DBFA006E1D00 /* VKVideoPlayerViewController.m */,
+				5E5F8D891DD1EED4006E1D00 /* VKVideoPlayerViewController~ipad.xib */,
+				5E5F8D8A1DD1EED4006E1D00 /* VKVideoPlayerViewController~iphone.xib */,
 			);
 			name = VKPlayer;
 			sourceTree = "<group>";
@@ -275,7 +282,9 @@
 			files = (
 				5E5F8D251DD1D920006E1D00 /* Main.storyboard in Resources */,
 				5E5F8D1C1DD1D37E006E1D00 /* LaunchScreen.storyboard in Resources */,
-				5E5F8D711DD1DBFA006E1D00 /* VKVideoPlayerView.xib in Resources */,
+				5E5F8D8B1DD1EED4006E1D00 /* VKVideoPlayerViewController~ipad.xib in Resources */,
+				5E5F8D8C1DD1EED4006E1D00 /* VKVideoPlayerViewController~iphone.xib in Resources */,
+				5E5F8D8E1DD1EFE3006E1D00 /* VKVideoPlayerView.xib in Resources */,
 				5E5F8D191DD1D37E006E1D00 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
