@@ -18,12 +18,12 @@
 #define kVKVideoQuality480p @"settings.videoSection.videoQuality.480p"
 #define kVKVideoQuality720p @"settings.videoSection.videoQuality.720p"
 
-static NSString * const kVKStreamKeyAuto = @"m3u8";
-static NSString * const kVKStreamKey240p = @"240p";
-static NSString * const kVKStreamKey360p = @"360p";
-static NSString * const kVKStreamKey480p = @"480p";
-static NSString * const kVKStreamKey720p = @"720p";
-
+//static NSString * const kVKStreamKeyAuto = @"m3u8";
+//static NSString * const kVKStreamKey240p = @"240p";
+//static NSString * const kVKStreamKey360p = @"360p";
+//static NSString * const kVKStreamKey480p = @"480p";
+//static NSString * const kVKStreamKey720p = @"720p";
+//
 #import <Foundation/Foundation.h>
 
 @interface VKVideoPlayerSettingsManager : NSObject

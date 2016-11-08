@@ -4,6 +4,7 @@
 //
 
 #import "VKScrubber.h"
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
 #ifdef DEBUG
   static const int ddLogLevel = DDLogLevelWarning;

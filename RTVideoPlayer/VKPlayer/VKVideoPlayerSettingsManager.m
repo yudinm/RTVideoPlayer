@@ -68,33 +68,33 @@
 //  [VKSharedUtility setSetting:videoQuality forKey:kVKVideoQualityKey];
 //}
 
-- (NSString*)videoQualityShortDescription:(NSString*)streamKey {
-  if ([streamKey isEqualToString:kVKStreamKey240p]) {
-    return kVKStreamKey240p;
-  } else if ([streamKey isEqualToString:kVKStreamKey360p]) {
-    return kVKStreamKey360p;
-  } else if ([streamKey isEqualToString:kVKStreamKey480p]) {
-    return kVKStreamKey480p;
-  } else if ([streamKey isEqualToString:kVKStreamKey720p]) {
-    return kVKStreamKey720p;
-  } else {
-    return @"AUTO";
-  }
-}
+//- (NSString*)videoQualityShortDescription:(NSString*)streamKey {
+//  if ([streamKey isEqualToString:kVKStreamKey240p]) {
+//    return kVKStreamKey240p;
+//  } else if ([streamKey isEqualToString:kVKStreamKey360p]) {
+//    return kVKStreamKey360p;
+//  } else if ([streamKey isEqualToString:kVKStreamKey480p]) {
+//    return kVKStreamKey480p;
+//  } else if ([streamKey isEqualToString:kVKStreamKey720p]) {
+//    return kVKStreamKey720p;
+//  } else {
+//    return @"AUTO";
+//  }
+//}
 
-- (NSString*)videoQualityLongDescription:(NSString*)streamKey {
-  if ([streamKey isEqualToString:kVKStreamKey240p]) {
-    return NSLocalizedString(kVKVideoQuality240p, nil);
-  } else if ([streamKey isEqualToString:kVKStreamKey360p]) {
-    return NSLocalizedString(kVKVideoQuality360p, nil);
-  } else if ([streamKey isEqualToString:kVKStreamKey480p]) {
-    return NSLocalizedString(kVKVideoQuality480p, nil);
-  } else if ([streamKey isEqualToString:kVKStreamKey720p]) {
-    return NSLocalizedString(kVKVideoQuality720p, nil);
-  } else {
-    return NSLocalizedString(kVKVideoQualityAuto, nil);
-  }
-}
+//- (NSString*)videoQualityLongDescription:(NSString*)streamKey {
+//  if ([streamKey isEqualToString:kVKStreamKey240p]) {
+//    return NSLocalizedString(kVKVideoQuality240p, nil);
+//  } else if ([streamKey isEqualToString:kVKStreamKey360p]) {
+//    return NSLocalizedString(kVKVideoQuality360p, nil);
+//  } else if ([streamKey isEqualToString:kVKStreamKey480p]) {
+//    return NSLocalizedString(kVKVideoQuality480p, nil);
+//  } else if ([streamKey isEqualToString:kVKStreamKey720p]) {
+//    return NSLocalizedString(kVKVideoQuality720p, nil);
+//  } else {
+//    return NSLocalizedString(kVKVideoQualityAuto, nil);
+//  }
+//}
 
 //- (NSString*)streamKey {
 //  NSString* streamKey = kVKStreamKeyAuto;
@@ -125,11 +125,11 @@
 //  }
 //}
 
-- (NSString*)streamQualityForKey:(NSString*)streamKey {
-  if ([streamKey isEqualToString:kVKStreamKeyAuto]) {
-    return @"variable";
-  } else {
-    return streamKey;
-  }
-}
+//- (NSString*)streamQualityForKey:(NSString*)streamKey {
+//  if ([streamKey isEqualToString:kVKStreamKeyAuto]) {
+//    return @"variable";
+//  } else {
+//    return streamKey;
+//  }
+//}
 @end
