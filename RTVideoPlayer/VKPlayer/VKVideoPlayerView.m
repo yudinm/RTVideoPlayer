@@ -235,28 +235,14 @@ static const int ddLogLevel = DDLogLevelWarning;
 - (void)updateTimeLabels {
     DDLogVerbose(@"Updating TimeLabels: %f", self.scrubber.value);
     
-//    [self.currentTimeLabel setFrameWidth:100.0f];
-//    [self.totalTimeLabel setFrameWidth:100.0f];
-    
     self.currentTimeLabel.text = [NSObject timeStringFromSecondsValue:(int)self.scrubber.value];
-//    [self.currentTimeLabel sizeToFit];
-//    [self.currentTimeLabel setFrameHeight:CGRectGetHeight(self.bottomControlOverlay.frame)];
-    
     self.totalTimeLabel.text = [NSObject timeStringFromSecondsValue:(int)self.scrubber.maximumValue];
-//    [self.totalTimeLabel sizeToFit];
-//    [self.totalTimeLabel setFrameHeight:CGRectGetHeight(self.bottomControlOverlay.frame)];
     
     [self layoutSlider];
 }
 
 - (void)layoutSliderForOrientation;
 {
-//    [self.currentTimeLabel setFrameOriginX:PADDING];
-//    [self.totalTimeLabel setFrameOriginX:CGRectGetWidth(self.bottomControlOverlay.frame) - self.totalTimeLabel.frame.size.width - PADDING];
-//    [self.scrubber setFrameOriginX:CGRectGetMaxX(self.currentTimeLabel.frame) + PADDING];
-//    [self.scrubber setFrameWidth:CGRectGetMinX(self.totalTimeLabel.frame) - PADDING * 2 - CGRectGetMaxX(self.currentTimeLabel.frame)];
-//    [self.scrubber setFrameOriginY:CGRectGetHeight(self.bottomControlOverlay.frame)/2 - CGRectGetHeight(self.scrubber.frame)/2];
-//    
     [self.progressBar setFrame:self.scrubber.frame];
 }
 

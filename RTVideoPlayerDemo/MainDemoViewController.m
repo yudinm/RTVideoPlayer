@@ -8,15 +8,16 @@
 
 #import "MainDemoViewController.h"
 #import "VKVideoPlayerViewController.h"
+#import <KWTransition.h>
 
 static DDLogLevel ddLogLevel = DDLogLevelAll;
 
-@interface MainDemoViewController () <VKVideoPlayerDelegate>
+@interface MainDemoViewController () <VKVideoPlayerDelegate, UIViewControllerTransitioningDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *vPlayerContainer;
 
 @property (nonatomic, strong) VKVideoPlayerViewController *vkPlayerViewController;
-//@property (nonatomic, strong) KWTransition *transition;
+@property (nonatomic, strong) KWTransition *transition;
 
 @end
 
@@ -33,6 +34,15 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
         _vkPlayerViewController.player.view.playerControlsAutoHideTime = @10;
     }
     return _vkPlayerViewController;
+}
+
+- (KWTransition *)transition;
+{
+    if (!_transition) {
+        _transition = [KWTransition manager];
+        _transition.style = KWTransitionStyleSink;
+    }
+    return _transition;
 }
 
 #pragma mark - Lifecycle
@@ -62,8 +72,6 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
     [self.vkPlayerViewController didMoveToParentViewController:self];
     
     [self.vkPlayerViewController playVideoWithStreamURL:[NSURL URLWithString:@"https://cdn.rt.com/files/2016.10/580c5d3fc46188da708b45fd.mp4"]];
-    
-    DDLogInfo(@"OK. Start!");
 }
 
 #pragma mark - VKVideoPlayerControllerDelegate
@@ -86,7 +94,7 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
             return;
         }
         VKVideoPlayerViewController *videoController = [[VKVideoPlayerViewController alloc] initWithPlayer:self.vkPlayerViewController.player];
-//        videoController.transitioningDelegate = self;
+        videoController.transitioningDelegate = self;
         videoController.view.tintColor = self.view.tintColor;
         [self presentViewController:videoController animated:YES completion:^{
             videoController.player.fullScreen = YES;
@@ -94,6 +102,20 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
         }];
     }
     
+}
+
+#pragma mark - UIVieControllerTransitioningDelegate
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                   presentingController:(UIViewController *)presenting
+                                                                       sourceController:(UIViewController *)source {
+    self.transition.action = KWTransitionStepPresent;
+    return self.transition;
+}
+
+-(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    self.transition.action = KWTransitionStepDismiss;
+    return self.transition;
 }
 
 

@@ -1069,10 +1069,10 @@ typedef enum {
 - (void)updateFullscreenButton:(BOOL)fullScreen;
 {
     if (fullScreen) {
-        [self.activePlayerView.fullscreenButton setImage:[UIImage imageNamed:@"VKVideoPlayer_zoom_out"] forState:UIControlStateNormal];
+        [self.activePlayerView.fullscreenButton setImage:[UIImage imageNamed:@"resize-100%"] forState:UIControlStateNormal];
         return;
     }
-    [self.activePlayerView.fullscreenButton setImage:[UIImage imageNamed:@"VKVideoPlayer_zoom_in"] forState:UIControlStateNormal];
+    [self.activePlayerView.fullscreenButton setImage:[UIImage imageNamed:@"resize-full-screen"] forState:UIControlStateNormal];
 }
 
 //- (void)layoutNavigationAndStatusBarForOrientation:(UIInterfaceOrientation)interfaceOrientation {
