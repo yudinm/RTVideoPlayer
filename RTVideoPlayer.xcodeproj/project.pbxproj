@@ -33,6 +33,7 @@
 		5E5F8DAA1DD22AD5006E1D00 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8DA61DD22AD5006E1D00 /* Info.plist */; };
 		5E5F8DAB1DD22AD5006E1D00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8DA71DD22AD5006E1D00 /* main.m */; };
 		5E5F8DAE1DD22AE3006E1D00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8DAC1DD22AE3006E1D00 /* LaunchScreen.storyboard */; };
+		5EA5F96C1DEC6E6900154A69 /* RTFullScreenTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5F96B1DEC6E6900154A69 /* RTFullScreenTransition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,8 @@
 		5E5F8DA71DD22AD5006E1D00 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5E5F8DA81DD22AD5006E1D00 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		5E5F8DAD1DD22AE3006E1D00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5EA5F96A1DEC6E6900154A69 /* RTFullScreenTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTFullScreenTransition.h; path = VKPlayer/RTFullScreenTransition.h; sourceTree = "<group>"; };
+		5EA5F96B1DEC6E6900154A69 /* RTFullScreenTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTFullScreenTransition.m; path = VKPlayer/RTFullScreenTransition.m; sourceTree = "<group>"; };
 		92D1BFA38481C49B25F2B485 /* Pods-RTVideoPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTVideoPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-RTVideoPlayer/Pods-RTVideoPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		F2CE38926C8C23EC07F06328 /* Pods-RTVideoPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTVideoPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RTVideoPlayer/Pods-RTVideoPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +162,8 @@
 		5E5F8D2A1DD1DBBF006E1D00 /* VKPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				5EA5F96A1DEC6E6900154A69 /* RTFullScreenTransition.h */,
+				5EA5F96B1DEC6E6900154A69 /* RTFullScreenTransition.m */,
 				5E5F8D501DD1DBFA006E1D00 /* VKVideoPlayer.h */,
 				5E5F8D511DD1DBFA006E1D00 /* VKVideoPlayer.m */,
 				5E5F8D521DD1DBFA006E1D00 /* VKVideoPlayerAirPlay.h */,
@@ -346,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EA5F96C1DEC6E6900154A69 /* RTFullScreenTransition.m in Sources */,
 				5E5F8D6A1DD1DBFA006E1D00 /* VKVideoPlayerCaption.m in Sources */,
 				5E5F8D841DD1DDF4006E1D00 /* VKSlider.m in Sources */,
 				5E5F8D6C1DD1DBFA006E1D00 /* VKVideoPlayerExternalMonitor.m in Sources */,
@@ -423,7 +429,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -466,7 +472,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -483,6 +489,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rtnews.RTVideoPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -496,6 +503,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rtnews.RTVideoPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

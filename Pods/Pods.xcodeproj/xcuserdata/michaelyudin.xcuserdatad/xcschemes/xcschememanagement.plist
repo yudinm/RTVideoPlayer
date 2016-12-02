@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>KWTransition.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-RTVideoPlayer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,17 +27,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4A107B21224DBB9C9223ACE73C18A2FA</key>
+		<key>ADBD221393D4E5242CE19E822587E158</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>942DED555E510862CAE5AA33C6784FC0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>ED9D516CB199F5E0B992C12BCC29B151</key>
+		<key>E7BF71AF82614BDE7A56F365172240B4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

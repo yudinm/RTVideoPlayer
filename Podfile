@@ -9,6 +9,5 @@ target 'RTVideoPlayer' do
 
 	pod 'CocoaLumberjack'
     pod 'Reachability'
-    pod 'KWTransition'
 
 end

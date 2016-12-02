@@ -8,7 +8,8 @@
 
 #import "MainDemoViewController.h"
 #import "VKVideoPlayerViewController.h"
-#import <KWTransition.h>
+//#import <KWTransition.h>
+#import "RTFullScreenTransition.h"
 
 static DDLogLevel ddLogLevel = DDLogLevelAll;
 
@@ -17,7 +18,7 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
 @property (weak, nonatomic) IBOutlet UIView *vPlayerContainer;
 
 @property (nonatomic, strong) VKVideoPlayerViewController *vkPlayerViewController;
-@property (nonatomic, strong) KWTransition *transition;
+@property (nonatomic, strong) RTFullScreenTransition *transition;
 
 @end
 
@@ -36,11 +37,10 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
     return _vkPlayerViewController;
 }
 
-- (KWTransition *)transition;
+- (RTFullScreenTransition *)transition;
 {
     if (!_transition) {
-        _transition = [KWTransition manager];
-        _transition.style = KWTransitionStyleSink;
+        _transition = [[RTFullScreenTransition alloc] init];
     }
     return _transition;
 }
@@ -71,7 +71,14 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
     
     [self.vkPlayerViewController didMoveToParentViewController:self];
     
-    [self.vkPlayerViewController playVideoWithStreamURL:[NSURL URLWithString:@"https://cdn.rt.com/files/2016.10/580c5d3fc46188da708b45fd.mp4"]];
+    NSURL *url = [NSURL URLWithString:@"https://cdn.rt.com/files/2016.11/5837f8ecc461889a478b461d.mp4"];
+    [self.vkPlayerViewController playVideoWithStreamURL:url];
+}
+
+- (void)viewWillAppear:(BOOL)animated;
+{
+    [super viewWillAppear:animated];
+    [self.view layoutIfNeeded];
 }
 
 #pragma mark - VKVideoPlayerControllerDelegate
@@ -90,13 +97,21 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
             VKVideoPlayerViewController *videoController = (VKVideoPlayerViewController *)self.presentedViewController;
             [videoController dismissViewControllerAnimated:YES completion:^{
                 weakSelf.vkPlayerViewController.player.fullScreen = NO;
+                [UIView performWithoutAnimation:^{
+                    
+                    [weakSelf.vPlayerContainer addSubview:weakSelf.vkPlayerViewController.player.view];
+//                    [weakSelf.view layoutIfNeeded];
+                    
+                }];
             }];
             return;
         }
         VKVideoPlayerViewController *videoController = [[VKVideoPlayerViewController alloc] initWithPlayer:self.vkPlayerViewController.player];
         videoController.transitioningDelegate = self;
         videoController.view.tintColor = self.view.tintColor;
-        [self presentViewController:videoController animated:YES completion:^{
+        videoController.modalPresentationStyle = UIModalPresentationOverFullScreen;
+        
+        [self.vkPlayerViewController presentViewController:videoController animated:YES completion:^{
             videoController.player.fullScreen = YES;
             videoController.player.delegate = weakSelf;
         }];
@@ -109,12 +124,14 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
                                                                    presentingController:(UIViewController *)presenting
                                                                        sourceController:(UIViewController *)source {
-    self.transition.action = KWTransitionStepPresent;
+    self.transition.action = RTTransitionStepPresent;
+    self.transition.sourceView = self.vPlayerContainer;
     return self.transition;
 }
 
 -(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    self.transition.action = KWTransitionStepDismiss;
+    self.transition.action = RTTransitionStepDismiss;
+    self.transition.sourceView = self.vPlayerContainer;
     return self.transition;
 }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad12_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -136,7 +136,7 @@
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="D7p-Az-85t"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
+                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -145,7 +145,7 @@
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="Y2d-Be-YzO"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
+                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -192,8 +192,38 @@
                                 <constraint firstAttribute="height" constant="44" id="fDG-rW-Xmn"/>
                                 <constraint firstItem="DnR-VJ-0Jd" firstAttribute="leading" secondItem="zNh-O5-BSd" secondAttribute="trailing" constant="8" id="iTI-6v-d0U"/>
                                 <constraint firstItem="mlt-5u-Wdp" firstAttribute="leading" secondItem="vpb-xw-dlb" secondAttribute="leading" constant="8" id="nZB-I0-n9a"/>
+                                <constraint firstAttribute="trailing" secondItem="DnR-VJ-0Jd" secondAttribute="trailing" constant="8" id="vQW-5A-B3v"/>
                                 <constraint firstItem="mlt-5u-Wdp" firstAttribute="top" secondItem="vpb-xw-dlb" secondAttribute="top" id="x5J-bP-Wql"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="vQW-5A-B3v"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=compact-widthClass=compact">
+                                <mask key="subviews">
+                                    <exclude reference="9NI-r6-2yb"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <include reference="vQW-5A-B3v"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=compact-widthClass=regular">
+                                <mask key="subviews">
+                                    <exclude reference="9NI-r6-2yb"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <include reference="vQW-5A-B3v"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="subviews">
+                                    <exclude reference="9NI-r6-2yb"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <include reference="vQW-5A-B3v"/>
+                                </mask>
+                            </variation>
                         </view>
                         <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4N6-e8-K6s" userLabel="Pause Button">
                             <rect key="frame" x="138" y="68" width="44" height="44"/>
