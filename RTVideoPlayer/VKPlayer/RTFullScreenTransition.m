@@ -60,7 +60,7 @@
             CGRect fr = fromVC.view.frame;
             fr.size = self.sourceView.bounds.size;
             fromVC.view.frame = fr;
-            fromVC.view.center = self.sourceView.center; //CGPointMake(self.sourceView.center.x, self.sourceView.center.y + kStatusBarHeight);
+            fromVC.view.center = self.sourceView.center;
             [fromVC.view layoutIfNeeded];
         } completion:^(__unused BOOL finished) {
             [transitionContext completeTransition:YES];
@@ -69,6 +69,9 @@
 
         return;
     }
+    
+//    [(VKVideoPlayerViewController *)presented updatePlayerView];
+//    [toVC performSelector:@selector(updatePlayerView) withObject:nil afterDelay:0.0];
 
     [containerView addSubview:toVC.view];
     

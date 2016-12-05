@@ -34,10 +34,10 @@
         self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self initialize];
         _player = player;
-        self.player.view.frame = self.view.bounds;
-        if (![self.view.subviews containsObject:self.player.view]) {
-            [self.view addSubview:self.player.view];
-        }
+//        self.player.view.frame = self.view.bounds;
+//        if (![self.view.subviews containsObject:self.player.view]) {
+//            [self.view addSubview:self.player.view];
+//        }
         
     }
     return self;
@@ -65,6 +65,15 @@
         _player = [[VKVideoPlayer alloc] init];
     }
     return _player;
+}
+
+- (void)updatePlayerView;
+{
+    self.player.view.frame = self.view.bounds;
+    if (![self.view.subviews containsObject:self.player.view]) {
+        [self.view addSubview:self.player.view];
+    }
+    self.player.view.backgroundColor = [UIColor purpleColor];
 }
 
 - (void)viewDidUnload {

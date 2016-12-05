@@ -14,5 +14,6 @@ VKVideoPlayerDelegate
 - (void)playVideoWithStreamURL:(NSURL*)streamURL;
 - (void)setSubtitle:(VKVideoPlayerCaption*)subtitle;
 - (id)initWithPlayer:(VKVideoPlayer *)player;
+- (void)updatePlayerView;
 
 @end
