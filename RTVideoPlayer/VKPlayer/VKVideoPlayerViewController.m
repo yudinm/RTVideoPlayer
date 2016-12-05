@@ -76,10 +76,6 @@
     self.player.view.backgroundColor = [UIColor purpleColor];
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     

@@ -8,7 +8,6 @@
 
 #import "MainDemoViewController.h"
 #import "VKVideoPlayerViewController.h"
-//#import <KWTransition.h>
 #import "RTFullScreenTransition.h"
 
 static DDLogLevel ddLogLevel = DDLogLevelAll;
@@ -53,7 +52,6 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
         _vkPlayerViewController_fullScreen.transitioningDelegate = self;
         _vkPlayerViewController_fullScreen.view.tintColor = self.view.tintColor;
         _vkPlayerViewController_fullScreen.modalPresentationStyle = UIModalPresentationOverFullScreen;
-//        [_vkPlayerViewController_fullScreen updatePlayerView];
     }
     return _vkPlayerViewController_fullScreen;
 }
@@ -113,20 +111,19 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
                 [UIView performWithoutAnimation:^{
                     
                     [weakSelf.vPlayerContainer addSubview:weakSelf.vkPlayerViewController.player.view];
-//                    [weakSelf.view layoutIfNeeded];
                     
                 }];
             }];
             return;
         }
-//        VKVideoPlayerViewController *videoController = [[VKVideoPlayerViewController alloc] initWithPlayer:self.vkPlayerViewController.player];
-//        videoController.transitioningDelegate = self;
-//        videoController.view.tintColor = self.view.tintColor;
-//        videoController.modalPresentationStyle = UIModalPresentationOverFullScreen;
+        
+        UIView *snapShot = [self.vPlayerContainer snapshotViewAfterScreenUpdates:YES];
+        [self.vPlayerContainer insertSubview:snapShot atIndex:self.vPlayerContainer.subviews.count - 1];
         [self.vkPlayerViewController_fullScreen updatePlayerView];
         [self.vkPlayerViewController presentViewController:self.vkPlayerViewController_fullScreen animated:YES completion:^{
             weakSelf.vkPlayerViewController_fullScreen.player.fullScreen = YES;
             weakSelf.vkPlayerViewController_fullScreen.player.delegate = weakSelf;
+            [snapShot removeFromSuperview];
         }];
     }
     
@@ -139,7 +136,7 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
                                                                        sourceController:(UIViewController *)source {
     self.transition.action = RTTransitionStepPresent;
     self.transition.sourceView = self.vPlayerContainer;
-//    [(VKVideoPlayerViewController *)presented updatePlayerView];
+    [(VKVideoPlayerViewController *)presented updatePlayerView];
     
     return self.transition;
 }

@@ -69,9 +69,6 @@
 
         return;
     }
-    
-//    [(VKVideoPlayerViewController *)presented updatePlayerView];
-//    [toVC performSelector:@selector(updatePlayerView) withObject:nil afterDelay:0.0];
 
     [containerView addSubview:toVC.view];
     
