@@ -86,7 +86,6 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
     
     NSURL *url = [NSURL URLWithString:@"https://cdn.rt.com/files/2016.11/5837f8ecc461889a478b461d.mp4"];
     [self.vkPlayerViewController playVideoWithStreamURL:url];
-    [self.vkPlayerViewController_fullScreen updatePlayerView];
 }
 
 - (void)viewWillAppear:(BOOL)animated;
@@ -124,7 +123,7 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
 //        videoController.transitioningDelegate = self;
 //        videoController.view.tintColor = self.view.tintColor;
 //        videoController.modalPresentationStyle = UIModalPresentationOverFullScreen;
-        
+        [self.vkPlayerViewController_fullScreen updatePlayerView];
         [self.vkPlayerViewController presentViewController:self.vkPlayerViewController_fullScreen animated:YES completion:^{
             weakSelf.vkPlayerViewController_fullScreen.player.fullScreen = YES;
             weakSelf.vkPlayerViewController_fullScreen.player.delegate = weakSelf;
