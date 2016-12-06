@@ -34,11 +34,6 @@
         self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self initialize];
         _player = player;
-//        self.player.view.frame = self.view.bounds;
-//        if (![self.view.subviews containsObject:self.player.view]) {
-//            [self.view addSubview:self.player.view];
-//        }
-        
     }
     return self;
 }
@@ -80,8 +75,6 @@
     [super viewDidLoad];
     
     self.player.delegate = self;
-    //    self.player.view.frame = self.view.bounds;
-    //    [self.view addSubview:self.player.view];
     
     if (VKSharedAirplay.isConnected) {
         [VKSharedAirplay activate:self.player];
@@ -111,9 +104,9 @@
     [super viewWillDisappear:animated];
 }
 
-- (BOOL)prefersStatusBarHidden {
-    return YES;
-}
+//- (BOOL)prefersStatusBarHidden {
+//    return YES;
+//}
 
 - (void)playVideoWithStreamURL:(NSURL*)streamURL {
     [self.player loadVideoWithTrack:[[VKVideoPlayerTrack alloc] initWithStreamURL:streamURL]];

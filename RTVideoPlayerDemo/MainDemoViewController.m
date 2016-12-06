@@ -15,7 +15,6 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
 @interface MainDemoViewController () <VKVideoPlayerDelegate, UIViewControllerTransitioningDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *vPlayerContainer;
-
 @property (nonatomic, strong) VKVideoPlayerViewController *vkPlayerViewController;
 @property (nonatomic, strong) RTFullScreenTransition *transition;
 @property (nonatomic, strong) VKVideoPlayerViewController *vkPlayerViewController_fullScreen;
@@ -90,6 +89,12 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
 {
     [super viewWillAppear:animated];
     [self.view layoutIfNeeded];
+}
+
+- (void)viewDidDisappear:(BOOL)animated;
+{
+    [super viewDidDisappear:animated];
+    
 }
 
 #pragma mark - VKVideoPlayerControllerDelegate

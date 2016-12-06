@@ -13,8 +13,6 @@ typedef NS_ENUM(NSUInteger, RTTransitionStep){
     RTTransitionStepPresent		/* Moving to the modal */
 };
 
-static const CGFloat kStatusBarHeight = 20.0f;
-
 @interface RTFullScreenTransition : NSObject <UIViewControllerAnimatedTransitioning>
 
 @property (nonatomic) NSTimeInterval duration;
