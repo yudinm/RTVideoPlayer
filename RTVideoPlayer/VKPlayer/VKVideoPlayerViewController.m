@@ -101,6 +101,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [UIApplication sharedApplication].idleTimerDisabled = self.applicationIdleTimerDisabled;
+    [self.player pauseContent];
     [super viewWillDisappear:animated];
 }
 
