@@ -96,7 +96,7 @@ static const int ddLogLevel = DDLogLevelWarning;
     
     [self.topPortraitCloseButton addTarget:self action:@selector(doneButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     
-    self.playerControlsAutoHideTime = @4.5;
+    self.playerControlsAutoHideTime = @2.5;
     
 //    [self.scrubber setMaximumTrackImage:[UIImage imageNamed:@"VKScrubber_max_t"] forState:UIControlStateNormal];
 //    [self.progressBar setThumbImage:[UIImage imageNamed:@"VKScrubber_max_t"] forState:UIControlStateNormal];

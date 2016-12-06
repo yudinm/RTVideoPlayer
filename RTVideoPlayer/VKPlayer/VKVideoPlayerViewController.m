@@ -101,7 +101,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [UIApplication sharedApplication].idleTimerDisabled = self.applicationIdleTimerDisabled;
-    [self.player pauseContent];
+    //    [self.player pauseContent];
     [super viewWillDisappear:animated];
 }
 
@@ -114,7 +114,7 @@
 }
 
 - (void)setSubtitle:(VKVideoPlayerCaption*)subtitle {
-//    [self.player setCaptionToBottom:subtitle];
+    //    [self.player setCaptionToBottom:subtitle];
 }
 
 #pragma mark - App States
