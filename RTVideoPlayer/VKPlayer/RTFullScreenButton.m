@@ -56,6 +56,7 @@
 
 - (UIBezierPath *)drawControllerFullScreenCanvasWithFrame: (CGRect)frame
 {
+    frame = CGRectInset(frame, 4.0, 4.0);
     UIBezierPath* bezierPath = [UIBezierPath bezierPath];
     
     [bezierPath moveToPoint: CGPointMake(CGRectGetMinX(frame) + 0.84091 * frame.size.width, CGRectGetMinY(frame) + 0.15914 * frame.size.height)];
@@ -85,6 +86,7 @@
 
 - (UIBezierPath *)drawControllerNormalScreenCanvasWithFrame: (CGRect)frame
 {
+    frame = CGRectInset(frame, 4.0, 4.0);
     UIBezierPath* bezierPath = [UIBezierPath bezierPath];
     
     [bezierPath moveToPoint: CGPointMake(CGRectGetMinX(frame) + 0.54317 * frame.size.width, CGRectGetMinY(frame) + 0.45789 * frame.size.height)];
