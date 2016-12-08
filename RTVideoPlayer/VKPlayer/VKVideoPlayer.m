@@ -766,8 +766,10 @@ typedef enum {
                 [self setLoading:NO];
                 break;
             case VKVideoPlayerStateContentPlaying:
+//                self.view.playButton.playing = NO;
                 break;
             case VKVideoPlayerStateContentPaused:
+//                self.view.playButton.playing = YES;
                 self.view.bigPlayButton.hidden = YES;
                 break;
             case VKVideoPlayerStateDismissed:
@@ -846,6 +848,7 @@ typedef enum {
     RUN_ON_UI_THREAD(^{
         if (self.state == VKVideoPlayerStateContentPaused) {
             self.state = VKVideoPlayerStateContentPlaying;
+            self.view.playButton.playing = YES;
         }
     });
 }
@@ -861,6 +864,7 @@ typedef enum {
 - (void)pauseContent:(BOOL)isUserAction completionHandler:(void (^)())completionHandler {
     
     RUN_ON_UI_THREAD(^{
+        self.view.playButton.playing = NO;
         
         switch ([self.playerItem status]) {
             case AVPlayerItemStatusFailed:
@@ -981,7 +985,7 @@ typedef enum {
 
 - (void)setFullScreen:(BOOL)fullScreen; {
     _fullScreen = fullScreen;
-    [self updateFullscreenButton:fullScreen];
+    self.view.fullscreenButton.fullScreen = fullScreen;
 }
 
 - (void)captionButtonTapped {
@@ -1064,15 +1068,6 @@ typedef enum {
     if ([self.delegate respondsToSelector:@selector(videoPlayer:didControlByEvent:)]) {
         [self.delegate videoPlayer:self didControlByEvent:VKVideoPlayerControlEventTapDone];
     }
-}
-
-- (void)updateFullscreenButton:(BOOL)fullScreen;
-{
-    if (fullScreen) {
-        [self.activePlayerView.fullscreenButton setImage:[UIImage imageNamed:@"resize-100%"] forState:UIControlStateNormal];
-        return;
-    }
-    [self.activePlayerView.fullscreenButton setImage:[UIImage imageNamed:@"resize-full-screen"] forState:UIControlStateNormal];
 }
 
 //- (void)layoutNavigationAndStatusBarForOrientation:(UIInterfaceOrientation)interfaceOrientation {

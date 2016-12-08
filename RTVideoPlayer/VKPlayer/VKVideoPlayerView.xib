@@ -129,39 +129,39 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpb-xw-dlb" userLabel="Bottom Control Overlay">
-                            <rect key="frame" x="0.0" y="136" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="124" width="320" height="56"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnR-VJ-0Jd">
-                                    <rect key="frame" x="228" y="0.0" width="32" height="44"/>
+                                    <rect key="frame" x="224.5" y="0.0" width="35.5" height="56"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="D7p-Az-85t"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlt-5u-Wdp">
-                                    <rect key="frame" x="8" y="0.0" width="32" height="44"/>
+                                    <rect key="frame" x="8" y="0.0" width="35.5" height="56"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="Y2d-Be-YzO"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.40000000596046448" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zNh-O5-BSd" customClass="VKScrubber">
-                                    <rect key="frame" x="46" y="8" width="176" height="29"/>
+                                    <rect key="frame" x="49.5" y="12" width="169" height="33"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="28" id="R9o-9x-jt6"/>
+                                        <constraint firstAttribute="height" constant="32" id="R9o-9x-jt6"/>
                                     </constraints>
                                     <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </slider>
                                 <slider opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.20000000298023224" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="RwN-bq-5ht" customClass="VKScrubber">
-                                    <rect key="frame" x="46" y="8" width="176" height="29"/>
+                                    <rect key="frame" x="49.5" y="12" width="169" height="33"/>
                                     <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </slider>
-                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9NI-r6-2yb">
-                                    <rect key="frame" x="268" y="0.0" width="44" height="44"/>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9NI-r6-2yb" customClass="RTFullScreenButton">
+                                    <rect key="frame" x="268" y="6" width="44" height="44"/>
                                     <accessibility key="accessibilityConfiguration" label="Fullscreen"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="44" id="UZt-MB-z8I"/>
@@ -169,7 +169,6 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" image="resize-full-screen"/>
                                     <connections>
                                         <action selector="fullscreenButtonTapped:" destination="-1" eventType="touchUpInside" id="O7e-XR-Vhy"/>
                                     </connections>
@@ -189,7 +188,7 @@
                                 <constraint firstItem="zNh-O5-BSd" firstAttribute="centerY" secondItem="mlt-5u-Wdp" secondAttribute="centerY" id="UeW-WS-U0N"/>
                                 <constraint firstItem="9NI-r6-2yb" firstAttribute="leading" secondItem="DnR-VJ-0Jd" secondAttribute="trailing" constant="8" id="Yw2-Ma-fUM"/>
                                 <constraint firstAttribute="trailing" secondItem="9NI-r6-2yb" secondAttribute="trailing" constant="8" id="alu-Mm-kgx"/>
-                                <constraint firstAttribute="height" constant="44" id="fDG-rW-Xmn"/>
+                                <constraint firstAttribute="height" constant="56" id="fDG-rW-Xmn"/>
                                 <constraint firstItem="DnR-VJ-0Jd" firstAttribute="leading" secondItem="zNh-O5-BSd" secondAttribute="trailing" constant="8" id="iTI-6v-d0U"/>
                                 <constraint firstItem="mlt-5u-Wdp" firstAttribute="leading" secondItem="vpb-xw-dlb" secondAttribute="leading" constant="8" id="nZB-I0-n9a"/>
                                 <constraint firstAttribute="trailing" secondItem="DnR-VJ-0Jd" secondAttribute="trailing" constant="8" id="vQW-5A-B3v"/>
@@ -225,8 +224,9 @@
                                 </mask>
                             </variation>
                         </view>
-                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4N6-e8-K6s" userLabel="Pause Button">
+                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4N6-e8-K6s" userLabel="Pause Button" customClass="RTPlayPauseButton">
                             <rect key="frame" x="138" y="68" width="44" height="44"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <accessibility key="accessibilityConfiguration" label="Pause"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="NFk-l2-LVZ"/>
@@ -234,11 +234,10 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="controller-pause">
+                            <state key="normal">
                                 <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
-                            <state key="selected" image="controller-play"/>
                             <state key="highlighted">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -322,8 +321,5 @@
     <resources>
         <image name="VKVideoPlayer_close" width="22" height="22"/>
         <image name="ccw" width="24" height="24"/>
-        <image name="controller-pause" width="23" height="24"/>
-        <image name="controller-play" width="24" height="24"/>
-        <image name="resize-full-screen" width="22" height="22"/>
     </resources>
 </document>

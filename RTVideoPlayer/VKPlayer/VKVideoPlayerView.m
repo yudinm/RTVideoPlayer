@@ -132,12 +132,15 @@ static const int ddLogLevel = DDLogLevelWarning;
         playButton = (UIButton*)sender;
     }
     
-    if (playButton.selected)  {
+//    if (playButton.selected)  {
+    if (!self.playButton.playing) {
         [self.delegate playButtonPressed];
-        [self setPlayButtonsSelected:NO];
+//        self.playButton.playing = YES;
+//        [self setPlayButtonsSelected:NO];
     } else {
         [self.delegate pauseButtonPressed];
-        [self setPlayButtonsSelected:YES];
+//        self.playButton.playing = NO;
+//        [self setPlayButtonsSelected:YES];
     }
 }
 
@@ -147,7 +150,8 @@ static const int ddLogLevel = DDLogLevelWarning;
     _playButton.hidden = NO;
     
     [self.delegate replayButtonPressed];
-    [self setPlayButtonsSelected:NO];
+//    [self setPlayButtonsSelected:NO];
+    self.playButton.playing = YES;
     
 }
 
@@ -164,7 +168,7 @@ static const int ddLogLevel = DDLogLevelWarning;
 }
 
 - (IBAction)fullscreenButtonTapped:(id)sender {
-    self.fullscreenButton.selected = !self.fullscreenButton.selected;
+    self.fullscreenButton.fullScreen = !self.fullscreenButton.fullScreen;
     [self.delegate fullScreenButtonTapped];
 }
 

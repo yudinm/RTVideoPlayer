@@ -9,6 +9,8 @@
 #import "VKPickerButton.h"
 #import "VKView.h"
 #import "VKVideoPlayerConfig.h"
+#import "RTPlayPauseButton.h"
+#import "RTFullScreenButton.h"
 
 #define kPlayerControlsDisableAutoHide -1
 
@@ -54,7 +56,7 @@
 @property (nonatomic, strong) IBOutlet VKPickerButton* videoQualityButton;
 @property (nonatomic, strong) IBOutlet UIButton* topSettingsButton;
 
-@property (nonatomic, strong) IBOutlet UIButton* playButton;
+@property (nonatomic, strong) IBOutlet RTPlayPauseButton* playButton;
 @property (nonatomic, strong) IBOutlet UIButton* replayButton;
 @property (nonatomic, strong) IBOutlet UIButton* nextButton;
 @property (nonatomic, strong) IBOutlet UILabel* currentTimeLabel;
@@ -62,7 +64,7 @@
 @property (nonatomic, strong) IBOutlet VKScrubber* progressBar;
 @property (nonatomic, strong) IBOutlet UILabel* totalTimeLabel;
 @property (nonatomic, strong) IBOutlet UIButton* rewindButton;
-@property (nonatomic, strong) IBOutlet UIButton* fullscreenButton;
+@property (nonatomic, strong) IBOutlet RTFullScreenButton* fullscreenButton;
 
 @property (nonatomic, strong) IBOutlet UIButton* previousButton;
 @property (nonatomic, strong) IBOutlet UIButton* doneButton;
