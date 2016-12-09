@@ -8,10 +8,9 @@
 
 #import "RTPlayPauseButton.h"
 
-@interface RTPlayPauseButton () <CAAnimationDelegate>
+@interface RTPlayPauseButton ()
 
 @property (nonatomic, strong) CAShapeLayer *pathImageLayer;
-@property (nonatomic, getter=isAnimating) BOOL animating;
 
 @end
 
@@ -57,6 +56,8 @@
 
 - (UIBezierPath *)drawControllerPauseCanvasWithFrame: (CGRect)frame
 {
+    frame = CGRectInset(frame, self.contentEdgeInsets.left, self.contentEdgeInsets.top);
+    
     UIBezierPath* bezierPath = [UIBezierPath bezierPath];
     [bezierPath moveToPoint: CGPointMake(CGRectGetMinX(frame) + 0.15915 * frame.size.width, CGRectGetMinY(frame) + 0.09095 * frame.size.height)];
     [bezierPath addCurveToPoint: CGPointMake(CGRectGetMinX(frame) + 0.43182 * frame.size.width, CGRectGetMinY(frame) + 0.09091 * frame.size.height) controlPoint1: CGPointMake(CGRectGetMinX(frame) + 0.15909 * frame.size.width, CGRectGetMinY(frame) + 0.09091 * frame.size.height) controlPoint2: CGPointMake(CGRectGetMinX(frame) + 0.43182 * frame.size.width, CGRectGetMinY(frame) + 0.09091 * frame.size.height)];
@@ -79,6 +80,8 @@
 
 - (UIBezierPath *)drawControllerPlayCanvasWithFrame: (CGRect)frame
 {
+    frame = CGRectInset(frame, self.contentEdgeInsets.left, self.contentEdgeInsets.top);
+    
     UIBezierPath* bezier2Path = [UIBezierPath bezierPath];
     [bezier2Path moveToPoint: CGPointMake(CGRectGetMinX(frame) + 0.09098 * frame.size.width, CGRectGetMinY(frame) + 0.04549 * frame.size.height)];
     [bezier2Path addCurveToPoint: CGPointMake(CGRectGetMinX(frame) + 0.49991 * frame.size.width, CGRectGetMinY(frame) + 0.26685 * frame.size.height) controlPoint1: CGPointMake(CGRectGetMinX(frame) + 0.09091 * frame.size.width, CGRectGetMinY(frame) + 0.04545 * frame.size.height) controlPoint2: CGPointMake(CGRectGetMinX(frame) + 0.49991 * frame.size.width, CGRectGetMinY(frame) + 0.26685 * frame.size.height)];
@@ -102,9 +105,7 @@
 - (void)animateNewPath:(UIBezierPath *)newPath
                inLayer:(CAShapeLayer *)layer;
 {
-    if (self.isAnimating) {
-        return;
-    }
+    [layer removeAllAnimations];
     
     CGPathRef oldPath = layer.path;
     layer.path = newPath.CGPath;
@@ -118,19 +119,11 @@
         [pathAnimation setToValue:(__bridge id)newPath.CGPath];
         pathAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
         pathAnimation.duration = 0.25;
-        pathAnimation.delegate = self;
+//        pathAnimation.delegate = self;
         
         [layer addAnimation:pathAnimation
                      forKey:@"pathAnimation"];
-        self.animating = YES;
     }
-}
-
-#pragma mark - CAAnimationDelegate
-
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
-{
-    self.animating = NO;
 }
 
 @end

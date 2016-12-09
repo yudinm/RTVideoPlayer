@@ -8,10 +8,9 @@
 
 #import "RTFullScreenButton.h"
 
-@interface RTFullScreenButton () <CAAnimationDelegate>
+@interface RTFullScreenButton ()
 
 @property (nonatomic, strong) CAShapeLayer *pathImageLayer;
-@property (nonatomic, getter=isAnimating) BOOL animating;
 
 @end
 
@@ -117,10 +116,6 @@
 - (void)animateNewPath:(UIBezierPath *)newPath
                inLayer:(CAShapeLayer *)layer;
 {
-    if (self.isAnimating) {
-        return;
-    }
-    
     CGPathRef oldPath = layer.path;
     layer.path = newPath.CGPath;
     layer.fillColor = self.tintColor.CGColor;
@@ -133,19 +128,11 @@
         [pathAnimation setToValue:(__bridge id)newPath.CGPath];
         pathAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
         pathAnimation.duration = 0.25;
-        pathAnimation.delegate = self;
+//        pathAnimation.delegate = self;
         
         [layer addAnimation:pathAnimation
                      forKey:@"pathAnimation"];
-        self.animating = YES;
     }
-}
-
-#pragma mark - CAAnimationDelegate
-
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
-{
-    self.animating = NO;
 }
 
 @end
