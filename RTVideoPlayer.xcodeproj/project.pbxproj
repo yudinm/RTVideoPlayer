@@ -37,6 +37,8 @@
 		5EC51D761DF84323002C738D /* RTPlayPauseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC51D751DF84323002C738D /* RTPlayPauseButton.m */; };
 		5EC51D7C1DF846F8002C738D /* RTPlayPauseButtonDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC51D7B1DF846F8002C738D /* RTPlayPauseButtonDemoViewController.m */; };
 		5EC51D7F1DF992CB002C738D /* RTFullScreenButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC51D7E1DF992CB002C738D /* RTFullScreenButton.m */; };
+		5EC51D811DFAEC91002C738D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC51D801DFAEC91002C738D /* MediaPlayer.framework */; };
+		5EC51D831DFAF00C002C738D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC51D821DFAF00C002C738D /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +97,8 @@
 		5EC51D7B1DF846F8002C738D /* RTPlayPauseButtonDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTPlayPauseButtonDemoViewController.m; path = RTVideoPlayerDemo/RTPlayPauseButtonDemoViewController.m; sourceTree = "<group>"; };
 		5EC51D7D1DF992CB002C738D /* RTFullScreenButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTFullScreenButton.h; path = VKPlayer/RTFullScreenButton.h; sourceTree = "<group>"; };
 		5EC51D7E1DF992CB002C738D /* RTFullScreenButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTFullScreenButton.m; path = VKPlayer/RTFullScreenButton.m; sourceTree = "<group>"; };
+		5EC51D801DFAEC91002C738D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		5EC51D821DFAF00C002C738D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		92D1BFA38481C49B25F2B485 /* Pods-RTVideoPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTVideoPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-RTVideoPlayer/Pods-RTVideoPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		F2CE38926C8C23EC07F06328 /* Pods-RTVideoPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTVideoPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RTVideoPlayer/Pods-RTVideoPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +108,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EC51D831DFAF00C002C738D /* AVFoundation.framework in Frameworks */,
+				5EC51D811DFAEC91002C738D /* MediaPlayer.framework in Frameworks */,
 				3E90DEEF04C98E0543A61FCC /* libPods-RTVideoPlayer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +120,8 @@
 		3507B16C613A0310365C241E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5EC51D821DFAF00C002C738D /* AVFoundation.framework */,
+				5EC51D801DFAEC91002C738D /* MediaPlayer.framework */,
 				380D1D801C8EB7D7DE0C23A5 /* libPods-RTVideoPlayer.a */,
 			);
 			name = Frameworks;
@@ -275,6 +283,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = K2B5R7D5U8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

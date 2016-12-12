@@ -4,6 +4,8 @@
 //
 
 #import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MPMoviePlayerController.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 #import "VKScrubber.h"
 #import "VKPickerButton.h"
@@ -96,6 +98,8 @@
 @property (nonatomic, strong) IBOutlet UIImageView* playerShadow;
 
 @property (nonatomic, strong) NSNumber* playerControlsAutoHideTime;
+@property (weak, nonatomic) IBOutlet MPVolumeView *btAirPlay;
+@property (nonatomic, getter=isAirplayButtonEnabled) BOOL airplayButtonEnabled;
 
 - (IBAction)fullscreenButtonTapped:(id)sender;
 - (IBAction)playButtonTapped:(id)sender;

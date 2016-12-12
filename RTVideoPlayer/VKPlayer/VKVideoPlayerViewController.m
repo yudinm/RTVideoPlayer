@@ -58,6 +58,8 @@
 {
     if (!_player) {
         _player = [[VKVideoPlayer alloc] init];
+        _player.avPlayer.allowsExternalPlayback = YES;
+        _player.avPlayer.usesExternalPlaybackWhileExternalScreenIsActive = YES;
     }
     return _player;
 }
@@ -68,7 +70,6 @@
     if (![self.view.subviews containsObject:self.player.view]) {
         [self.view addSubview:self.player.view];
     }
-    self.player.view.backgroundColor = [UIColor purpleColor];
 }
 
 - (void)viewDidLoad {
@@ -87,6 +88,10 @@
     self.applicationIdleTimerDisabled = [UIApplication sharedApplication].isIdleTimerDisabled;
     [UIApplication sharedApplication].idleTimerDisabled = YES;
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                           selector:@selector(didReceiveRemoteControlEventWithNotification:)
+                               name:@"RemoteControlEventReceived" object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -102,6 +107,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [UIApplication sharedApplication].idleTimerDisabled = self.applicationIdleTimerDisabled;
     //    [self.player pauseContent];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [super viewWillDisappear:animated];
 }
 
@@ -134,5 +140,33 @@
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
+
+#pragma mark - Remote Control
+
+- (void)didReceiveRemoteControlEventWithNotification:(NSNotification *)notification
+{
+    UIEvent *event = notification.object;
+    
+    switch (event.subtype) {
+            
+        case UIEventSubtypeNone:break;
+        case UIEventSubtypeMotionShake:break;
+        case UIEventSubtypeRemoteControlPlay:
+            [self.player playContent];
+            break;
+        case UIEventSubtypeRemoteControlPause:
+            [self.player pauseContent];
+            break;
+        case UIEventSubtypeRemoteControlStop:break;
+        case UIEventSubtypeRemoteControlTogglePlayPause:break;
+        case UIEventSubtypeRemoteControlNextTrack:break;
+        case UIEventSubtypeRemoteControlPreviousTrack:break;
+        case UIEventSubtypeRemoteControlBeginSeekingBackward:break;
+        case UIEventSubtypeRemoteControlEndSeekingBackward:break;
+        case UIEventSubtypeRemoteControlBeginSeekingForward:break;
+        case UIEventSubtypeRemoteControlEndSeekingForward:break;
+    }
+}
+
 
 @end

@@ -17,6 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    
     return YES;
 }
 
@@ -50,6 +53,10 @@
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
 {
     return UIInterfaceOrientationMaskAll;
+}
+
+-(void)remoteControlReceivedWithEvent:(UIEvent *)event{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"RemoteControlEventReceived" object:event];
 }
 
 @end

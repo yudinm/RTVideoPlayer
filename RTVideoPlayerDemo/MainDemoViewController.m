@@ -32,6 +32,7 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
         _vkPlayerViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
         _vkPlayerViewController.player.delegate = self;
         _vkPlayerViewController.player.view.playerControlsAutoHideTime = @10;
+        _vkPlayerViewController.player.view.airplayButtonEnabled = YES;
     }
     return _vkPlayerViewController;
 }
@@ -51,6 +52,7 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
         _vkPlayerViewController_fullScreen.transitioningDelegate = self;
         _vkPlayerViewController_fullScreen.view.tintColor = self.view.tintColor;
         _vkPlayerViewController_fullScreen.modalPresentationStyle = UIModalPresentationOverFullScreen;
+        _vkPlayerViewController_fullScreen.player.view.airplayButtonEnabled = YES;
     }
     return _vkPlayerViewController_fullScreen;
 }

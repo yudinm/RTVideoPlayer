@@ -23,12 +23,17 @@ static const int ddLogLevel = DDLogLevelWarning;
 #endif
 
 @interface VKVideoPlayerView()
+
 @property (nonatomic, strong) NSMutableArray* customControls;
 @property (nonatomic, strong) NSMutableArray* portraitControls;
 @property (nonatomic, strong) NSMutableArray* landscapeControls;
 
 @property (nonatomic, assign) BOOL isControlsEnabled;
 @property (nonatomic, assign) BOOL isControlsHidden;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btAirPlayWidthHidder;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btAirPlaySpacerHidder;
+
 @end
 
 @implementation VKVideoPlayerView
@@ -367,6 +372,25 @@ static const int ddLogLevel = DDLogLevelWarning;
     }
     
     [self layoutTopControls];
+}
+
+- (void)setAirplayButtonEnabled:(BOOL)airplayButtonEnabled;
+{
+    _airplayButtonEnabled = airplayButtonEnabled;
+    self.btAirPlay.hidden = !airplayButtonEnabled;
+    if (airplayButtonEnabled) {
+        self.btAirPlayWidthHidder.priority = 1;
+        self.btAirPlaySpacerHidder.priority = 1;
+        [UIView animateWithDuration:0.3 animations:^{
+            [self layoutIfNeeded];
+        }];
+        return;
+    }
+    self.btAirPlayWidthHidder.priority = 999;
+    self.btAirPlaySpacerHidder.priority = 999;
+    [UIView animateWithDuration:0.3 animations:^{
+        [self layoutIfNeeded];
+    }];
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {

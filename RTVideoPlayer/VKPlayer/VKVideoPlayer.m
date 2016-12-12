@@ -539,7 +539,8 @@ typedef enum {
 - (AVPlayer*)playerWithPlayerItem:(AVPlayerItem*)playerItem {
     AVPlayer* player = [AVPlayer playerWithPlayerItem:playerItem];
 //    if ([player respondsToSelector:@selector(setAllowsAirPlayVideo:)]) player.allowsAirPlayVideo = NO;
-    if ([player respondsToSelector:@selector(setAllowsExternalPlayback:)]) player.allowsExternalPlayback = NO;
+    if ([player respondsToSelector:@selector(setAllowsExternalPlayback:)]) player.allowsExternalPlayback = YES;
+    if ([player respondsToSelector:@selector(setUsesExternalPlaybackWhileExternalScreenIsActive:)]) player.usesExternalPlaybackWhileExternalScreenIsActive = YES;
     return player;
 }
 
