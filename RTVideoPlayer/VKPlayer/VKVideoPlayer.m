@@ -213,14 +213,14 @@ typedef enum {
 }
 
 - (void)reachabilityChanged:(NSNotification*)notification {
-//    Reachability* curReachability = notification.object;
-//    if (curReachability == VKSharedUtility.wifiReach) {
-//        DDLogVerbose(@"Reachability Changed: %@", [VKSharedUtility.wifiReach isReachableViaWiFi] ? @"Wifi Detected." : @"Cellular Detected.");
-//        [self reloadCurrentVideoTrack];
-//        self.view.videoQualityButton.enabled = YES;
-//    } else {
-//        self.view.videoQualityButton.enabled = NO;
-//    }
+    //    Reachability* curReachability = notification.object;
+    //    if (curReachability == VKSharedUtility.wifiReach) {
+    //        DDLogVerbose(@"Reachability Changed: %@", [VKSharedUtility.wifiReach isReachableViaWiFi] ? @"Wifi Detected." : @"Cellular Detected.");
+    //        [self reloadCurrentVideoTrack];
+    //        self.view.videoQualityButton.enabled = YES;
+    //    } else {
+    //        self.view.videoQualityButton.enabled = NO;
+    //    }
 }
 
 
@@ -256,8 +256,8 @@ typedef enum {
         NSTimeInterval interval = fabs(timeInSeconds - _previousPlaybackTime);
         if (interval < 2 ) {
             if (self.captionBottom) {
-//                VKVideoPlayerView* playerView = [self activePlayerView];
-//                [self updateCaptionView:playerView.captionBottomView caption:self.captionBottom playerView:playerView];
+                //                VKVideoPlayerView* playerView = [self activePlayerView];
+                //                [self updateCaptionView:playerView.captionBottomView caption:self.captionBottom playerView:playerView];
             }
         }
         
@@ -525,20 +525,20 @@ typedef enum {
             [weakSelf periodicTimeObserver:time];
         }];
         
-//        if (self.captionTop) {
-//            [self setCaption:self.captionTop toCaptionView:self.activePlayerView.captionTopView playerView:self.activePlayerView];
-//        }
-//        if (self.captionBottom) {
-//            [self setCaption:self.captionBottom toCaptionView:self.activePlayerView.captionBottomView playerView:self.activePlayerView];
-//        }
-//        [self clearCaptionView:self.activePlayerView.captionTopView];
-//        [self clearCaptionView:self.activePlayerView.captionBottomView];
+        //        if (self.captionTop) {
+        //            [self setCaption:self.captionTop toCaptionView:self.activePlayerView.captionTopView playerView:self.activePlayerView];
+        //        }
+        //        if (self.captionBottom) {
+        //            [self setCaption:self.captionBottom toCaptionView:self.activePlayerView.captionBottomView playerView:self.activePlayerView];
+        //        }
+        //        [self clearCaptionView:self.activePlayerView.captionTopView];
+        //        [self clearCaptionView:self.activePlayerView.captionBottomView];
     }
 }
 
 - (AVPlayer*)playerWithPlayerItem:(AVPlayerItem*)playerItem {
     AVPlayer* player = [AVPlayer playerWithPlayerItem:playerItem];
-//    if ([player respondsToSelector:@selector(setAllowsAirPlayVideo:)]) player.allowsAirPlayVideo = NO;
+    //    if ([player respondsToSelector:@selector(setAllowsAirPlayVideo:)]) player.allowsAirPlayVideo = NO;
     if ([player respondsToSelector:@selector(setAllowsExternalPlayback:)]) player.allowsExternalPlayback = YES;
     if ([player respondsToSelector:@selector(setUsesExternalPlaybackWhileExternalScreenIsActive:)]) player.usesExternalPlaybackWhileExternalScreenIsActive = YES;
     return player;
@@ -601,14 +601,14 @@ typedef enum {
 //        }
 //        return;
 //    }
-//    
+//
 //    __weak id weakSelf = self;
-//    
+//
 //    DDLogVerbose(@"Subs: %@ - segment count %d", caption, (int)caption.segments.count);
 //    id captionTimer = [self.avPlayer addBoundaryTimeObserverForTimes:caption.boundryTimes queue:NULL usingBlock:^{
 //        [weakSelf updateCaptionView:captionView caption:caption playerView:playerView];
 //    }];
-//    
+//
 //    if (captionView.tag == VKVideoPlayerCaptionPositionTop) {
 //        self.captionTopTimer = captionTimer;
 //        self.captionTop = caption;
@@ -629,7 +629,7 @@ typedef enum {
             } else {
                 self.captionBottomTimer = nil;
                 self.captionBottom = nil;
-//                [self clearCaptionView:self.view.captionBottomView];
+                //                [self clearCaptionView:self.view.captionBottomView];
                 fromLang = VKSharedVideoPlayerSettingsManager.subtitleLanguageCode;
                 toLang = @"null";
             }
@@ -645,7 +645,7 @@ typedef enum {
                 self.captionTopTimer = nil;
                 self.captionTop = nil;
                 //        self.track.topSubtitleEnabled = @NO;
-//                [self clearCaptionView:[self activePlayerView].captionTopView];
+                //                [self clearCaptionView:[self activePlayerView].captionTopView];
             }
         }
         if ([keyPath isEqualToString:kVKSettingsSubtitleLanguageCodeKey]) {
@@ -653,7 +653,7 @@ typedef enum {
         }
         if ([keyPath isEqualToString:kVKVideoQualityKey]) {
             [self reloadCurrentVideoTrack];
-//            [self.view.videoQualityButton setTitle:[VKSharedVideoPlayerSettingsManager videoQualityShortDescription:[VKSharedVideoPlayerSettingsManager streamKey]] forState:UIControlStateNormal];
+            //            [self.view.videoQualityButton setTitle:[VKSharedVideoPlayerSettingsManager videoQualityShortDescription:[VKSharedVideoPlayerSettingsManager streamKey]] forState:UIControlStateNormal];
         }
     }
     
@@ -767,10 +767,10 @@ typedef enum {
                 [self setLoading:NO];
                 break;
             case VKVideoPlayerStateContentPlaying:
-//                self.view.playButton.playing = NO;
+                //                self.view.playButton.playing = NO;
                 break;
             case VKVideoPlayerStateContentPaused:
-//                self.view.playButton.playing = YES;
+                //                self.view.playButton.playing = YES;
                 self.view.bigPlayButton.hidden = YES;
                 break;
             case VKVideoPlayerStateDismissed:
@@ -797,7 +797,7 @@ typedef enum {
                 self.playerControlsEnabled = YES;
                 [self.view setPlayButtonsSelected:NO];
                 self.view.playerLayerView.hidden = NO;
-//                self.view.captionBottomView.hidden = NO;
+                //                self.view.captionBottomView.hidden = NO;
                 self.view.captionTopContainerView.hidden = NO;
                 self.view.messageLabel.hidden = YES;
                 self.view.externalDeviceView.hidden = ![self isPlayingOnExternalDevice];
@@ -807,7 +807,7 @@ typedef enum {
                 self.playerControlsEnabled = YES;
                 [self.view setPlayButtonsSelected:YES];
                 self.view.playerLayerView.hidden = NO;
-//                self.view.captionBottomView.hidden = NO;
+                //                self.view.captionBottomView.hidden = NO;
                 self.view.captionTopContainerView.hidden = NO;
                 self.track.lastDurationWatchedInSeconds = [NSNumber numberWithFloat:[self currentTime]];
                 self.view.bigPlayButton.hidden = NO;
@@ -1139,7 +1139,7 @@ typedef enum {
 //- (DTCSSStylesheet*)captionStyleSheet:(NSString*)color {
 //    float fontSize = 1.3f;
 //    float shadowSize = 1.0f;
-//    
+//
 //    switch ([[VKSharedUtility setting:kVKSettingsSubtitleSizeKey] integerValue]) {
 //        case 1:
 //            fontSize = 1.5f;
@@ -1153,7 +1153,7 @@ typedef enum {
 //            shadowSize = 1.5f;
 //            break;
 //    }
-//    
+//
 //    DTCSSStylesheet* stylesheet = [[DTCSSStylesheet alloc] initWithStyleBlock:[NSString stringWithFormat:@"body{\
 //                                                                               text-align: center;\
 //                                                                               font-size: %fem;\
@@ -1178,13 +1178,13 @@ typedef enum {
 //    CGFloat activePlayerViewWidth = CGRectGetWidth([self activePlayerView].frame);
 //    CGFloat videoHeight = activePlayerViewWidth/aspectRatio;
 //    CGFloat padding = (CGRectGetHeight([self activePlayerView].frame) - videoHeight)/2;
-//    
+//
 //    if ([self activePlayerView] == self.view) {
 //        if (captionView.tag == VKVideoPlayerCaptionPositionBottom && !self.view.isControlsHidden) {
 //            padding = MAX(CGRectGetHeight(self.view.bottomControlOverlay.frame), padding);
 //        }
 //    }
-//    
+//
 //    return MAX(padding, 0.0f);
 //}
 //
@@ -1202,13 +1202,13 @@ typedef enum {
 //        color = @"#FFF";
 //        captionView.frame = CGRectMake(padding, padding, playerView.frame.size.width - padding*2, playerView.frame.size.height - padding - extraPadding);
 //    }
-//    
+//
 //    NSMutableDictionary* options = [NSMutableDictionary dictionaryWithObject:[self captionStyleSheet:color] forKey:DTDefaultStyleSheet];
 //    NSAttributedString *string = [[NSAttributedString alloc] initWithHTMLData:[html dataUsingEncoding:NSUTF8StringEncoding] options:options documentAttributes:NULL];
 //    captionView.attributedString = string;
 //    captionView.isAccessibilityElement = YES;
 //    captionView.accessibilityLabel = [html stripHtml];
-//    
+//
 //    if (captionView.tag == VKVideoPlayerCaptionPositionTop) {
 //        [captionView setFrameOriginY:padding + extraPadding];
 //        DDLogVerbose(@"Set top caption: %@", [html stripHtml]);
@@ -1218,7 +1218,7 @@ typedef enum {
 //        [captionView setFrameOriginY:playerView.frame.size.height - captionView.frame.size.height - padding - extraPadding];
 //        DDLogVerbose(@"Set bottom caption: %@", [html stripHtml]);
 //    }
-//    
+//
 //    [playerView.captionTopContainerView setFrameHeight:MIN(playerView.captionBottomView.frame.origin.y - padding, playerView.captionTopView.frame.size.height + padding + extraPadding)];
 //}
 //

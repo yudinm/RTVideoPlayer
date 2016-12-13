@@ -90,8 +90,8 @@
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                           selector:@selector(didReceiveRemoteControlEventWithNotification:)
-                               name:@"RemoteControlEventReceived" object:nil];
+                                             selector:@selector(didReceiveRemoteControlEventWithNotification:)
+                                                 name:@"RemoteControlEventReceived" object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

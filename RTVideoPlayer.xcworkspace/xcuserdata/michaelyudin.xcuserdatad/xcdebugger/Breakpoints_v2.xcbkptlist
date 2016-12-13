@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RTVideoPlayer/VKPlayer/VKVideoPlayerView.m"
-            timestampString = "502990306.45844"
+            timestampString = "503329336.764333"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "-playButtonTapped:"
             landmarkType = "7">
          </BreakpointContent>
