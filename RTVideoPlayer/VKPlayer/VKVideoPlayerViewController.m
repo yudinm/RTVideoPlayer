@@ -106,21 +106,12 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [UIApplication sharedApplication].idleTimerDisabled = self.applicationIdleTimerDisabled;
-    //    [self.player pauseContent];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [super viewWillDisappear:animated];
 }
 
-//- (BOOL)prefersStatusBarHidden {
-//    return YES;
-//}
-
 - (void)playVideoWithStreamURL:(NSURL*)streamURL {
     [self.player loadVideoWithTrack:[[VKVideoPlayerTrack alloc] initWithStreamURL:streamURL]];
-}
-
-- (void)setSubtitle:(VKVideoPlayerCaption*)subtitle {
-    //    [self.player setCaptionToBottom:subtitle];
 }
 
 #pragma mark - App States

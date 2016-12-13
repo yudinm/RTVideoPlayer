@@ -191,7 +191,6 @@ typedef enum {
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter addObserver:self selector:@selector(volumeChanged:) name:@"AVSystemController_SystemVolumeDidChangeNotification" object:nil];
     
-    [defaultCenter addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
     [defaultCenter addObserver:self selector:@selector(playerItemReadyToPlay) name:kVKVideoPlayerItemReadyToPlay object:nil];
     
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
@@ -211,18 +210,6 @@ typedef enum {
     [defaults removeObserver:self forKeyPath:kVKVideoQualityKey];
     
 }
-
-- (void)reachabilityChanged:(NSNotification*)notification {
-    //    Reachability* curReachability = notification.object;
-    //    if (curReachability == VKSharedUtility.wifiReach) {
-    //        DDLogVerbose(@"Reachability Changed: %@", [VKSharedUtility.wifiReach isReachableViaWiFi] ? @"Wifi Detected." : @"Cellular Detected.");
-    //        [self reloadCurrentVideoTrack];
-    //        self.view.videoQualityButton.enabled = YES;
-    //    } else {
-    //        self.view.videoQualityButton.enabled = NO;
-    //    }
-}
-
 
 - (NSString*)observedBitrateBucket:(NSNumber*)observedKbps {
     NSString* observedKbpsString = @"";
@@ -524,21 +511,11 @@ typedef enum {
         self.timeObserver = [avPlayer addPeriodicTimeObserverForInterval:CMTimeMake(1, 1) queue:NULL usingBlock:^(CMTime time){
             [weakSelf periodicTimeObserver:time];
         }];
-        
-        //        if (self.captionTop) {
-        //            [self setCaption:self.captionTop toCaptionView:self.activePlayerView.captionTopView playerView:self.activePlayerView];
-        //        }
-        //        if (self.captionBottom) {
-        //            [self setCaption:self.captionBottom toCaptionView:self.activePlayerView.captionBottomView playerView:self.activePlayerView];
-        //        }
-        //        [self clearCaptionView:self.activePlayerView.captionTopView];
-        //        [self clearCaptionView:self.activePlayerView.captionBottomView];
     }
 }
 
 - (AVPlayer*)playerWithPlayerItem:(AVPlayerItem*)playerItem {
     AVPlayer* player = [AVPlayer playerWithPlayerItem:playerItem];
-    //    if ([player respondsToSelector:@selector(setAllowsAirPlayVideo:)]) player.allowsAirPlayVideo = NO;
     if ([player respondsToSelector:@selector(setAllowsExternalPlayback:)]) player.allowsExternalPlayback = YES;
     if ([player respondsToSelector:@selector(setUsesExternalPlaybackWhileExternalScreenIsActive:)]) player.usesExternalPlaybackWhileExternalScreenIsActive = YES;
     return player;
@@ -583,42 +560,6 @@ typedef enum {
     } else return CMTimeGetSeconds([self.player currentCMTime]);
 }
 
-//#pragma mark - captions
-//- (void)clearCaptions {
-//    [self setCaptionToTop:nil];
-//    [self setCaptionToBottom:nil];
-//}
-//
-//- (void)setCaption:(id<VKVideoPlayerCaptionProtocol>)caption toCaptionView:(DTAttributedLabel*)captionView playerView:(VKVideoPlayerView*)playerView {
-//    if (!caption.boundryTimes.count) {
-//        [self clearCaptionView:captionView];
-//        if (captionView.tag == VKVideoPlayerCaptionPositionTop) {
-//            self.captionTopTimer = nil;
-//            self.captionTop = nil;
-//        } else if (captionView.tag == VKVideoPlayerCaptionPositionBottom) {
-//            self.captionBottomTimer = nil;
-//            self.captionBottom = nil;
-//        }
-//        return;
-//    }
-//
-//    __weak id weakSelf = self;
-//
-//    DDLogVerbose(@"Subs: %@ - segment count %d", caption, (int)caption.segments.count);
-//    id captionTimer = [self.avPlayer addBoundaryTimeObserverForTimes:caption.boundryTimes queue:NULL usingBlock:^{
-//        [weakSelf updateCaptionView:captionView caption:caption playerView:playerView];
-//    }];
-//
-//    if (captionView.tag == VKVideoPlayerCaptionPositionTop) {
-//        self.captionTopTimer = captionTimer;
-//        self.captionTop = caption;
-//    } else if (captionView.tag == VKVideoPlayerCaptionPositionBottom) {
-//        self.captionBottomTimer = captionTimer;
-//        self.captionBottom = caption;
-//    }
-//    [self updateCaptionView:captionView caption:caption playerView:playerView];
-//}
-
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if (object == [NSUserDefaults standardUserDefaults]) {
         if ([keyPath isEqualToString:kVKSettingsSubtitlesEnabledKey]) {
@@ -629,7 +570,6 @@ typedef enum {
             } else {
                 self.captionBottomTimer = nil;
                 self.captionBottom = nil;
-                //                [self clearCaptionView:self.view.captionBottomView];
                 fromLang = VKSharedVideoPlayerSettingsManager.subtitleLanguageCode;
                 toLang = @"null";
             }
@@ -638,22 +578,8 @@ typedef enum {
                 [self.delegate videoPlayer:self didChangeSubtitleFrom:fromLang to:toLang];
             }
         }
-        if ([keyPath isEqualToString:kVKSettingsTopSubtitlesEnabledKey]) {
-            if ([[change valueForKeyPath:NSKeyValueChangeNewKey] boolValue]) {
-                //        self.track.topSubtitleEnabled = @YES;
-            } else {
-                self.captionTopTimer = nil;
-                self.captionTop = nil;
-                //        self.track.topSubtitleEnabled = @NO;
-                //                [self clearCaptionView:[self activePlayerView].captionTopView];
-            }
-        }
         if ([keyPath isEqualToString:kVKSettingsSubtitleLanguageCodeKey]) {
             [self.view.captionButton setTitle:[VKSharedVideoPlayerSettingsManager.subtitleLanguageCode uppercaseString] forState:UIControlStateNormal];
-        }
-        if ([keyPath isEqualToString:kVKVideoQualityKey]) {
-            [self reloadCurrentVideoTrack];
-            //            [self.view.videoQualityButton setTitle:[VKSharedVideoPlayerSettingsManager videoQualityShortDescription:[VKSharedVideoPlayerSettingsManager streamKey]] forState:UIControlStateNormal];
         }
     }
     
@@ -716,8 +642,6 @@ typedef enum {
         }
     }
 }
-
-
 
 #pragma mark - Controls
 
@@ -797,7 +721,6 @@ typedef enum {
                 self.playerControlsEnabled = YES;
                 [self.view setPlayButtonsSelected:NO];
                 self.view.playerLayerView.hidden = NO;
-                //                self.view.captionBottomView.hidden = NO;
                 self.view.captionTopContainerView.hidden = NO;
                 self.view.messageLabel.hidden = YES;
                 self.view.externalDeviceView.hidden = ![self isPlayingOnExternalDevice];
@@ -807,7 +730,6 @@ typedef enum {
                 self.playerControlsEnabled = YES;
                 [self.view setPlayButtonsSelected:YES];
                 self.view.playerLayerView.hidden = NO;
-                //                self.view.captionBottomView.hidden = NO;
                 self.view.captionTopContainerView.hidden = NO;
                 self.track.lastDurationWatchedInSeconds = [NSNumber numberWithFloat:[self currentTime]];
                 self.view.bigPlayButton.hidden = NO;
@@ -1071,19 +993,7 @@ typedef enum {
     }
 }
 
-//- (void)layoutNavigationAndStatusBarForOrientation:(UIInterfaceOrientation)interfaceOrientation {
-//    [[UIApplication sharedApplication] setStatusBarOrientation:interfaceOrientation animated:NO];
-//}
-
 #pragma mark - Auto hide controls
-
-//- (void)setForceRotate:(BOOL)forceRotate {
-//    if (_forceRotate != forceRotate) {
-//        _forceRotate = forceRotate;
-//    }
-//
-//    self.view.fullscreenButton.hidden = !self.forceRotate;
-//}
 
 - (void)setLoading:(BOOL)loading {
     if (loading) {
@@ -1135,106 +1045,6 @@ typedef enum {
         }
     }
 }
-
-//- (DTCSSStylesheet*)captionStyleSheet:(NSString*)color {
-//    float fontSize = 1.3f;
-//    float shadowSize = 1.0f;
-//
-//    switch ([[VKSharedUtility setting:kVKSettingsSubtitleSizeKey] integerValue]) {
-//        case 1:
-//            fontSize = 1.5f;
-//            break;
-//        case 2:
-//            fontSize = 2.0f;
-//            shadowSize = 1.2f;
-//            break;
-//        case 3:
-//            fontSize = 3.5f;
-//            shadowSize = 1.5f;
-//            break;
-//    }
-//
-//    DTCSSStylesheet* stylesheet = [[DTCSSStylesheet alloc] initWithStyleBlock:[NSString stringWithFormat:@"body{\
-//                                                                               text-align: center;\
-//                                                                               font-size: %fem;\
-//                                                                               font-family: Helvetica Neue;\
-//                                                                               font-weight: bold;\
-//                                                                               color: %@;\
-//                                                                               text-shadow: -%fpx -%fpx %fpx #000, %fpx -%fpx %fpx #000, -%fpx %fpx %fpx #000, %fpx %fpx %fpx #000;\
-//                                                                               vertical-align: bottom;\
-//                                                                               }", fontSize, color, shadowSize, shadowSize, shadowSize, shadowSize, shadowSize, shadowSize, shadowSize, shadowSize, shadowSize, shadowSize, shadowSize, shadowSize]];
-//    return stylesheet;
-//}
-//
-//- (void)clearCaptionView:(DTAttributedLabel*)captionView {
-//    [captionView setAttributedString:[[NSAttributedString alloc] initWithHTMLData:[@"" dataUsingEncoding:NSUTF8StringEncoding] options:nil documentAttributes:NULL]];
-//}
-//
-//- (CGFloat)captionPadding:(DTAttributedLabel*)captionView {
-//    CGFloat aspectRatio = self.playerItem.presentationSize.width/self.playerItem.presentationSize.height;
-//    if (isnan(aspectRatio)) {
-//        return 0.0f;
-//    }
-//    CGFloat activePlayerViewWidth = CGRectGetWidth([self activePlayerView].frame);
-//    CGFloat videoHeight = activePlayerViewWidth/aspectRatio;
-//    CGFloat padding = (CGRectGetHeight([self activePlayerView].frame) - videoHeight)/2;
-//
-//    if ([self activePlayerView] == self.view) {
-//        if (captionView.tag == VKVideoPlayerCaptionPositionBottom && !self.view.isControlsHidden) {
-//            padding = MAX(CGRectGetHeight(self.view.bottomControlOverlay.frame), padding);
-//        }
-//    }
-//
-//    return MAX(padding, 0.0f);
-//}
-//
-//- (void)updateCaptionView:(DTAttributedLabel*)captionView caption:(id<VKVideoPlayerCaptionProtocol>)caption playerView:(VKVideoPlayerView*)playerView {
-//    float timeInSeconds = CMTimeGetSeconds([self.player currentCMTime]);
-//    float timeInMilliseconds = timeInSeconds * 1000;
-//    NSString* html = [caption contentAtTime:timeInMilliseconds];
-//    int padding = VKCaptionPadding;
-//    CGFloat extraPadding = [self captionPadding:captionView];
-//    NSString* color = nil;
-//    if (captionView.tag == VKVideoPlayerCaptionPositionTop) {
-//        color = @"#CCC";
-//        [captionView setFrameHeight:CGRectGetHeight(playerView.frame)];
-//    } else {
-//        color = @"#FFF";
-//        captionView.frame = CGRectMake(padding, padding, playerView.frame.size.width - padding*2, playerView.frame.size.height - padding - extraPadding);
-//    }
-//
-//    NSMutableDictionary* options = [NSMutableDictionary dictionaryWithObject:[self captionStyleSheet:color] forKey:DTDefaultStyleSheet];
-//    NSAttributedString *string = [[NSAttributedString alloc] initWithHTMLData:[html dataUsingEncoding:NSUTF8StringEncoding] options:options documentAttributes:NULL];
-//    captionView.attributedString = string;
-//    captionView.isAccessibilityElement = YES;
-//    captionView.accessibilityLabel = [html stripHtml];
-//
-//    if (captionView.tag == VKVideoPlayerCaptionPositionTop) {
-//        [captionView setFrameOriginY:padding + extraPadding];
-//        DDLogVerbose(@"Set top caption: %@", [html stripHtml]);
-//    } else if (captionView.tag == VKVideoPlayerCaptionPositionBottom) {
-//        [captionView sizeToFit];
-//        captionView.center = CGPointMake(playerView.frame.size.width * 0.5f, captionView.center.y);
-//        [captionView setFrameOriginY:playerView.frame.size.height - captionView.frame.size.height - padding - extraPadding];
-//        DDLogVerbose(@"Set bottom caption: %@", [html stripHtml]);
-//    }
-//
-//    [playerView.captionTopContainerView setFrameHeight:MIN(playerView.captionBottomView.frame.origin.y - padding, playerView.captionTopView.frame.size.height + padding + extraPadding)];
-//}
-//
-//- (void)setCaptionToBottom:(id<VKVideoPlayerCaptionProtocol>)caption {
-//    [self setCaptionToBottom:caption playerView:[self activePlayerView]];
-//}
-//- (void)setCaptionToBottom:(id<VKVideoPlayerCaptionProtocol>)caption playerView:(VKVideoPlayerView*)playerView {
-//    [self setCaption:caption toCaptionView:playerView.captionBottomView playerView:playerView];
-//}
-//
-//- (void)setCaptionToTop:(id<VKVideoPlayerCaptionProtocol>)caption {
-//    [self setCaptionToTop:caption playerView:[self activePlayerView]];
-//}
-//- (void)setCaptionToTop:(id<VKVideoPlayerCaptionProtocol>)caption playerView:(VKVideoPlayerView*)playerView {
-//    [self setCaption:caption toCaptionView:playerView.captionTopView playerView:playerView];
-//}
 
 @end
 

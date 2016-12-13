@@ -6,6 +6,7 @@
 #import "VKVideoPlayerConfig.h"
 
 @interface VKVideoPlayerLayerView : UIView
-//@property (nonatomic, weak) AVPlayer *player;
+
 - (void)setPlayer:(AVPlayer *)player;
+
 @end

@@ -25,16 +25,7 @@ typedef enum {
 - (NSArray*)boundryTimes;
 - (NSString*)contentAtTime:(NSInteger)time;
 + (NSString*)captionType;
-//- (void)parseSubtitleRaw:(NSString *)srt completion:(void (^)(NSMutableArray* segments, NSMutableArray* invalidSegments))completion;
-//+ (void)captionWithVideoSession:(VKVideoSession*)videoSession block:(void (^)(id resource, NSError *error))block;
-//@optional
-//@property (nonatomic, readonly) NSArray* preferredAdSlotTimes;
-//- (NSNumber*)closestPreferredAdSlotTimeInMilliseconds:(NSNumber*)timeInMilliseconds;
 @end
-
-//@protocol VKVideoPlayerCaptionParserProtocol <NSObject>
-//- (void)parseSubtitleRaw:(NSString *)string completion:(void (^)(NSMutableArray *segments, NSMutableArray *invalidSegments))completion;
-//@end
 
 @interface VKVideoPlayerCaption : NSObject<VKVideoPlayerCaptionProtocol>
 @property (nonatomic, strong) NSString* languageCode;
@@ -42,11 +33,7 @@ typedef enum {
 @property (nonatomic, strong) NSArray* boundryTimes;
 @property (nonatomic, strong) NSArray* preferredAdSlotTimes;
 @property (nonatomic, strong) NSArray* invalidSegments;
-//@property (nonatomic, strong) id<VKVideoPlayerCaptionParserProtocol>parser;
 - (id)initWithRawString:(NSString *)subtitleRawData;
 - (void)parseSubtitleRaw:(NSString *)string completion:(void (^)(NSMutableArray *segments, NSMutableArray *invalidSegments))completion;
-
-//- (id)initWithRawString:(NSString *)subtitleRawData parser:(Class<VKVideoPlayerCaptionParserProtocol>)parserClass;
-//- (NSNumber*)closestPreferredAdSlotTimeInMilliseconds:(NSNumber*)timeInMilliseconds;
 
 @end

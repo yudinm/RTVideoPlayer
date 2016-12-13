@@ -11,7 +11,6 @@
 #import "VKFoundationLib.h"
 #import "VKScrubber.h"
 #import "VKVideoPlayerTrack.h"
-//#import "UIImage+VKFoundation.h" ??
 #import "VKVideoPlayerSettingsManager.h"
 
 #define PADDING 8
@@ -41,8 +40,6 @@ static const int ddLogLevel = DDLogLevelWarning;
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self.scrubber removeObserver:self forKeyPath:@"maximumValue"];
-    [self.rewindButton removeObserver:self forKeyPath:@"hidden"];
-    [self.nextButton removeObserver:self forKeyPath:@"hidden"];
 }
 
 - (void)initialize {
@@ -54,22 +51,7 @@ static const int ddLogLevel = DDLogLevelWarning;
     self.view.frame = self.frame;
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     [self addSubview:self.view];
-    
-    //    self.titleLabel.font = THEMEFONT(@"fontRegular", DEVICEVALUE(22.0f, 16.0f));
-    //    self.titleLabel.textColor = THEMECOLOR(@"colorFont4");
-    self.titleLabel.text = @"";
-    
-    //    self.captionButton.titleLabel.font = THEMEFONT(@"fontRegular", 16.0f);
-    //    [self.captionButton setTitleColor:THEMECOLOR(@"colorFont4") forState:UIControlStateNormal];
-    
-    //    self.videoQualityButton.titleLabel.font = THEMEFONT(@"fontRegular", 13.0f);
-    //    [self.videoQualityButton setTitleColor:THEMECOLOR(@"colorFont4") forState:UIControlStateNormal];
-    
-    //    self.currentTimeLabel.font = THEMEFONT(@"fontRegular", DEVICEVALUE(16.0f, 12.0f));
-    //    self.currentTimeLabel.textColor = THEMECOLOR(@"colorFont4");
-    //    self.totalTimeLabel.font = THEMEFONT(@"fontRegular", DEVICEVALUE(16.0f, 12.0f));
-    //    self.totalTimeLabel.textColor = THEMECOLOR(@"colorFont4");
-    
+
     [self.scrubber addObserver:self forKeyPath:@"maximumValue" options:0 context:nil];
     
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
@@ -79,40 +61,8 @@ static const int ddLogLevel = DDLogLevelWarning;
     [self.scrubber addTarget:self action:@selector(updateTimeLabels) forControlEvents:UIControlEventValueChanged];
     
     [self.controls setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:0.5]];
-    
-    [self.captionButton setTitle:[VKSharedVideoPlayerSettingsManager.subtitleLanguageCode uppercaseString] forState:UIControlStateNormal];
-    
-    //    [self.videoQualityButton setTitle:[VKSharedVideoPlayerSettingsManager videoQualityShortDescription:[VKSharedVideoPlayerSettingsManager streamKey]] forState:UIControlStateNormal];
-    
-    self.externalDeviceLabel.adjustsFontSizeToFitWidth = YES;
-    
-    [self.rewindButton addObserver:self forKeyPath:@"hidden" options:0 context:nil];
-    [self.nextButton addObserver:self forKeyPath:@"hidden" options:0 context:nil];
-    
     self.fullscreenButton.hidden = NO;
-    
-    //    for (UIButton* button in @[
-    //                               self.topPortraitCloseButton
-    //                               ]) {
-    ////        [button setBackgroundImage:[[UIImage imageWithColor:THEMECOLOR(@"colorBackground8")] imageByApplyingAlpha:0.6f] forState:UIControlStateNormal];
-    //        button.layer.cornerRadius = 4.0f;
-    //        button.clipsToBounds = YES;
-    //    }
-    
-    [self.topPortraitCloseButton addTarget:self action:@selector(doneButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    
     self.playerControlsAutoHideTime = @2.5;
-    
-    //    [self.scrubber setMaximumTrackImage:[UIImage imageNamed:@"VKScrubber_max_t"] forState:UIControlStateNormal];
-    //    [self.progressBar setThumbImage:[UIImage imageNamed:@"VKScrubber_max_t"] forState:UIControlStateNormal];
-    //    [self.progressBar setMinimumTrackImage:
-    //     [[UIImage imageNamed:@"VKScrubber_min"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 4, 0, 4)]
-    //                                  forState:UIControlStateNormal];
-    
-    //    MPVolumeView *airplayButton = [[MPVolumeView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.btAirPlay.bounds), CGRectGetHeight(self.btAirPlay.bounds))];
-    //    airplayButton.showsVolumeSlider = NO;
-    //    airplayButton.translatesAutoresizingMaskIntoConstraints = NO;
-    //    [self addSubview:airplayButton];
 }
 
 - (id)initWithFrame:(CGRect)frame {
@@ -128,19 +78,6 @@ static const int ddLogLevel = DDLogLevelWarning;
     [self initialize];
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    //    if (self.btAirPlay.subviews.count == 0) {
-    //        MPVolumeView *airplayButton = [[MPVolumeView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.btAirPlay.bounds), CGRectGetHeight(self.btAirPlay.bounds))];
-    //        airplayButton.showsVolumeSlider = NO;
-    //        airplayButton.translatesAutoresizingMaskIntoConstraints = YES;
-    //        [self.btAirPlay addSubview:airplayButton];
-    //        [airplayButton setNeedsDisplay];
-    //        [airplayButton setNeedsLayout];
-    //        [self.btAirPlay layoutIfNeeded];
-    //    }
-}
-
 #pragma - VKVideoPlayerViewDelegates
 
 - (IBAction)playButtonTapped:(id)sender {
@@ -150,15 +87,10 @@ static const int ddLogLevel = DDLogLevelWarning;
         playButton = (UIButton*)sender;
     }
     
-    //    if (playButton.selected)  {
     if (!self.playButton.playing) {
         [self.delegate playButtonPressed];
-        //        self.playButton.playing = YES;
-        //        [self setPlayButtonsSelected:NO];
     } else {
         [self.delegate pauseButtonPressed];
-        //        self.playButton.playing = NO;
-        //        [self setPlayButtonsSelected:YES];
     }
 }
 
@@ -210,13 +142,6 @@ static const int ddLogLevel = DDLogLevelWarning;
             RUN_ON_UI_THREAD(^{
                 [self updateTimeLabels];
             });
-        }
-    }
-    
-    if ([object isKindOfClass:[UIButton class]]) {
-        UIButton* button = object;
-        if ([button isDescendantOfView:self.topControlOverlay]) {
-            [self layoutTopControls];
         }
     }
 }
@@ -272,42 +197,20 @@ static const int ddLogLevel = DDLogLevelWarning;
     [self layoutSliderForOrientation];
 }
 
-- (void)layoutTopControls {
-    
-    //    CGFloat rightMargin = CGRectGetMaxX(self.topControlOverlay.frame);
-    //    for (UIView* button in self.topControlOverlay.subviews) {
-    //        if ([button isKindOfClass:[UIButton class]] && button != self.doneButton && !button.hidden) {
-    //            rightMargin = MIN(CGRectGetMinX(button.frame), rightMargin);
-    //        }
-    //    }
-    
-    //    [self.titleLabel setFrameWidth:rightMargin - CGRectGetMinX(self.titleLabel.frame) - 20];
-}
-
 - (void)setPlayButtonsSelected:(BOOL)selected {
     self.playButton.selected = selected;
-    self.bigPlayButton.selected = selected;
 }
 
 - (void)setPlayButtonsEnabled:(BOOL)enabled {
     self.playButton.enabled = enabled;
-    self.bigPlayButton.enabled = enabled;
 }
 
 - (void)setControlsEnabled:(BOOL)enabled {
     
-    self.captionButton.enabled = enabled;
-    self.videoQualityButton.enabled = enabled;
-    self.topSettingsButton.enabled = enabled;
-    
     [self setPlayButtonsEnabled:enabled];
     
-    self.previousButton.enabled = enabled && self.delegate.videoTrack.hasPrevious;
-    self.nextButton.enabled = enabled && self.delegate.videoTrack.hasNext;
     self.scrubber.enabled = enabled;
-    self.rewindButton.enabled = enabled;
     self.fullscreenButton.enabled = enabled;
-    
     self.isControlsEnabled = enabled;
     
     NSMutableArray *controlList = self.customControls.mutableCopy;
@@ -366,7 +269,6 @@ static const int ddLogLevel = DDLogLevelWarning;
         if (hidden) {
             [UIView animateWithDuration:0.35 delay:0.0 options:UIViewAnimationOptionCurveEaseOut | UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionAllowUserInteraction animations:^{
                 [self.controls setAlpha:0];
-                [self.topControlOverlay setTransform:CGAffineTransformMakeTranslation(0, -60)];
                 [self.bottomControlOverlay setTransform:CGAffineTransformMakeTranslation(0, 60)];
             } completion:^(BOOL finished) {
                 
@@ -374,7 +276,6 @@ static const int ddLogLevel = DDLogLevelWarning;
         }else{
             [UIView animateWithDuration:0.35 delay:0.0 options:UIViewAnimationOptionCurveEaseOut | UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionAllowUserInteraction animations:^{
                 [self.controls setAlpha:1];
-                [self.topControlOverlay setTransform:CGAffineTransformMakeTranslation(0, 0)];
                 [self.bottomControlOverlay setTransform:CGAffineTransformMakeTranslation(0, 0)];
             } completion:^(BOOL finished) {
                 
@@ -383,8 +284,6 @@ static const int ddLogLevel = DDLogLevelWarning;
         
         
     }
-    
-    [self layoutTopControls];
 }
 
 - (void)setAirplayButtonEnabled:(BOOL)airplayButtonEnabled;

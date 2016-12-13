@@ -14,14 +14,6 @@
 
 #import "VKFoundationLib.h"
 #import "NSObject+VKFoundation.h"
-//#import "DTAttributedLabel.h"
-
-//???
-//#import "UIView+VKFoundation.h"
-//#import "UILabel+VKFoundation.h"
-//#import "NSString+VKFoundation.h"
-//#import "VKUtility.h"
-
 #import "Reachability.h"
 
 #define kVKVideoPlayerDurationDidLoadNotification @"VKVideoPlayerDurationDidLoadNotification"
@@ -37,17 +29,3 @@
 #define kVKVideoPlayerStateChanged @"VKVideoPlayerStateChanged"
 #define kVKVideoPlayerDismiss @"VKVideoPlayerDismiss"
 #define kVKVideoPlayerShare @"VKVideoPlayerShare"
-
-
-//#define kVKDurationDidLoadNotification @"VKDurationDidLoadNotification"
-//#define kVKPlayerItemReadyToPlay @"VKPlayerItemReadyToPlay"
-//#define kVKScrubberValueUpdatedNotification @"VKScrubberValueUpdatedNotification"
-//#define kVKShowVideoInfoNotification @"VKShowVideoInfoNotification"
-//#define kVKVideoPlayerOrientationDidChange @"VKVideoPlayerOrientationDidChange"
-//#define kVKUpdateVideoSession @"VKUpdateVideoSession"
-//
-//#define kVKPlayerStateChanged @"VKPlayerStateChanged"
-//#define kVKPlayerDismiss @"VKPlayerDismiss"
-//#define kVKPlayerShare @"VKPlayerShare"
-
-

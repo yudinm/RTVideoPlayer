@@ -150,13 +150,4 @@ VKVideoPlayerViewDelegate
 - (void)pauseContent:(BOOL)isUserAction completionHandler:(void (^)())completionHandler;
 - (void)updateTrackControls;
 
-//#pragma mark - Captions
-//- (void)clearCaptions;
-//- (void)setCaptionToBottom:(id<VKVideoPlayerCaptionProtocol>)caption;
-//- (void)setCaptionToBottom:(id<VKVideoPlayerCaptionProtocol>)caption playerView:(VKVideoPlayerView*)playerView;
-//- (void)setCaptionToTop:(id<VKVideoPlayerCaptionProtocol>)caption;
-//- (void)setCaptionToTop:(id<VKVideoPlayerCaptionProtocol>)caption playerView:(VKVideoPlayerView*)playerView;
-//
-//- (void)updateCaptionView:(DTAttributedLabel*)captionView caption:(id<VKVideoPlayerCaptionProtocol>)caption playerView:(VKVideoPlayerView*)playerView;
-//- (void)clearCaptionView:(DTAttributedLabel*)captionView;
 @end

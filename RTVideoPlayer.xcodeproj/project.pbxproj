@@ -181,8 +181,12 @@
 		5E5F8D2A1DD1DBBF006E1D00 /* VKPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				5EC51D7D1DF992CB002C738D /* RTFullScreenButton.h */,
+				5EC51D7E1DF992CB002C738D /* RTFullScreenButton.m */,
 				5EA5F96A1DEC6E6900154A69 /* RTFullScreenTransition.h */,
 				5EA5F96B1DEC6E6900154A69 /* RTFullScreenTransition.m */,
+				5EC51D741DF84323002C738D /* RTPlayPauseButton.h */,
+				5EC51D751DF84323002C738D /* RTPlayPauseButton.m */,
 				5E5F8D501DD1DBFA006E1D00 /* VKVideoPlayer.h */,
 				5E5F8D511DD1DBFA006E1D00 /* VKVideoPlayer.m */,
 				5E5F8D521DD1DBFA006E1D00 /* VKVideoPlayerAirPlay.h */,
@@ -207,10 +211,6 @@
 				5E5F8D651DD1DBFA006E1D00 /* VKVideoPlayerViewController.m */,
 				5E5F8D891DD1EED4006E1D00 /* VKVideoPlayerViewController~ipad.xib */,
 				5E5F8D8A1DD1EED4006E1D00 /* VKVideoPlayerViewController~iphone.xib */,
-				5EC51D741DF84323002C738D /* RTPlayPauseButton.h */,
-				5EC51D751DF84323002C738D /* RTPlayPauseButton.m */,
-				5EC51D7D1DF992CB002C738D /* RTFullScreenButton.h */,
-				5EC51D7E1DF992CB002C738D /* RTFullScreenButton.m */,
 			);
 			name = VKPlayer;
 			sourceTree = "<group>";
