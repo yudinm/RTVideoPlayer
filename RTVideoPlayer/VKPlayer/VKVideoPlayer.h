@@ -148,6 +148,5 @@ VKVideoPlayerViewDelegate
 - (void)pauseContent;
 - (void)pauseContentWithCompletionHandler:(void (^)())completionHandler;
 - (void)pauseContent:(BOOL)isUserAction completionHandler:(void (^)())completionHandler;
-- (void)updateTrackControls;
 
 @end

@@ -30,7 +30,6 @@
 		5E5F8D8C1DD1EED4006E1D00 /* VKVideoPlayerViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8D8A1DD1EED4006E1D00 /* VKVideoPlayerViewController~iphone.xib */; };
 		5E5F8D8E1DD1EFE3006E1D00 /* VKVideoPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8D8D1DD1EFE3006E1D00 /* VKVideoPlayerView.xib */; };
 		5E5F8DA91DD22AD5006E1D00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8DA51DD22AD5006E1D00 /* AppDelegate.m */; };
-		5E5F8DAA1DD22AD5006E1D00 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8DA61DD22AD5006E1D00 /* Info.plist */; };
 		5E5F8DAB1DD22AD5006E1D00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8DA71DD22AD5006E1D00 /* main.m */; };
 		5E5F8DAE1DD22AE3006E1D00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8DAC1DD22AE3006E1D00 /* LaunchScreen.storyboard */; };
 		5EA5F96C1DEC6E6900154A69 /* RTFullScreenTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5F96B1DEC6E6900154A69 /* RTFullScreenTransition.m */; };
@@ -276,7 +275,7 @@
 		5E5F8D011DD1D37E006E1D00 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "RT News";
 				TargetAttributes = {
 					5E5F8D081DD1D37E006E1D00 = {
@@ -320,7 +319,6 @@
 				5E5F8D8C1DD1EED4006E1D00 /* VKVideoPlayerViewController~iphone.xib in Resources */,
 				5E5F8D8E1DD1EFE3006E1D00 /* VKVideoPlayerView.xib in Resources */,
 				5E5F8D191DD1D37E006E1D00 /* Assets.xcassets in Resources */,
-				5E5F8DAA1DD22AD5006E1D00 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -394,10 +394,6 @@ typedef enum {
     [self clearPlayer];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kVKVideoPlayerUpdateVideoTrack object:track];
-    
-    self.view.titleLabel.text = [track title];
-    
-    [self updateTrackControls];
 }
 
 
@@ -578,9 +574,6 @@ typedef enum {
                 [self.delegate videoPlayer:self didChangeSubtitleFrom:fromLang to:toLang];
             }
         }
-        if ([keyPath isEqualToString:kVKSettingsSubtitleLanguageCodeKey]) {
-            [self.view.captionButton setTitle:[VKSharedVideoPlayerSettingsManager.subtitleLanguageCode uppercaseString] forState:UIControlStateNormal];
-        }
     }
     
     if (object == self.avPlayer) {
@@ -695,12 +688,10 @@ typedef enum {
                 break;
             case VKVideoPlayerStateContentPaused:
                 //                self.view.playButton.playing = YES;
-                self.view.bigPlayButton.hidden = YES;
                 break;
             case VKVideoPlayerStateDismissed:
                 break;
             case VKVideoPlayerStateError:
-                self.view.messageLabel.hidden = YES;
                 break;
             default:
                 break;
@@ -721,20 +712,13 @@ typedef enum {
                 self.playerControlsEnabled = YES;
                 [self.view setPlayButtonsSelected:NO];
                 self.view.playerLayerView.hidden = NO;
-                self.view.captionTopContainerView.hidden = NO;
-                self.view.messageLabel.hidden = YES;
-                self.view.externalDeviceView.hidden = ![self isPlayingOnExternalDevice];
                 [self.player play];
             } break;
             case VKVideoPlayerStateContentPaused:
                 self.playerControlsEnabled = YES;
                 [self.view setPlayButtonsSelected:YES];
                 self.view.playerLayerView.hidden = NO;
-                self.view.captionTopContainerView.hidden = NO;
                 self.track.lastDurationWatchedInSeconds = [NSNumber numberWithFloat:[self currentTime]];
-                self.view.bigPlayButton.hidden = NO;
-                self.view.messageLabel.hidden = YES;
-                self.view.externalDeviceView.hidden = ![self isPlayingOnExternalDevice];
                 [self.player pause];
                 break;
             case VKVideoPlayerStateSuspend:
@@ -742,10 +726,8 @@ typedef enum {
                 break;
             case VKVideoPlayerStateError:{
                 [self.player pause];
-                self.view.externalDeviceView.hidden = YES;
                 self.view.playerLayerView.hidden = YES;
                 self.playerControlsEnabled = NO;
-                self.view.messageLabel.hidden = NO;
                 self.view.controlHideCountdown = kPlayerControlsDisableAutoHide;
                 break;
             }
@@ -835,17 +817,6 @@ typedef enum {
 - (void)setPlayerControlsEnabled:(BOOL)enabled {
     [self.view setControlsEnabled:enabled];
 }
-
-
-- (void)updateTrackControls {
-    RUN_ON_UI_THREAD(^{
-        if (self.view.isControlsEnabled) {
-            self.view.previousButton.enabled = self.track.hasPrevious;
-            self.view.nextButton.enabled = self.track.hasNext;
-        }
-    });
-}
-
 
 #pragma mark - VKScrubberDelegate
 
