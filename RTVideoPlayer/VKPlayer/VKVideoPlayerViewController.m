@@ -75,7 +75,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.player.delegate = self;
+//    self.player.delegate = self;
     
     if (VKSharedAirplay.isConnected) {
         [VKSharedAirplay activate:self.player];
