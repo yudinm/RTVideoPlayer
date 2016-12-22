@@ -32,6 +32,7 @@ static const int ddLogLevel = DDLogLevelWarning;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *btAirPlayWidthHidder;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *btAirPlaySpacerHidder;
+@property (strong, nonatomic) IBOutlet UIPinchGestureRecognizer *pinchGesture;
 
 @end
 
@@ -238,6 +239,12 @@ static const int ddLogLevel = DDLogLevelWarning;
 
 - (IBAction)handleSwipeRight:(id)sender {
     [self.delegate previousTrackBySwipe];
+}
+
+- (IBAction)handlePinch:(id)sender;
+{
+    UIPinchGestureRecognizer *gesture = (UIPinchGestureRecognizer *)sender;
+    gesture.scale > 2.0 || gesture.velocity > 5.0 ? [self.delegate pinchIn] : [self.delegate pinchOut];
 }
 
 - (void)setControlHideCountdown:(NSInteger)controlHideCountdown {

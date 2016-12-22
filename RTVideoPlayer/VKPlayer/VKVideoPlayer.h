@@ -82,6 +82,10 @@ typedef enum {
 //- (void)videoPlayer:(VKVideoPlayer*)videoPlayer didChangeOrientationFrom:(UIInterfaceOrientation)orientation;
 
 - (void)handleErrorCode:(VKVideoPlayerErrorCode)errorCode track:(id<VKVideoPlayerTrackProtocol>)track customMessage:(NSString*)customMessage;
+
+- (void)handlePinchIn:(VKVideoPlayer*)videoPlayer;
+- (void)handlePinchOut:(VKVideoPlayer*)videoPlayer;
+
 @end
 
 

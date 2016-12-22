@@ -43,6 +43,9 @@
 - (void)scrubbingBegin;
 - (void)scrubbingEnd;
 
+- (void)pinchIn;
+- (void)pinchOut;
+
 @end
 
 @interface VKVideoPlayerView : UIView
@@ -78,6 +81,7 @@
 - (IBAction)handleSingleTap:(id)sender;
 - (IBAction)handleSwipeLeft:(id)sender;
 - (IBAction)handleSwipeRight:(id)sender;
+- (IBAction)handlePinch:(id)sender;
 
 - (void)resetTimeLabelsInit; // add by vince
 - (void)updateTimeLabels;

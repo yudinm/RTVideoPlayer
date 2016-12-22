@@ -83,7 +83,7 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
     
     [self.vkPlayerViewController didMoveToParentViewController:self];
     
-    NSURL *url = [NSURL URLWithString:@"https://cdn.rt.com/files/2016.11/5837f8ecc461889a478b461d.mp4"];
+    NSURL *url = [NSURL URLWithString:@"https://cdn.rt.com/files/2016.12/5857894dc3618842338b459e.mp4"];
     [self.vkPlayerViewController playVideoWithStreamURL:url];
 }
 
@@ -101,9 +101,9 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
 
 #pragma mark - VKVideoPlayerControllerDelegate
 
-- (void)videoPlayer:(VKVideoPlayer*)videoPlayer didControlByEvent:(VKVideoPlayerControlEvent)event {
+- (void)videoPlayer:(VKVideoPlayer*)videoPlayer didControlByEvent:(VKVideoPlayerControlEvent)event;
+{
     DDLogDebug(@"%s event:%d", __FUNCTION__, event);
-    __weak __typeof(self) weakSelf = self;
     
     if (event == VKVideoPlayerControlEventTapDone) {
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -112,28 +112,58 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
     if (event == VKVideoPlayerControlEventTapFullScreen) {
         
         if ([self.presentedViewController isKindOfClass:[VKVideoPlayerViewController class]]) {
-            VKVideoPlayerViewController *videoController = (VKVideoPlayerViewController *)self.presentedViewController;
-            [videoController dismissViewControllerAnimated:YES completion:^{
-                weakSelf.vkPlayerViewController.player.fullScreen = NO;
-                [UIView performWithoutAnimation:^{
-                    
-                    [weakSelf.vPlayerContainer addSubview:weakSelf.vkPlayerViewController.player.view];
-                    
-                }];
-            }];
+            [self toNormalScreenVideo];
             return;
         }
-        
-        UIView *snapShot = [self.vPlayerContainer snapshotViewAfterScreenUpdates:YES];
-        [self.vPlayerContainer insertSubview:snapShot atIndex:self.vPlayerContainer.subviews.count - 1];
-        [self.vkPlayerViewController_fullScreen updatePlayerView];
-        [self.vkPlayerViewController presentViewController:self.vkPlayerViewController_fullScreen animated:YES completion:^{
-            weakSelf.vkPlayerViewController_fullScreen.player.fullScreen = YES;
-            weakSelf.vkPlayerViewController_fullScreen.player.delegate = weakSelf;
-            [snapShot removeFromSuperview];
-        }];
+        [self toFullScreenVideo];
     }
     
+}
+
+- (void)toNormalScreenVideo;
+{
+    if (!self.vkPlayerViewController.player.fullScreen || ![self.presentedViewController isKindOfClass:[VKVideoPlayerViewController class]]) {
+        return;
+    }
+    __weak __typeof(self) weakSelf = self;
+    VKVideoPlayerViewController *videoController = (VKVideoPlayerViewController *)self.presentedViewController;
+    [videoController dismissViewControllerAnimated:YES completion:^{
+        weakSelf.vkPlayerViewController.player.fullScreen = NO;
+        [weakSelf.vkPlayerViewController_fullScreen removeFromParentViewController];
+        _vkPlayerViewController_fullScreen = nil;
+        [UIView performWithoutAnimation:^{
+            
+            [weakSelf.vPlayerContainer addSubview:weakSelf.vkPlayerViewController.player.view];
+            
+        }];
+    }];
+}
+
+- (void)toFullScreenVideo;
+{
+    if (self.vkPlayerViewController_fullScreen.player.fullScreen || self.presentedViewController == self.vkPlayerViewController_fullScreen) {
+        return;
+    }
+    __weak __typeof(self) weakSelf = self;
+    UIView *snapShot = [self.vPlayerContainer snapshotViewAfterScreenUpdates:YES];
+    [self.vPlayerContainer insertSubview:snapShot atIndex:self.vPlayerContainer.subviews.count - 1];
+    [self.vkPlayerViewController_fullScreen updatePlayerView];
+    [self.vkPlayerViewController presentViewController:self.vkPlayerViewController_fullScreen animated:YES completion:^{
+        weakSelf.vkPlayerViewController_fullScreen.player.fullScreen = YES;
+        weakSelf.vkPlayerViewController_fullScreen.player.delegate = weakSelf;
+        [snapShot removeFromSuperview];
+    }];
+    
+}
+
+- (void)handlePinchIn:(VKVideoPlayer *)videoPlayer;
+{
+    [self toFullScreenVideo];
+}
+
+- (void)handlePinchOut:(VKVideoPlayer *)videoPlayer;
+{
+    [self toNormalScreenVideo];
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate

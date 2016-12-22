@@ -42,12 +42,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RTVideoPlayer/VKPlayer/VKVideoPlayerView.m"
-            timestampString = "503329336.764333"
+            timestampString = "504030797.133789"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "-playButtonTapped:"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "-setDelegate:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RTVideoPlayerDemo/MainDemoViewController.m"
+            timestampString = "504091587.450858"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "-toNormalScreenVideo"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

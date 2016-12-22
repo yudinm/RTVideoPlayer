@@ -1017,6 +1017,16 @@ typedef enum {
     }
 }
 
+- (void)pinchIn;
+{
+    [self.delegate handlePinchIn:self];
+}
+
+- (void)pinchOut;
+{
+    [self.delegate handlePinchOut:self];
+}
+
 @end
 
 

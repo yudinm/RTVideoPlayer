@@ -126,11 +126,23 @@
 }
 
 #pragma mark - VKVideoPlayerControllerDelegate
+
 - (void)videoPlayer:(VKVideoPlayer*)videoPlayer didControlByEvent:(VKVideoPlayerControlEvent)event {
     if (event == VKVideoPlayerControlEventTapDone) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
+
+- (void)handlePinchIn:(VKVideoPlayer *)videoPlayer;
+{
+    
+}
+
+- (void)handlePinchOut:(VKVideoPlayer *)videoPlayer;
+{
+    
+}
+
 
 #pragma mark - Remote Control
 
@@ -158,6 +170,7 @@
         case UIEventSubtypeRemoteControlEndSeekingForward:break;
     }
 }
+
 
 
 @end
