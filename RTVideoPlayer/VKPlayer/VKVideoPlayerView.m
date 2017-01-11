@@ -106,6 +106,10 @@ static const int ddLogLevel = DDLogLevelWarning;
     
 }
 
+- (IBAction)downloadButtonTapped:(id)sender {
+    [self.delegate downloadButtonPressed];
+}
+
 - (IBAction)nextTrackButtonPressed:(id)sender {
     [self.delegate nextTrackButtonPressed];
 }
@@ -134,7 +138,6 @@ static const int ddLogLevel = DDLogLevelWarning;
 - (IBAction)doneButtonTapped:(id)sender {
     [self.delegate doneButtonTapped];
 }
-
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if (object == self.scrubber) {

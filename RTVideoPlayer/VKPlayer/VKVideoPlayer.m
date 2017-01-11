@@ -99,11 +99,6 @@ typedef enum {
     self.scrubbing = NO;
     self.beforeSeek = 0.0;
     self.previousPlaybackTime = 0;
-    
-    CGRect bounds = [[UIScreen mainScreen] bounds];
-    
-    self.portraitFrame = CGRectMake(0, 0, MIN(bounds.size.width, bounds.size.height), MAX(bounds.size.width, bounds.size.height));
-    self.landscapeFrame = CGRectMake(0, 0, MAX(bounds.size.width, bounds.size.height), MIN(bounds.size.width, bounds.size.height));
 }
 
 - (void)initializePlayerView {
@@ -906,6 +901,12 @@ typedef enum {
     }
 }
 
+- (void)downloadButtonPressed {
+    if ([self.delegate respondsToSelector:@selector(videoPlayer:didControlByEvent:)]) {
+        [self.delegate videoPlayer:self didControlByEvent:VKVideoPlayerControlEventDownload];
+    }
+}
+
 - (void)nextTrackButtonPressed {
     if (self.track.hasNext) {
         if ([self.delegate respondsToSelector:@selector(videoPlayer:didControlByEvent:)]) {
@@ -964,6 +965,17 @@ typedef enum {
     }
 }
 
+- (void)pinchIn;
+{
+    [self.delegate handlePinchIn:self];
+}
+
+- (void)pinchOut;
+{
+    [self.delegate handlePinchOut:self];
+}
+
+
 #pragma mark - Auto hide controls
 
 - (void)setLoading:(BOOL)loading {
@@ -1015,16 +1027,6 @@ typedef enum {
                 break;
         }
     }
-}
-
-- (void)pinchIn;
-{
-    [self.delegate handlePinchIn:self];
-}
-
-- (void)pinchOut;
-{
-    [self.delegate handlePinchOut:self];
 }
 
 @end

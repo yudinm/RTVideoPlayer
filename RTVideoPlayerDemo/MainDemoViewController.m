@@ -12,6 +12,8 @@
 
 static DDLogLevel ddLogLevel = DDLogLevelAll;
 
+static NSString *stringURL = @"https://cdn.rt.com/files/2016.12/5857894dc3618842338b459e.mp4";
+
 @interface MainDemoViewController () <VKVideoPlayerDelegate, UIViewControllerTransitioningDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *vPlayerContainer;
@@ -83,7 +85,7 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
     
     [self.vkPlayerViewController didMoveToParentViewController:self];
     
-    NSURL *url = [NSURL URLWithString:@"https://cdn.rt.com/files/2016.12/5857894dc3618842338b459e.mp4"];
+    NSURL *url = [NSURL URLWithString:stringURL];
     [self.vkPlayerViewController playVideoWithStreamURL:url];
 }
 
@@ -96,7 +98,7 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
 - (void)viewDidDisappear:(BOOL)animated;
 {
     [super viewDidDisappear:animated];
-    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - VKVideoPlayerControllerDelegate
@@ -116,6 +118,10 @@ static DDLogLevel ddLogLevel = DDLogLevelAll;
             return;
         }
         [self toFullScreenVideo];
+    }
+    
+    if (event == VKVideoPlayerControlEventDownload) {
+        DDLogInfo(@"VKVideoPlayerControlEventDownload");
     }
     
 }

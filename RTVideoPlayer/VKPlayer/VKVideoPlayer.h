@@ -59,11 +59,14 @@ typedef enum {
     VKVideoPlayerControlEventTapVideoQuality,
     VKVideoPlayerControlEventSwipeNext,
     VKVideoPlayerControlEventSwipePrevious,
+    VKVideoPlayerControlEventDownload,
 } VKVideoPlayerControlEvent;
 
 
 @class VKVideoPlayer;
+
 @protocol VKVideoPlayerDelegate <NSObject>
+
 @optional
 - (BOOL)shouldVideoPlayer:(VKVideoPlayer*)videoPlayer changeStateTo:(VKVideoPlayerState)toState;
 - (void)videoPlayer:(VKVideoPlayer*)videoPlayer willChangeStateTo:(VKVideoPlayerState)toState;
@@ -78,8 +81,6 @@ typedef enum {
 - (void)videoPlayer:(VKVideoPlayer*)videoPlayer didPlayToEnd:(id<VKVideoPlayerTrackProtocol>)track;
 - (void)videoPlayer:(VKVideoPlayer*)videoPlayer didControlByEvent:(VKVideoPlayerControlEvent)event;
 - (void)videoPlayer:(VKVideoPlayer*)videoPlayer didChangeSubtitleFrom:(NSString*)fronLang to:(NSString*)toLang;
-//- (void)videoPlayer:(VKVideoPlayer*)videoPlayer willChangeOrientationTo:(UIInterfaceOrientation)orientation;
-//- (void)videoPlayer:(VKVideoPlayer*)videoPlayer didChangeOrientationFrom:(UIInterfaceOrientation)orientation;
 
 - (void)handleErrorCode:(VKVideoPlayerErrorCode)errorCode track:(id<VKVideoPlayerTrackProtocol>)track customMessage:(NSString*)customMessage;
 
@@ -93,11 +94,13 @@ typedef enum {
 
 
 @protocol VKPlayer <NSObject>
+
 - (void)play;
 - (void)pause;
 - (CMTime)currentCMTime;
 - (NSTimeInterval)currentItemDuration;
 - (void)seekToTimeInSeconds:(float)time completionHandler:(void (^)(BOOL finished))completionHandler;
+
 @end
 
 
@@ -125,9 +128,6 @@ VKVideoPlayerViewDelegate
 
 @property (nonatomic, strong, readonly) NSURL* streamURL;
 @property (nonatomic, strong) NSString* defaultStreamKey;
-
-@property (nonatomic, assign) CGRect portraitFrame;
-@property (nonatomic, assign) CGRect landscapeFrame;
 
 
 - (id)initWithVideoPlayerView:(VKVideoPlayerView*)videoPlayerView;
