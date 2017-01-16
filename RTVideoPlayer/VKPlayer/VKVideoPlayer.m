@@ -601,6 +601,10 @@ typedef enum {
             }
         }
         if ([keyPath isEqualToString:@"playbackLikelyToKeepUp"]) {
+            if (self.view.window == nil) {
+                self.state = VKVideoPlayerStateContentPaused;
+                return;
+            }
             if (self.playerItem.playbackLikelyToKeepUp && [self.delegate respondsToSelector:@selector(videoPlayer:isBuffering:)]) {
                 [self.delegate videoPlayer:self isBuffering:NO];
             }
