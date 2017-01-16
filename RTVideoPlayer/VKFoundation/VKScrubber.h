@@ -8,6 +8,8 @@
 @protocol VKScrubberDelegate <NSObject>
 - (void)scrubbingBegin;
 - (void)scrubbingEnd;
+@optional
+- (void)scrubberValueChanged;
 @end
 
 @interface VKScrubber : VKSlider <VKScrubberDelegate>

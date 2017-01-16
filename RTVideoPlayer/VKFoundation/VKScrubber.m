@@ -7,9 +7,9 @@
 #import <CocoaLumberjack/CocoaLumberjack.h>
 
 #ifdef DEBUG
-  static const int ddLogLevel = DDLogLevelWarning;
+  static DDLogLevel ddLogLevel = DDLogLevelWarning;
 #else
-  static const int ddLogLevel = DDLogLevelWarning;
+  static DDLogLevel ddLogLevel = DDLogLevelWarning;
 #endif
 
 @interface VKScrubber ()
@@ -33,6 +33,8 @@
     if (self.userInteractionEnabled) {
         [self setThumbImage:[[UIImage imageNamed:@"VKScrubber_thumb"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
                    forState:UIControlStateNormal];        
+        [self setThumbImage:[[UIImage imageNamed:@"VKScrubber_thumb"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
+                   forState:UIControlStateHighlighted];
     }
   
   [self addTarget:self action:@selector(scrubbingBegin) forControlEvents:UIControlEventTouchDown];
@@ -54,6 +56,7 @@
 
 - (void)scrubberValueChanged {
   DDLogVerbose(@"SCRUBBER: Change %f", self.value);
+  [self.delegate scrubberValueChanged];
 }
 
 @end

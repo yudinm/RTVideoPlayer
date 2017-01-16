@@ -16,9 +16,9 @@
 #define PADDING 8
 
 #ifdef DEBUG
-static const int ddLogLevel = DDLogLevelWarning;
+    static DDLogLevel ddLogLevel = DDLogLevelWarning;
 #else
-static const int ddLogLevel = DDLogLevelWarning;
+    static DDLogLevel ddLogLevel = DDLogLevelWarning;
 #endif
 
 @interface VKVideoPlayerView()

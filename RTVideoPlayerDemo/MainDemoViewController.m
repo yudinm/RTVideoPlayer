@@ -10,9 +10,9 @@
 #import "VKVideoPlayerViewController.h"
 #import "RTFullScreenTransition.h"
 
-static DDLogLevel ddLogLevel = DDLogLevelAll;
+static DDLogLevel ddLogLevel = DDLogLevelWarning;
 
-static NSString *stringURL = @"https://cdn.rt.com/files/2016.12/5857894dc3618842338b459e.mp4";
+static NSString *stringURL = @"https://cdn.rt.com/files/2017.01/5879d7d2c4618866678b45e3.mp4";
 
 @interface MainDemoViewController () <VKVideoPlayerDelegate, UIViewControllerTransitioningDelegate>
 

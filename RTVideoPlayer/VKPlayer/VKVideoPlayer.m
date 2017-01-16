@@ -831,6 +831,12 @@ typedef enum {
     }];
 }
 
+- (void)scrubberValueChanged;
+{
+    self.activePlayerView.replayButton.hidden = YES;
+    self.activePlayerView.playButton.hidden = NO;
+}
+
 - (void)zoomInPressed {
     ((AVPlayerLayer *)self.view.layer).videoGravity = AVLayerVideoGravityResizeAspectFill;
     if ([[[UIDevice currentDevice] systemVersion] hasPrefix:@"5"]) {
