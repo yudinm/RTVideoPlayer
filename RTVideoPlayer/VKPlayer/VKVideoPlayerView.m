@@ -127,6 +127,11 @@
     [self.delegate fullScreenButtonTapped];
 }
 
+- (IBAction)pipButtonTapped:(id)sender {
+    self.pipButton.piPEnabled = !self.pipButton.piPEnabled;
+    [self.delegate pipButtonTapped];
+}
+
 - (IBAction)captionButtonTapped:(id)sender {
     [self.delegate captionButtonTapped];
 }

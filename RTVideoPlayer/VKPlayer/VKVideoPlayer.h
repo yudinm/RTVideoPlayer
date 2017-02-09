@@ -60,6 +60,7 @@ typedef enum {
     VKVideoPlayerControlEventSwipeNext,
     VKVideoPlayerControlEventSwipePrevious,
     VKVideoPlayerControlEventDownload,
+    VKVideoPlayerControlEventPiP,
 } VKVideoPlayerControlEvent;
 
 

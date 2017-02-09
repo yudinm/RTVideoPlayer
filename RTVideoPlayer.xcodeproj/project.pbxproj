@@ -32,6 +32,7 @@
 		5E5F8DA91DD22AD5006E1D00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8DA51DD22AD5006E1D00 /* AppDelegate.m */; };
 		5E5F8DAB1DD22AD5006E1D00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8DA71DD22AD5006E1D00 /* main.m */; };
 		5E5F8DAE1DD22AE3006E1D00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8DAC1DD22AE3006E1D00 /* LaunchScreen.storyboard */; };
+		5E69F2191E38E9DC00100127 /* RTPiPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E69F2181E38E9DC00100127 /* RTPiPButton.m */; };
 		5EA5F96C1DEC6E6900154A69 /* RTFullScreenTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5F96B1DEC6E6900154A69 /* RTFullScreenTransition.m */; };
 		5EC51D761DF84323002C738D /* RTPlayPauseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC51D751DF84323002C738D /* RTPlayPauseButton.m */; };
 		5EC51D7C1DF846F8002C738D /* RTPlayPauseButtonDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC51D7B1DF846F8002C738D /* RTPlayPauseButtonDemoViewController.m */; };
@@ -88,6 +89,8 @@
 		5E5F8DA71DD22AD5006E1D00 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5E5F8DA81DD22AD5006E1D00 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		5E5F8DAD1DD22AE3006E1D00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5E69F2171E38E9DC00100127 /* RTPiPButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTPiPButton.h; path = VKPlayer/RTPiPButton.h; sourceTree = "<group>"; };
+		5E69F2181E38E9DC00100127 /* RTPiPButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTPiPButton.m; path = VKPlayer/RTPiPButton.m; sourceTree = "<group>"; };
 		5EA5F96A1DEC6E6900154A69 /* RTFullScreenTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTFullScreenTransition.h; path = VKPlayer/RTFullScreenTransition.h; sourceTree = "<group>"; };
 		5EA5F96B1DEC6E6900154A69 /* RTFullScreenTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTFullScreenTransition.m; path = VKPlayer/RTFullScreenTransition.m; sourceTree = "<group>"; };
 		5EC51D741DF84323002C738D /* RTPlayPauseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTPlayPauseButton.h; path = VKPlayer/RTPlayPauseButton.h; sourceTree = "<group>"; };
@@ -184,6 +187,8 @@
 				5EC51D7E1DF992CB002C738D /* RTFullScreenButton.m */,
 				5EA5F96A1DEC6E6900154A69 /* RTFullScreenTransition.h */,
 				5EA5F96B1DEC6E6900154A69 /* RTFullScreenTransition.m */,
+				5E69F2171E38E9DC00100127 /* RTPiPButton.h */,
+				5E69F2181E38E9DC00100127 /* RTPiPButton.m */,
 				5EC51D741DF84323002C738D /* RTPlayPauseButton.h */,
 				5EC51D751DF84323002C738D /* RTPlayPauseButton.m */,
 				5E5F8D501DD1DBFA006E1D00 /* VKVideoPlayer.h */,
@@ -378,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EA5F96C1DEC6E6900154A69 /* RTFullScreenTransition.m in Sources */,
+				5E69F2191E38E9DC00100127 /* RTPiPButton.m in Sources */,
 				5EC51D7C1DF846F8002C738D /* RTPlayPauseButtonDemoViewController.m in Sources */,
 				5E5F8D6A1DD1DBFA006E1D00 /* VKVideoPlayerCaption.m in Sources */,
 				5E5F8D841DD1DDF4006E1D00 /* VKSlider.m in Sources */,

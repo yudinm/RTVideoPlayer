@@ -985,6 +985,13 @@ typedef enum {
     [self.delegate handlePinchOut:self];
 }
 
+- (void)pipButtonTapped;
+{
+    if ([self.delegate respondsToSelector:@selector(videoPlayer:didControlByEvent:)]) {
+        [self.delegate videoPlayer:self didControlByEvent:VKVideoPlayerControlEventPiP];
+    }
+}
+
 
 #pragma mark - Auto hide controls
 

@@ -35,6 +35,9 @@
                    forState:UIControlStateNormal];        
         [self setThumbImage:[[UIImage imageNamed:@"VKScrubber_thumb"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
                    forState:UIControlStateHighlighted];
+    } else {
+        [self setThumbImage:[[UIImage alloc] init] forState:UIControlStateNormal];
+        [self setThumbImage:[[UIImage alloc] init] forState:UIControlStateHighlighted];
     }
   
   [self addTarget:self action:@selector(scrubbingBegin) forControlEvents:UIControlEventTouchDown];

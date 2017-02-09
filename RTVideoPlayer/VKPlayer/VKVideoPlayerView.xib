@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,6 +21,7 @@
                 <outlet property="downloadButton" destination="hjc-tB-WHU" id="LF3-2W-Wrq"/>
                 <outlet property="fullscreenButton" destination="9NI-r6-2yb" id="zCI-Xo-jyO"/>
                 <outlet property="pinchGesture" destination="8he-Ph-EOG" id="70O-vv-Sfm"/>
+                <outlet property="pipButton" destination="MVk-oK-mAz" id="BLf-XD-MfP"/>
                 <outlet property="playButton" destination="4N6-e8-K6s" id="DnV-XK-awe"/>
                 <outlet property="playerLayerView" destination="cfn-hW-WG7" id="6xW-4T-Gbm"/>
                 <outlet property="progressBar" destination="zNh-O5-BSd" id="yHF-MS-7VB"/>
@@ -90,7 +91,7 @@
                             <rect key="frame" x="0.0" y="132" width="320" height="48"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnR-VJ-0Jd">
-                                    <rect key="frame" x="212.5" y="0.0" width="35.5" height="48"/>
+                                    <rect key="frame" x="168.5" y="0.0" width="35.5" height="48"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="749" constant="32" id="D7p-Az-85t"/>
                                     </constraints>
@@ -108,16 +109,29 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.40000000596046448" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zNh-O5-BSd" customClass="VKScrubber">
-                                    <rect key="frame" x="57.5" y="8" width="149" height="33"/>
+                                    <rect key="frame" x="57.5" y="8" width="105" height="33"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="32" id="R9o-9x-jt6"/>
                                     </constraints>
                                     <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </slider>
                                 <slider opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.20000000298023224" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="RwN-bq-5ht" customClass="VKScrubber">
-                                    <rect key="frame" x="57.5" y="8" width="149" height="33"/>
+                                    <rect key="frame" x="57.5" y="8" width="105" height="33"/>
                                     <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </slider>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVk-oK-mAz" userLabel="PipButton" customClass="RTPiPButton">
+                                    <rect key="frame" x="216" y="2" width="44" height="44"/>
+                                    <accessibility key="accessibilityConfiguration" label="PiP"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="999" constant="44" id="8Ed-ft-OQq"/>
+                                        <constraint firstAttribute="width" priority="999" constant="44" id="bZE-Hg-WV4"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <action selector="pipButtonTapped:" destination="-1" eventType="touchUpInside" id="IXT-fl-zwz"/>
+                                    </connections>
+                                </button>
                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9NI-r6-2yb" customClass="RTFullScreenButton">
                                     <rect key="frame" x="264" y="2" width="44" height="44"/>
                                     <accessibility key="accessibilityConfiguration" label="Fullscreen"/>
@@ -132,7 +146,7 @@
                                     </connections>
                                 </button>
                                 <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUl-lQ-nBm" userLabel="AirPlay View" customClass="MPVolumeView">
-                                    <rect key="frame" x="256" y="2" width="0.0" height="44"/>
+                                    <rect key="frame" x="212" y="2" width="0.0" height="44"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
@@ -152,6 +166,7 @@
                                 <constraint firstItem="RwN-bq-5ht" firstAttribute="trailing" secondItem="zNh-O5-BSd" secondAttribute="trailing" id="7eo-ti-8Uy"/>
                                 <constraint firstItem="RwN-bq-5ht" firstAttribute="leading" secondItem="zNh-O5-BSd" secondAttribute="leading" id="A4e-zC-mjp"/>
                                 <constraint firstItem="DnR-VJ-0Jd" firstAttribute="top" secondItem="vpb-xw-dlb" secondAttribute="top" id="Da2-p7-bD4"/>
+                                <constraint firstItem="MVk-oK-mAz" firstAttribute="leading" secondItem="NUl-lQ-nBm" secondAttribute="trailing" constant="4" id="Hm1-ih-yRq"/>
                                 <constraint firstAttribute="bottom" secondItem="mlt-5u-Wdp" secondAttribute="bottom" id="MK9-pn-GB8"/>
                                 <constraint firstItem="9NI-r6-2yb" firstAttribute="centerY" secondItem="RwN-bq-5ht" secondAttribute="centerY" id="RMz-bg-fBc"/>
                                 <constraint firstItem="NUl-lQ-nBm" firstAttribute="leading" secondItem="DnR-VJ-0Jd" secondAttribute="trailing" constant="8" id="RcE-yD-Gnv"/>
@@ -163,7 +178,9 @@
                                 <constraint firstItem="9NI-r6-2yb" firstAttribute="leading" secondItem="NUl-lQ-nBm" secondAttribute="trailing" priority="1" identifier="btAirPlaySpacerHidder" id="c2K-UF-cID"/>
                                 <constraint firstAttribute="height" constant="48" id="fDG-rW-Xmn"/>
                                 <constraint firstItem="DnR-VJ-0Jd" firstAttribute="leading" secondItem="zNh-O5-BSd" secondAttribute="trailing" constant="8" id="iTI-6v-d0U"/>
+                                <constraint firstItem="MVk-oK-mAz" firstAttribute="centerY" secondItem="zNh-O5-BSd" secondAttribute="centerY" id="n3F-OP-xsJ"/>
                                 <constraint firstItem="mlt-5u-Wdp" firstAttribute="leading" secondItem="vpb-xw-dlb" secondAttribute="leading" constant="16" id="nZB-I0-n9a"/>
+                                <constraint firstItem="9NI-r6-2yb" firstAttribute="leading" secondItem="MVk-oK-mAz" secondAttribute="trailing" constant="4" id="tSm-Vv-zzM"/>
                                 <constraint firstItem="mlt-5u-Wdp" firstAttribute="top" secondItem="vpb-xw-dlb" secondAttribute="top" id="x5J-bP-Wql"/>
                                 <constraint firstItem="NUl-lQ-nBm" firstAttribute="centerY" secondItem="DnR-VJ-0Jd" secondAttribute="centerY" id="ykH-qn-rSh"/>
                             </constraints>

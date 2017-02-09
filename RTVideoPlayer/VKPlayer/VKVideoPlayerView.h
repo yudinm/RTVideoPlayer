@@ -13,6 +13,7 @@
 #import "VKVideoPlayerConfig.h"
 #import "RTPlayPauseButton.h"
 #import "RTFullScreenButton.h"
+#import "RTPiPButton.h"
 
 #define kPlayerControlsDisableAutoHide -1
 
@@ -22,6 +23,7 @@
 @protocol VKVideoPlayerViewDelegate <VKScrubberDelegate>
 @property (nonatomic, readonly) VKVideoPlayerTrack* videoTrack;
 - (void)fullScreenButtonTapped;
+- (void)pipButtonTapped;
 - (void)playButtonPressed;
 - (void)pauseButtonPressed;
 - (void)replayButtonPressed;
@@ -64,6 +66,7 @@
 @property (nonatomic, strong) IBOutlet UILabel* totalTimeLabel;
 @property (nonatomic, strong) IBOutlet RTFullScreenButton* fullscreenButton;
 @property (weak, nonatomic) IBOutlet UIButton *downloadButton;
+@property (weak, nonatomic) IBOutlet RTPiPButton *pipButton;
 
 @property (nonatomic, readonly) BOOL isControlsEnabled;
 @property (nonatomic, readonly) BOOL isControlsHidden;
