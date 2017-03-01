@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "RTVideoPlayer"
-  s.version      = "0.0.14"
+  s.version      = "0.0.15"
   s.summary      = "RTVideoPlayer is Objective-C video player implementation based on AVFramework and VKPlayerView."
 
   # This description is used to generate tags and improve search results.
@@ -84,7 +84,8 @@ Pod::Spec.new do |s|
   #
 
   # s.source       = { :git => "http://EXAMPLE/RTVideoPlayer.git", :tag => "#{s.version}" }
-  s.source = { :git => "git@github.com:yudinm/RTVideoPlayer.git" }
+  #s.source = { :git => "git@github.com:yudinm/RTVideoPlayer.git" }
+  s.source = { :git => "https://github.com/yudinm/RTVideoPlayer.git" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
