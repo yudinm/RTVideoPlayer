@@ -110,7 +110,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  s.resources = '**/*.xcassets' , 'RTVideoPlayer/**/*.{xib}'
+  s.resources = 'RTVideoPlayer/**/*.xcassets' , 'RTVideoPlayer/**/*.{xib}'
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
