@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "RTVideoPlayer"
-  s.version      = "0.0.15"
+  s.version      = "0.0.16"
   s.summary      = "RTVideoPlayer is Objective-C video player implementation based on AVFramework and VKPlayerView."
 
   # This description is used to generate tags and improve search results.
@@ -110,7 +110,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  s.resources = 'RTVideoPlayer/**/*.xcassets' , 'RTVideoPlayer/**/*.{xib}'
+  s.resources = 'RTVideoPlayer/**/*.bundle' , 'RTVideoPlayer/**/*.{xib}'
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 

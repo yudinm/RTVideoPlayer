@@ -12,7 +12,7 @@
 
 static DDLogLevel ddLogLevel = DDLogLevelWarning;
 
-static NSString *stringURL = @"https://cdn.rt.com/files/2017.01/5879d7d2c4618866678b45e3.mp4";
+static NSString *stringURL = @"https://cdnv.rt.com/files/2017.05/590b2c19c36188881e8b4572.mp4";
 
 @interface MainDemoViewController () <VKVideoPlayerDelegate, UIViewControllerTransitioningDelegate>
 

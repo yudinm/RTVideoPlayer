@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E90DEEF04C98E0543A61FCC /* libPods-RTVideoPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 380D1D801C8EB7D7DE0C23A5 /* libPods-RTVideoPlayer.a */; };
-		5E5F8D191DD1D37E006E1D00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8D181DD1D37E006E1D00 /* Assets.xcassets */; };
+		5E09B5C31F8CFCB800329611 /* Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5E09B5C21F8CFCB800329611 /* Resources.bundle */; };
 		5E5F8D251DD1D920006E1D00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F8D241DD1D920006E1D00 /* Main.storyboard */; };
 		5E5F8D281DD1D955006E1D00 /* MainDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D271DD1D955006E1D00 /* MainDemoViewController.m */; };
 		5E5F8D681DD1DBFA006E1D00 /* VKVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8D511DD1DBFA006E1D00 /* VKVideoPlayer.m */; };
@@ -42,8 +42,8 @@
 
 /* Begin PBXFileReference section */
 		380D1D801C8EB7D7DE0C23A5 /* libPods-RTVideoPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RTVideoPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E09B5C21F8CFCB800329611 /* Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resources.bundle; sourceTree = "<group>"; };
 		5E5F8D091DD1D37E006E1D00 /* RTVideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTVideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E5F8D181DD1D37E006E1D00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E5F8D241DD1D920006E1D00 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = RTVideoPlayerDemo/Main.storyboard; sourceTree = "<group>"; };
 		5E5F8D261DD1D955006E1D00 /* MainDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainDemoViewController.h; path = RTVideoPlayerDemo/MainDemoViewController.h; sourceTree = "<group>"; };
 		5E5F8D271DD1D955006E1D00 /* MainDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainDemoViewController.m; path = RTVideoPlayerDemo/MainDemoViewController.m; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 			children = (
 				5E5F8D751DD1DC7F006E1D00 /* VKFoundation */,
 				5E5F8D2A1DD1DBBF006E1D00 /* VKPlayer */,
-				5E5F8D181DD1D37E006E1D00 /* Assets.xcassets */,
+				5E09B5C21F8CFCB800329611 /* Resources.bundle */,
 			);
 			path = RTVideoPlayer;
 			sourceTree = "<group>";
@@ -280,7 +280,7 @@
 				TargetAttributes = {
 					5E5F8D081DD1D37E006E1D00 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = K2B5R7D5U8;
+						DevelopmentTeam = BT7NEHF4NA;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -315,10 +315,10 @@
 			files = (
 				5E5F8D251DD1D920006E1D00 /* Main.storyboard in Resources */,
 				5E5F8DAE1DD22AE3006E1D00 /* LaunchScreen.storyboard in Resources */,
+				5E09B5C31F8CFCB800329611 /* Resources.bundle in Resources */,
 				5E5F8D8B1DD1EED4006E1D00 /* VKVideoPlayerViewController~ipad.xib in Resources */,
 				5E5F8D8C1DD1EED4006E1D00 /* VKVideoPlayerViewController~iphone.xib in Resources */,
 				5E5F8D8E1DD1EFE3006E1D00 /* VKVideoPlayerView.xib in Resources */,
-				5E5F8D191DD1D37E006E1D00 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,13 +346,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RTVideoPlayer-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A854681A6030F1DEDB7614AA /* [CP] Copy Pods Resources */ = {
@@ -512,7 +515,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F2CE38926C8C23EC07F06328 /* Pods-RTVideoPlayer.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = K2B5R7D5U8;
+				DEVELOPMENT_TEAM = BT7NEHF4NA;
 				GCC_PREFIX_HEADER = "RTVideoPlayerDemo/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/RTVideoPlayerDemo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -526,7 +529,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 92D1BFA38481C49B25F2B485 /* Pods-RTVideoPlayer.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = K2B5R7D5U8;
+				DEVELOPMENT_TEAM = BT7NEHF4NA;
 				GCC_PREFIX_HEADER = "RTVideoPlayerDemo/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/RTVideoPlayerDemo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

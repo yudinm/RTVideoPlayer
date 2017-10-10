@@ -64,6 +64,10 @@
     [self.controls setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:0.5]];
     self.fullscreenButton.hidden = NO;
     self.playerControlsAutoHideTime = @2.5;
+    
+    NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"Resources" ofType:@"bundle"]];
+    UIImage *image  = [UIImage imageNamed:@"replay" inBundle:bundle compatibleWithTraitCollection:nil];
+    [self.replayButton setImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
 }
 
 - (id)initWithFrame:(CGRect)frame {

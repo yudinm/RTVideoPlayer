@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RTVideoPlayer/VKPlayer/VKVideoPlayerView.m"
-            timestampString = "507049190.2317"
+            timestampString = "529341870.234247"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "-setDelegate:"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "-durationDidLoad:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RTVideoPlayer/VKPlayer/VKVideoPlayerView.m"
-            timestampString = "507049190.2317"
+            timestampString = "529341870.234317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
             landmarkName = "-scrubberValueUpdated:"
             landmarkType = "7">
          </BreakpointContent>

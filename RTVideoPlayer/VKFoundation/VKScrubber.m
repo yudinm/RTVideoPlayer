@@ -22,18 +22,24 @@
 
 - (void) initialize {
 
-  [self setMaximumTrackImage:[[[UIImage imageNamed:@"VKScrubber_max"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
+    NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"Resources" ofType:@"bundle"]];
+    UIImage *image  = [UIImage imageNamed:@"VKScrubber_max" inBundle:bundle compatibleWithTraitCollection:nil];
+    
+    [self setMaximumTrackImage:[[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
       resizableImageWithCapInsets:UIEdgeInsetsMake(0, 4, 0, 4)]
       forState:UIControlStateNormal];
     self.maximumTrackTintColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.2];
-  [self setMinimumTrackImage:[[[UIImage imageNamed:@"VKScrubber_min"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
+    
+    image  = [UIImage imageNamed:@"VKScrubber_min" inBundle:bundle compatibleWithTraitCollection:nil];
+    [self setMinimumTrackImage:[[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
       resizableImageWithCapInsets:UIEdgeInsetsMake(0, 4, 0, 4)]
       forState:UIControlStateNormal];
 //    self.minimumTrackTintColor = [self.superview.tintColor colorWithAlphaComponent:0.7];
     if (self.userInteractionEnabled) {
-        [self setThumbImage:[[UIImage imageNamed:@"VKScrubber_thumb"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
+        image  = [UIImage imageNamed:@"VKScrubber_thumb" inBundle:bundle compatibleWithTraitCollection:nil];
+        [self setThumbImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
                    forState:UIControlStateNormal];        
-        [self setThumbImage:[[UIImage imageNamed:@"VKScrubber_thumb"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
+        [self setThumbImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
                    forState:UIControlStateHighlighted];
     }
   
