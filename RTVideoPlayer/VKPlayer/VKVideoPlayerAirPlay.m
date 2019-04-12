@@ -8,11 +8,11 @@
 #import "VKVideoPlayerLayerView.h"
 #import "VKVideoPlayerConfig.h"
 
-#ifdef DEBUG
-static const int ddLogLevel = DDLogLevelWarning;
-#else
-static const int ddLogLevel = DDLogLevelWarning;
-#endif
+//#ifdef DEBUG
+//static const int ddLogLevel = DDLogLevelWarning;
+//#else
+//static const int ddLogLevel = DDLogLevelWarning;
+//#endif
 
 @implementation VKVideoPlayerAirPlay
 
@@ -137,7 +137,7 @@ static const int ddLogLevel = DDLogLevelWarning;
       break;
   }
   
-  DDLogVerbose(@"AIRPLAY: State: %@ -> %@", [self stateDescription:oldState], [self stateDescription:newState]);
+//  DDLogVerbose(@"AIRPLAY: State: %@ -> %@", [self stateDescription:oldState], [self stateDescription:newState]);
   
   [super setState:newState];
 //  _state = newState;

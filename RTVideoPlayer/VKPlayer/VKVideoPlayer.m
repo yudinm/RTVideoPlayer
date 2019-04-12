@@ -16,11 +16,11 @@
 #define VKCaptionPadding 10
 #define degreesToRadians(x) (M_PI * x / 180.0f)
 
-#ifdef DEBUG
-static const int ddLogLevel = DDLogLevelWarning;
-#else
-static const int ddLogLevel = DDLogLevelWarning;
-#endif
+//#ifdef DEBUG
+//static const int ddLogLevel = DDLogLevelWarning;
+//#else
+//static const int ddLogLevel = DDLogLevelWarning;
+//#endif
 
 NSString *kTracksKey		= @"tracks";
 NSString *kPlayableKey		= @"playable";
@@ -163,12 +163,12 @@ typedef enum {
 
 - (void)setTimeObserver:(id)timeObserver {
     if (_timeObserver) {
-        DDLogVerbose(@"TimeObserver: remove %@", _timeObserver);
+//        DDLogVerbose(@"TimeObserver: remove %@", _timeObserver);
         [self.avPlayer removeTimeObserver:_timeObserver];
     }
     _timeObserver = timeObserver;
     if (timeObserver) {
-        DDLogVerbose(@"TimeObserver: setup %@", _timeObserver);
+//        DDLogVerbose(@"TimeObserver: setup %@", _timeObserver);
     }
 }
 
@@ -305,7 +305,7 @@ typedef enum {
         CGFloat lastWatchedTime = [self.track.lastDurationWatchedInSeconds floatValue];
         if (lastWatchedTime > 5) lastWatchedTime -= 5;
         
-        DDLogVerbose(@"Seeking to last watched duration: %f", lastWatchedTime);
+//        DDLogVerbose(@"Seeking to last watched duration: %f", lastWatchedTime);
         [self.view.scrubber setValue:([self.player currentItemDuration] > 0) ? lastWatchedTime / [self.player currentItemDuration] : 0.0f animated:NO];
         
         [self.player seekToTimeInSeconds:lastWatchedTime completionHandler:^(BOOL finished) {
@@ -321,7 +321,7 @@ typedef enum {
 }
 
 - (void)playerDidPlayToEnd:(NSNotification *)notification {
-    DDLogVerbose(@"Player: Did play to the end");
+//    DDLogVerbose(@"Player: Did play to the end");
     RUN_ON_UI_THREAD(^{
         
         self.track.isPlayedToEnd = YES;
@@ -428,7 +428,7 @@ typedef enum {
         RUN_ON_UI_THREAD(^{
             if (self.state == VKVideoPlayerStateDismissed) return;
             if (![asset.URL.absoluteString isEqualToString:streamURL.absoluteString]) {
-                DDLogVerbose(@"Ignore stream load success. Requested to load: %@ but the current stream should be %@.", asset.URL.absoluteString, streamURL.absoluteString);
+//                DDLogVerbose(@"Ignore stream load success. Requested to load: %@ but the current stream should be %@.", asset.URL.absoluteString, streamURL.absoluteString);
                 return;
             }
             NSError *error = nil;
@@ -442,7 +442,7 @@ typedef enum {
             } else {
                 // You should deal with the error appropriately.
                 [self handleErrorCode:kVideoPlayerErrorAssetLoadError track:track];
-                DDLogWarn(@"The asset's tracks were not loaded:\n%@", error);
+//                DDLogWarn(@"The asset's tracks were not loaded:\n%@", error);
             }
         });
     }];
@@ -450,7 +450,7 @@ typedef enum {
 
 - (void)playerItemReadyToPlay {
     
-    DDLogVerbose(@"Player: playerItemReadyToPlay");
+//    DDLogVerbose(@"Player: playerItemReadyToPlay");
     
     RUN_ON_UI_THREAD(^{
         switch (self.state) {
@@ -524,11 +524,11 @@ typedef enum {
             case VKVideoPlayerStateContentLoading:
             case VKVideoPlayerStateContentPaused:
             case VKVideoPlayerStateError:
-                DDLogVerbose(@"Reload stream now.");
+//                DDLogVerbose(@"Reload stream now.");
                 completionHandler();
                 break;
             case VKVideoPlayerStateContentPlaying:
-                DDLogVerbose(@"Reload stream after pause.");
+//                DDLogVerbose(@"Reload stream after pause.");
                 [self pauseContent:NO completionHandler:completionHandler];
                 break;
             case VKVideoPlayerStateDismissed:
@@ -575,13 +575,13 @@ typedef enum {
         if ([keyPath isEqualToString:@"status"]) {
             switch ([self.avPlayer status]) {
                 case AVPlayerStatusReadyToPlay:
-                    DDLogVerbose(@"AVPlayerStatusReadyToPlay");
+//                    DDLogVerbose(@"AVPlayerStatusReadyToPlay");
                     if (self.playerItem.status == AVPlayerItemStatusReadyToPlay) {
                         [[NSNotificationCenter defaultCenter] postNotificationName:kVKVideoPlayerItemReadyToPlay object:nil];
                     }
                     break;
                 case AVPlayerStatusFailed:
-                    DDLogVerbose(@"AVPlayerStatusFailed");
+//                    DDLogVerbose(@"AVPlayerStatusFailed");
                     [self handleErrorCode:kVideoPlayerErrorAVPlayerFail track:self.track];
                 default:
                     break;
@@ -595,7 +595,7 @@ typedef enum {
                 [self.delegate videoPlayer:self isBuffering:YES];
             }
             
-            DDLogVerbose(@"playbackBufferEmpty: %@", self.playerItem.isPlaybackBufferEmpty ? @"yes" : @"no");
+//            DDLogVerbose(@"playbackBufferEmpty: %@", self.playerItem.isPlaybackBufferEmpty ? @"yes" : @"no");
             if (self.playerItem.isPlaybackBufferEmpty && [self currentTime] > 0 && [self currentTime] < [self.player currentItemDuration] - 1 && self.state == VKVideoPlayerStateContentPlaying) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:kVKVideoPlayerPlaybackBufferEmpty object:nil];
             }
@@ -609,7 +609,7 @@ typedef enum {
                 [self.delegate videoPlayer:self isBuffering:NO];
             }
             
-            DDLogVerbose(@"playbackLikelyToKeepUp: %@", self.playerItem.playbackLikelyToKeepUp ? @"yes" : @"no");
+//            DDLogVerbose(@"playbackLikelyToKeepUp: %@", self.playerItem.playbackLikelyToKeepUp ? @"yes" : @"no");
             if (self.playerItem.playbackLikelyToKeepUp) {
                 if (self.state == VKVideoPlayerStateContentPlaying && ![self isPlayingVideo]) {
                     [[NSNotificationCenter defaultCenter] postNotificationName:kVKVideoPlayerPlaybackLikelyToKeepUp object:nil];
@@ -620,13 +620,13 @@ typedef enum {
         if ([keyPath isEqualToString:@"status"]) {
             switch ([self.playerItem status]) {
                 case AVPlayerItemStatusReadyToPlay:
-                    DDLogVerbose(@"AVPlayerItemStatusReadyToPlay");
+//                    DDLogVerbose(@"AVPlayerItemStatusReadyToPlay");
                     if ([self.avPlayer status] == AVPlayerStatusReadyToPlay) {
                         [[NSNotificationCenter defaultCenter] postNotificationName:kVKVideoPlayerItemReadyToPlay object:nil];
                     }
                     break;
                 case AVPlayerItemStatusFailed:
-                    DDLogVerbose(@"AVPlayerItemStatusFailed");
+//                    DDLogVerbose(@"AVPlayerItemStatusFailed");
                     [self handleErrorCode:kVideoPlayerErrorAVPlayerItemFail track:self.track];
                 default:
                     break;
@@ -696,7 +696,7 @@ typedef enum {
                 break;
         }
         
-        DDLogVerbose(@"Player State: %@ -> %@", [self playerStateDescription:self.state], [self playerStateDescription:newPlayerState]);
+//        DDLogVerbose(@"Player State: %@ -> %@", [self playerStateDescription:self.state], [self playerStateDescription:newPlayerState]);
         _state = newPlayerState;
         
         switch (newPlayerState) {
@@ -776,7 +776,7 @@ typedef enum {
                 return;
                 break;
             case AVPlayerItemStatusUnknown:
-                DDLogVerbose(@"Trying to pause content but AVPlayerItemStatusUnknown.");
+//                DDLogVerbose(@"Trying to pause content but AVPlayerItemStatusUnknown.");
                 self.state = VKVideoPlayerStateContentLoading;
                 return;
                 break;
@@ -790,7 +790,7 @@ typedef enum {
                 return;
                 break;
             case AVPlayerStatusUnknown:
-                DDLogVerbose(@"Trying to pause content but AVPlayerStatusUnknown.");
+//                DDLogVerbose(@"Trying to pause content but AVPlayerStatusUnknown.");
                 self.state = VKVideoPlayerStateContentLoading;
                 return;
                 break;

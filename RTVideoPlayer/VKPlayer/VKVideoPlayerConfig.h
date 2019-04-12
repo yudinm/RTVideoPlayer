@@ -10,11 +10,11 @@
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
 #import <AVFoundation/AVFoundation.h>
-#import <DDLog.h>
+//#import <DDLog.h>
 
 #import "VKFoundationLib.h"
 #import "NSObject+VKFoundation.h"
-#import "Reachability.h"
+//#import "Reachability.h"
 
 #define kVKVideoPlayerDurationDidLoadNotification @"VKVideoPlayerDurationDidLoadNotification"
 #define kVKVideoPlayerItemReadyToPlay @"VKVideoPlayerItemReadyToPlay"

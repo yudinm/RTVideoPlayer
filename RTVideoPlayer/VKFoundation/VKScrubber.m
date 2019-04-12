@@ -4,13 +4,13 @@
 //
 
 #import "VKScrubber.h"
-#import <CocoaLumberjack/CocoaLumberjack.h>
+//#import "CocoaLumberjack.h"
 
-#ifdef DEBUG
-  static DDLogLevel ddLogLevel = DDLogLevelWarning;
-#else
-  static DDLogLevel ddLogLevel = DDLogLevelWarning;
-#endif
+//#ifdef DEBUG
+//  static DDLogLevel ddLogLevel = DDLogLevelWarning;
+//#else
+//  static DDLogLevel ddLogLevel = DDLogLevelWarning;
+//#endif
 
 @interface VKScrubber ()
 @property (nonatomic, strong) UIImageView *scrubberGlow;
@@ -51,17 +51,17 @@
 }
 
 - (void)scrubbingBegin {
-  DDLogVerbose(@"SCRUBBER: Begin %f", self.value);
+//  DDLogVerbose(@"SCRUBBER: Begin %f", self.value);
   [self.delegate scrubbingBegin];
 }
 
 - (void)scrubbingEnd {
-  DDLogVerbose(@"SCRUBBER: End %f", self.value);
+//  DDLogVerbose(@"SCRUBBER: End %f", self.value);
   [self.delegate scrubbingEnd];
 }
 
 - (void)scrubberValueChanged {
-  DDLogVerbose(@"SCRUBBER: Change %f", self.value);
+//  DDLogVerbose(@"SCRUBBER: Change %f", self.value);
   [self.delegate scrubberValueChanged];
 }
 

@@ -146,7 +146,7 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if (object == self.scrubber) {
         if ([keyPath isEqualToString:@"maximumValue"]) {
-            DDLogVerbose(@"scrubber Value change: %f", self.scrubber.value);
+//            DDLogVerbose(@"scrubber Value change: %f", self.scrubber.value);
             RUN_ON_UI_THREAD(^{
                 [self updateTimeLabels];
             });
@@ -173,7 +173,7 @@
 - (void)scrubberValueUpdated:(NSNotification *)notification {
     NSDictionary *info = [notification userInfo];
     RUN_ON_UI_THREAD(^{
-        DDLogVerbose(@"scrubberValueUpdated: %@", [info objectForKey:@"scrubberValue"]);
+//        DDLogVerbose(@"scrubberValueUpdated: %@", [info objectForKey:@"scrubberValue"]);
         [self.scrubber setValue:[[info objectForKey:@"scrubberValue"] floatValue] animated:YES];
         [self updateTimeLabels];
     });
@@ -188,7 +188,7 @@
 }
 
 - (void)updateTimeLabels {
-    DDLogVerbose(@"Updating TimeLabels: %f", self.scrubber.value);
+//    DDLogVerbose(@"Updating TimeLabels: %f", self.scrubber.value);
     
     self.currentTimeLabel.text = [NSObject timeStringFromSecondsValue:(int)self.scrubber.value];
     self.totalTimeLabel.text = [NSObject timeStringFromSecondsValue:(int)self.scrubber.maximumValue];
@@ -275,7 +275,7 @@
 }
 
 - (void)setControlsHidden:(BOOL)hidden {
-    DDLogVerbose(@"Controls: %@", hidden ? @"hidden" : @"visible");
+//    DDLogVerbose(@"Controls: %@", hidden ? @"hidden" : @"visible");
     
     if (self.isControlsHidden != hidden) {
         self.isControlsHidden = hidden;
